@@ -1,0 +1,181 @@
+/* Nord tokens — dark mode
+   Inspired by the Nord arctic color palette (nordtheme.com)
+   Cool blue-grey backgrounds with frost and aurora accents
+   Scoped via [data-tokens="nord"][data-mode="dark"] */
+
+[data-tokens="nord"][data-mode="dark"] {
+  /* === Base colors === */
+  --base-color-1: #D8DEE9;
+  --base-color-2: #4C566A;
+  --base-color-3: #3B4252;
+  --base-color-4: #2E3440;
+  --base-color-5: #242933;
+
+  /* === Primary === */
+  --primary-color-1: #88C0D0;
+  --primary-color-2: #88C0D04D;
+  --primary-color-3: #88C0D033;
+
+  /* === Danger === */
+  --danger-color-1: #BF616A;
+  --danger-color-2: #BF616A4D;
+  --danger-color-3: #BF616A33;
+
+  /* === Warning === */
+  --warning-color-1: #D08770;
+  --warning-color-2: #D0877033;
+  --warning-color-3: #D087701A;
+
+  /* === Success === */
+  --success-color-1: #A3BE8C;
+  --success-color-2: #A3BE8C33;
+  --success-color-3: #A3BE8C4D;
+
+  /* === Mention === */
+  --mention-color-1: #88C0D0;
+  --mention-color-2: #5E81AC4D;
+  --mention-color-3: #5E81AC33;
+  --mention-color-4: #5E81AC1A;
+
+  /* === Pin === */
+  --pin-color-1: #D08770;
+  --pin-color-2: #D0877033;
+  --pin-color-3: #D087701A;
+
+  /* === Direct (foreground) === */
+  --direct-color-1: #ECEFF4;
+  --direct-color-2: #ECEFF4E6;
+  --direct-color-3: #ECEFF4CC;
+  --direct-color-4: #ECEFF4B3;
+  --direct-color-5: #ECEFF466;
+  --direct-color-6: #ECEFF433;
+  --direct-color-7: #ECEFF41A;
+  --direct-color-8: #ECEFF40D;
+  --direct-color-9: #ECEFF433;
+
+  /* === Indirect (inverse foreground) === */
+  --indirect-color-1: #000000;
+  --indirect-color-2: #000000B3;
+  --indirect-color-3: #00000066;
+  --indirect-color-4: #2E3440;
+
+  /* === Misc (avatar/accent palette) === */
+  --misc-color-1: #88C0D0;
+  --misc-color-2: #81A1C1;
+  --misc-color-3: #5E81AC;
+  --misc-color-4: #B48EAD;
+  --misc-color-5: #BF616A;
+  --misc-color-6: #D08770;
+  --misc-color-7: #EBCB8B;
+  --misc-color-8: #A3BE8C;
+  --misc-color-9: #8FBCBB;
+  --misc-color-10: #94545D;
+  --misc-color-11: #D8DEE9;
+  --misc-color-12: #7B8FA1;
+
+  /* === Surfaces === */
+  --background: #2E3440;
+  --background-hover: #3B4252;
+  --card-color: #3B4252;
+  --border: #4C566A;
+  --separator: #ECEFF41A;
+  --text-color: #ECEFF4;
+  --secondary-text: #D8DEE9;
+  --secondary-background: #88C0D04D;
+  --secondary-menu-background: #242933;
+  --dark-grey: #4C566A;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(0, 0, 0, 0.12);
+  --drop-shadow-2: rgba(46, 52, 64, 0.04);
+  --drop-shadow-3: rgba(46, 52, 64, 0.08);
+  --backdrop-color: rgba(0, 0, 0, 0.4);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: rgba(136, 192, 208, 0.3);
+  --message-highlight-color: rgba(136, 192, 208, 0.2);
+  --desktop-blue-10: #2E3E50;
+
+  /* === Other === */
+  --neutral-95: #0D1117;
+  --block-progress-bar-color: #ECEFF41A;
+
+  /* === Component tokens === */
+  --app-layout-bg: #2E3440;
+  --app-layout-right-panel-bg: #2E3440;
+  --app-nav-bar-bg: #3B4252;
+  --toast-message-bg: #2E3440;
+  --list-item-bg: #2E3440;
+  --list-item-secondary-hover-bg: #88C0D033;
+  --list-item-highlight: #88C0D00D;
+  --chat-list-item-hover-bg: #ECEFF40D;
+  --chat-list-item-selected-bg: #ECEFF41A;
+  --chat-list-category-button-hover-bg: #ECEFF41A;
+  --nav-list-item-hover-bg: #ECEFF40D;
+  --nav-list-item-selected-bg: #ECEFF41A;
+  --badge-foreground: #2E3440;
+  --badge-border: #242933;
+  --badge-hover-border: #434C5E;
+  --menu-bg: #2E3440;
+  --menu-hover-bg: #ECEFF41A;
+  --menu-separator: #ECEFF41A;
+  --modal-bg: #2E3440;
+  --rounded-image-bg: #2E3440;
+  --chat-input-secondary-bg: #434C5E;
+  --switch-tab-button-bg: #88C0D0;
+  --switch-tab-bar-bg: #88C0D033;
+  --switch-tab-selected-text: #2E3440;
+  --switch-tab-text: #88C0D0;
+  --select-menu-item-bg: #2E3440;
+  --select-menu-item-hover-bg: #ECEFF41A;
+  --message-emoji-reaction-bg: #3B4252;
+  --message-emoji-reaction-bg-hovered: #88C0D033;
+  --message-emoji-reaction-border-hovered: #88C0D04D;
+
+  /* === Privacy === */
+  --privacy-primary: #2E3E50;
+  --privacy-secondary: #5E81AC;
+  --privacy-tertiary: #ECEFF4;
+  --privacy-tertiary-opaque: #ECEFF44D;
+  --privacy-icon-color: #ECEFF480;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors (raw) === */
+  --black-hovered: #1D2128;
+  --blue-hovered: #5E81AC;
+  --purple-hovered: #B48EAD;
+  --cyan-hovered: #8FBCBB;
+  --violet-hovered: #A07DB5;
+  --red-hovered: #A8515A;
+  --yellow-hovered: #D4B56B;
+  --green-hovered: #8DAF76;
+  --moss-hovered: #6B917A;
+  --brown-hovered: #6B3A3A;
+  --brown2-hovered: #7A6940;
+}

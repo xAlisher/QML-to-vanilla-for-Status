@@ -1,0 +1,361 @@
+/* Swap Modal — pixel-perfect from QML source
+   SwapModal.qml (StatusDialog) → SwapInputPanel.qml → SwapExchangeButton.qml
+   Modal: 556px, bg baseColor3, topPadding xlPadding(32) */
+
+/* Backdrop: backdropColor */
+.swap-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--backdrop-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* StatusDialog: 556px, bg baseColor3, radius Theme.radius(8) */
+.swap-modal {
+  width: 556px;
+  max-height: 90vh;
+  background: var(--base-color-3); /* baseColor3 — not modal-bg */
+  border-radius: var(--radius); /* 8px */
+  box-shadow: 0 8px 32px var(--drop-shadow-3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header: StatusDialogHeader, padding Theme.padding(16), bg baseColor3, radius top */
+.swap-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px; /* Theme.padding */
+  border-bottom: 1px solid var(--separator);
+  flex-shrink: 0;
+}
+
+/* Title row: spacing 12 */
+.swap-modal__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* HeaderTitleText: fontSize(28), lineHeight 38, letterSpacing -0.4 */
+.swap-modal__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--direct-color-1);
+  line-height: 38px;
+  letter-spacing: -0.4px;
+}
+
+/* "On:" label: additionalTextSize(13), baseColor1 */
+.swap-modal__network {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-additional); /* 13px */
+  color: var(--base-color-1);
+  line-height: 38px;
+}
+
+.swap-modal__network-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--misc-color-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--indirect-color-1);
+}
+
+/* Close button: part of StatusHeaderActions */
+.swap-modal__close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--base-color-1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.swap-modal__close:hover {
+  background: var(--background-hover);
+}
+
+/* Body: StatusScrollView, topPadding 0, bottomPadding xlPadding(32)
+   ColumnLayout spacing: Theme.padding(16) */
+.swap-modal__body {
+  padding: 0 16px 32px 16px; /* top:0 sides:padding bottom:xlPadding */
+  overflow-y: auto;
+  flex: 1;
+}
+
+.swap-modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* ColumnLayout spacing: Theme.padding */
+}
+
+/* Panels container: margins 2px, height = pay + receive + 4 */
+.swap-panels {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 2px; /* Layout.margins: 2 */
+}
+
+/* SwapInputPanel: 492x131, padding Theme.padding(16)
+   bg: indirectColor3, border 1px directColor8 (normal) / directColor7 (focused)
+   radius: Theme.radius(8) */
+.swap-panel {
+  background: var(--indirect-color-3);
+  border: 1px solid var(--direct-color-8);
+  border-radius: var(--radius); /* 8px */
+  padding: 16px; /* Theme.padding */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* RowLayout spacing: 20 */
+  min-height: 131px; /* implicitHeight */
+}
+
+.swap-panel:focus-within {
+  border-color: var(--direct-color-7);
+}
+
+.swap-panel__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+}
+
+/* Caption: additionalTextSize(13), directColor1 */
+.swap-panel__label {
+  font-size: var(--font-size-additional); /* 13px */
+  color: var(--direct-color-1);
+  line-height: 18px; /* lineHeight: 18 */
+}
+
+/* Amount: fontSize(34), directColor1 */
+.swap-panel__amount {
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--direct-color-1);
+  border: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  outline: none;
+  width: 100%;
+  line-height: 1.2;
+}
+
+.swap-panel__amount::placeholder {
+  color: var(--direct-color-6);
+}
+
+/* Fiat equivalent: additionalTextSize(13), directColor5 */
+.swap-panel__fiat {
+  font-size: var(--font-size-additional); /* 13px */
+  color: var(--direct-color-5);
+}
+
+.swap-panel__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px; /* halfPadding */
+}
+
+/* Token selector: icon 24x24, text 28px, spacing halfPadding(8)
+   When selected: transparent bg, primaryColor1 text */
+.swap-panel__token-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* halfPadding */
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+}
+
+.swap-panel__token-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--indirect-color-1);
+}
+
+.swap-panel__token-symbol {
+  font-weight: 500;
+  font-size: 28px; /* TokenSelectorButton font size */
+  color: var(--primary-color-1);
+  line-height: 38px;
+}
+
+.swap-panel__token-chevron {
+  color: var(--base-color-1);
+  font-size: 10px;
+}
+
+/* Balance text: tertiaryTextFontSize(12), baseColor1 */
+.swap-panel__balance {
+  font-size: var(--font-size-tertiary); /* 12px */
+  color: var(--base-color-1);
+}
+
+/* Max button: height 22, horizontalPadding 8, verticalPadding 3, radius 20
+   tertiaryTextFontSize(12) */
+.swap-panel__max-btn {
+  height: 22px;
+  padding: 3px 8px;
+  border-radius: 20px; /* pill */
+  font-size: var(--font-size-tertiary); /* 12px */
+  color: var(--primary-color-1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+}
+
+.swap-panel__max-btn:hover {
+  text-decoration: underline;
+}
+
+/* Exchange button: 44x44, round, bg indirectColor3, border 1px directColor8
+   icon: arrow-down (normal), arrow-up (hover)
+   hover bg: directColor8, hover border: directColor7 */
+.swap-exchange-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%; /* isRoundIcon */
+  background: var(--indirect-color-3); /* normalColor */
+  border: 1px solid var(--direct-color-8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--base-color-1); /* icon.color */
+  z-index: 2;
+  transition: all 0.15s;
+}
+
+.swap-exchange-btn:hover {
+  background: var(--direct-color-8); /* hoverColor */
+  border-color: var(--direct-color-7);
+}
+
+/* Quote row: spacing 0, additionalTextSize(13), Medium weight */
+.swap-quote {
+  display: flex;
+  align-items: center;
+  gap: 0; /* spacing: 0 */
+  font-size: var(--font-size-additional); /* 13px */
+  color: var(--direct-color-4);
+  font-weight: 500; /* Font.Medium */
+}
+
+.swap-quote__fiat {
+  color: var(--direct-color-5);
+  margin-left: 4px;
+}
+
+/* Footer: StatusDialogFooter, padding Theme.padding(16), bg baseColor3
+   dropShadow: verticalOffset -2, color dropShadow */
+.swap-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px; /* Theme.padding */
+  border-top: 1px solid var(--separator);
+  flex-shrink: 0;
+  background: var(--base-color-3);
+}
+
+.swap-modal__footer-left {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* halfPadding */
+  font-size: var(--font-size-additional); /* additionalTextSize */
+}
+
+/* Labels: directColor5, Medium weight */
+.swap-modal__footer-label {
+  color: var(--direct-color-5);
+  font-weight: 500;
+}
+
+.swap-modal__footer-value {
+  color: var(--direct-color-4);
+  font-weight: 500;
+}
+
+/* Edit button: icon edit_pencil, Tiny size, directColor5 */
+.swap-modal__footer-edit {
+  color: var(--direct-color-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-additional);
+}
+
+.swap-modal__footer-edit:hover {
+  color: var(--direct-color-1);
+}
+
+.swap-modal__footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* padding */
+}
+
+.swap-modal__fees {
+  font-size: var(--font-size-additional);
+  color: var(--direct-color-5);
+  font-weight: 500;
+}
+
+.swap-modal__fees-value {
+  color: var(--direct-color-4);
+  font-weight: 500;
+}
+
+/* Swap button: Primary StatusButton */
+.swap-modal__submit {
+  padding: 10px 24px;
+  border-radius: var(--radius); /* 8px */
+  background: var(--primary-color-1);
+  color: var(--indirect-color-1);
+  border: none;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-primary); /* 15px */
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.swap-modal__submit:hover {
+  opacity: 0.9;
+}

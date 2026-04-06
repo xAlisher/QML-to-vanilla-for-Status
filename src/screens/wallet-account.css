@@ -1,0 +1,478 @@
+/* Wallet Account — pixel-perfect from QML source
+   WalletLayout.qml → LeftTabView.qml + RightTabView.qml + WalletAccountHeader.qml
+   Left: account list (secondaryMenuBackground)
+   Center: header + tabs + assets + footer */
+
+/* === LEFT PANEL (LeftTabView.qml) ===
+   bg: secondaryMenuBackground, spacing: 0 */
+.wallet-left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--secondary-menu-background);
+}
+
+/* Header: "Wallet" title + add button
+   margins: padding(16) left/right/top
+   Title: secondaryAdditionalTextSize(17), Bold */
+.wallet-left__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 0 16px; /* top/left/right: padding, bottom: 0 */
+}
+
+.wallet-left__title {
+  font-size: 17px; /* secondaryAdditionalTextSize */
+  font-weight: 700; /* Font.Bold */
+  color: var(--direct-color-1);
+}
+
+/* Add button: icon 24x24, bg primaryColor3 hover */
+.wallet-left__add-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--primary-color-1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.wallet-left__add-btn:hover {
+  background: var(--primary-color-3);
+}
+
+/* Shadow divider: height bigPadding(24) — visual separator */
+.wallet-left__divider {
+  height: 1px;
+  background: var(--separator);
+  margin: 8px 16px;
+}
+
+/* "All accounts" button: padding 16 all sides
+   bg: secondaryMenuBackground default, backgroundHover on hover
+   radius: 8 */
+.wallet-all-accounts {
+  padding: 16px; /* padding all sides */
+  cursor: pointer;
+  border-radius: 8px; /* Theme.radius */
+  margin: 0 16px; /* leftInset/rightInset: padding */
+  transition: background 0.1s;
+}
+
+.wallet-all-accounts:hover {
+  background: var(--background-hover);
+}
+
+/* "All accounts" label: primaryTextFontSize(15), Medium, baseColor1, lineHeight 22 */
+.wallet-all-accounts__label {
+  font-size: var(--font-size-primary); /* 15px */
+  font-weight: 500; /* Font.Medium */
+  color: var(--base-color-1);
+  line-height: 22px;
+}
+
+/* Balance: fontSize(22), textColor, lineHeight 36 */
+.wallet-all-accounts__balance {
+  font-size: 22px;
+  font-weight: 500; /* Font.Medium */
+  color: var(--text-color);
+  line-height: 36px;
+}
+
+/* Currency symbol: additionalTextSize(13), Medium, lineHeight 22 */
+.wallet-all-accounts__currency {
+  font-size: var(--font-size-additional); /* 13px */
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 22px;
+  vertical-align: bottom;
+}
+
+/* Account list: spacing smallPadding(10), bottomMargin padding(16) */
+.wallet-accounts {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px; /* left/right: padding */
+}
+
+/* Account item (StatusListItem delegate):
+   width: listView.width - padding*2
+   asset: 40x40, emoji bg primaryColor3
+   title: Medium, subtitle: currencyBalance
+   hover bg: baseColor3 */
+.wallet-account-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* halfPadding */
+  padding: 8px; /* halfPadding */
+  border-radius: 8px; /* Theme.radius */
+  cursor: pointer;
+  margin-bottom: 4px; /* spacing: smallPadding(10) → approximated with margin */
+  transition: background 0.1s;
+  min-height: 56px;
+}
+
+.wallet-account-item:hover {
+  background: var(--base-color-3);
+}
+
+.wallet-account-item.active {
+  background: var(--base-color-3);
+}
+
+/* Account icon: 40x40, emoji, bg primaryColor3, letterSize 14 */
+.wallet-account-item__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  background: var(--primary-color-3);
+}
+
+.wallet-account-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Name: primaryTextFontSize(15), Medium */
+.wallet-account-item__name {
+  font-size: var(--font-size-primary); /* 15px */
+  font-weight: 500; /* Font.Medium */
+  color: var(--direct-color-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Balance subtitle: primaryTextFontSize(15), baseColor1 */
+.wallet-account-item__balance {
+  font-size: var(--font-size-primary); /* 15px */
+  color: var(--base-color-1);
+}
+
+/* Right side icons: 15x15 */
+.wallet-account-item__badges {
+  display: flex;
+  gap: 4px;
+}
+
+.wallet-account-item__badge {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--direct-color-1);
+}
+
+/* Footer: "Saved addresses" + "Onchain friends" links
+   icon 40x40 round, primaryColor1
+   text: directColor1
+   hover bg: backgroundHover */
+.wallet-left__footer {
+  padding: 8px 16px 16px; /* padding top/sides, xlPadding bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.wallet-left__footer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* spacing from source */
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--direct-color-1);
+  font-size: var(--font-size-primary); /* 15px */
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.wallet-left__footer-link:hover {
+  background: var(--background-hover);
+}
+
+.wallet-left__footer-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color-3);
+  color: var(--primary-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === CENTER: Account header (WalletAccountHeader.qml) ===
+   spacing: padding(16) */
+.wallet-header {
+  padding: 16px 32px; /* padding vertical, xlPadding*2 horizontal per layout margins */
+  flex-shrink: 0;
+}
+
+/* Title row: spacing padding(16) */
+.wallet-header__top {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Theme.padding */
+}
+
+/* Emoji circle: min(parent.h, parent.w), radius width/2, bg account color */
+.wallet-header__emoji {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Account name: fontSize(19), lineHeight 26 */
+.wallet-header__name {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--direct-color-1);
+  line-height: 26px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Balance: fontSize(19), Medium, lineHeight 26 */
+.wallet-header__balance {
+  font-size: 19px;
+  font-weight: 500; /* Font.Medium */
+  color: var(--direct-color-1);
+  line-height: 26px;
+}
+
+.wallet-header__spacer {
+  flex: 1;
+}
+
+/* Control row buttons: height 38, border 1px directColor7
+   normalColor transparent, hoverColor baseColor2 */
+.wallet-header__actions {
+  display: flex;
+  gap: 8px; /* spacing: 8 */
+}
+
+.wallet-header__action-btn {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--direct-color-7);
+  border-radius: var(--radius); /* 8px */
+  background: transparent;
+  color: var(--base-color-1);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-additional); /* 13px */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* spacing: 8 */
+  transition: background 0.1s;
+}
+
+.wallet-header__action-btn:hover {
+  background: var(--base-color-2);
+  color: var(--direct-color-1);
+}
+
+.wallet-header__action-btn--icon {
+  width: 38px;
+  padding: 0;
+  justify-content: center;
+}
+
+/* === Tab bar (StatusTabBar + StatusTabButton) ===
+   spacing: bigPadding(24) between tabs */
+.wallet-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px; /* xlPadding*2 horizontal to match header */
+  flex-shrink: 0;
+}
+
+/* StatusTabButton: text, active indicator = 2px bottom line */
+.wallet-tab {
+  padding: 12px 16px;
+  font-size: var(--font-size-primary); /* 15px */
+  font-weight: 500; /* Medium */
+  color: var(--base-color-1);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.1s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--font-family-base);
+  margin-right: 24px; /* bigPadding spacing between tabs */
+}
+
+.wallet-tab:last-child {
+  margin-right: 0;
+}
+
+.wallet-tab:hover {
+  color: var(--direct-color-1);
+}
+
+.wallet-tab.active {
+  color: var(--primary-color-1);
+  border-bottom-color: var(--primary-color-1);
+}
+
+/* === Asset list (TokenDelegate extends StatusListItem) ===
+   StatusListItem: min height 64, padding 16 left/right, radius 8
+   hover bg: baseColor2
+   asset: 32x32 image */
+.wallet-assets {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 32px; /* match header horizontal */
+}
+
+.wallet-asset-row {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* padding */
+  padding: 12px 8px; /* StatusListItem padding */
+  border-radius: 8px; /* Theme.radius */
+  cursor: pointer;
+  transition: background 0.1s;
+  min-height: 64px; /* StatusListItem minimum */
+}
+
+.wallet-asset-row:hover {
+  background: var(--base-color-2); /* hover bg */
+}
+
+/* Token icon: 32x32 */
+.wallet-asset__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-tertiary);
+  color: var(--indirect-color-1);
+  flex-shrink: 0;
+}
+
+.wallet-asset__info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Name: primaryTextFontSize(15), directColor1 */
+.wallet-asset__name {
+  font-size: var(--font-size-primary);
+  color: var(--direct-color-1);
+}
+
+/* Symbol subtitle: primaryTextFontSize(15), baseColor1 */
+.wallet-asset__symbol {
+  font-size: var(--font-size-primary);
+  color: var(--base-color-1);
+}
+
+/* Right side values */
+.wallet-asset__values {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.wallet-asset__fiat {
+  font-size: var(--font-size-primary);
+  color: var(--direct-color-1);
+}
+
+.wallet-asset__crypto {
+  font-size: var(--font-size-primary);
+  color: var(--base-color-1);
+}
+
+/* Change percentage: additionalTextSize(13)
+   Color via WalletUtils.getChangePct24HourColor */
+.wallet-asset__change {
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Vertical divider between change % and price: 1px wide, 12px tall, directColor9 */
+.wallet-asset__divider {
+  width: 1px;
+  height: 12px;
+  background: var(--direct-color-9);
+}
+
+.wallet-asset__change-value {
+  font-size: var(--font-size-additional); /* 13px */
+  font-weight: 500;
+}
+
+.wallet-asset__change-value--up {
+  color: var(--success-color-1);
+}
+
+.wallet-asset__change-value--down {
+  color: var(--danger-color-1);
+}
+
+/* === Footer (WalletFooter.qml) ===
+   implicitHeight: 61
+   bg: statusAppLayout.rightPanelBackgroundColor
+   top: StatusModalDivider
+   buttons: centered, spacing padding(16) */
+.wallet-footer {
+  height: 61px; /* implicitHeight */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Theme.padding */
+  border-top: 1px solid var(--separator);
+  flex-shrink: 0;
+  background: var(--app-layout-right-panel-bg);
+}
+
+/* Footer buttons: StatusFlatButton with icon
+   TextBesideIcon display */
+.wallet-footer__btn {
+  padding: 8px 16px;
+  border-radius: var(--radius); /* 8px */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-primary); /* 15px */
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: var(--primary-color-1);
+  transition: background 0.1s;
+}
+
+.wallet-footer__btn:hover {
+  background: var(--primary-color-3);
+}

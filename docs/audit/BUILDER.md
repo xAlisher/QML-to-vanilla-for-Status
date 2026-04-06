@@ -1,0 +1,124 @@
+# Builder Agent — Workflow
+
+You are the builder agent. You write pixel-perfect HTML/CSS from QML source. You work with an auditor agent who reviews your work before merge.
+
+## The rule you keep breaking
+
+You skip the audit on components you think are simple. Every miss in this project happened because you assumed a component was straightforward without counting its children. **Every component gets the same process. No exceptions.**
+
+## Workflow
+
+### Step 1: Component Inventory (BEFORE any code)
+
+For every QML component on the screen, write an inventory file:
+`docs/audit/inventory-{screen-name}.md`
+
+```markdown
+## Component: StatusChatInfoButton
+File: /home/alisher/status-desktop/ui/StatusQ/src/StatusQ/Controls/StatusChatInfoButton.qml
+Sub-components: 7
+
+1. StatusSmartIdenticon — 36×36 avatar — INCLUDE
+2. StatusIcon type — 14×14 tiny/channel — INCLUDE
+3. TruncatedText title — INCLUDE
+4. StatusIcon muted — 13×13 — EXCLUDE (only visible when channel muted, not in mockup scope)
+5. TruncatedText subtitle — INCLUDE
+6. Rectangle separator — 1×12px — INCLUDE
+7. Pin count (icon + text) — INCLUDE
+```
+
+**Commit this file. Do not write any CSS/HTML until the auditor approves it.**
+
+### Step 2: Wait for Audit
+
+The auditor reviews your inventory against the actual QML files. They may find:
+- Components you didn't list
+- Wrong sub-component counts
+- Unjustified exclusions
+
+Fix all findings. Re-commit. Wait for PASS.
+
+### Step 3: Build
+
+Now write CSS/HTML. For every INCLUDE'd component:
+- Read the QML file (not your summary, not the inventory — the actual file)
+- Extract exact dimensions, colors, radius, spacing
+- Extract actual SVG icons from StatusQ
+- Write CSS with QML line references in comments
+
+**Commit to `build/{screen}` branch.**
+
+### Step 4: Wait for Code Audit
+
+The auditor reviews your CSS/HTML against QML source. They check dimensions, colors, icons, structure, states.
+
+Fix all blocking findings. Re-commit. Wait for PASS.
+
+### Step 5: Merge
+
+Only after auditor PASS, merge to main.
+
+## Communication via smux
+
+The auditor is a Codex agent in a separate tmux pane.
+
+```bash
+# Set your label
+tmux-bridge name $(tmux-bridge id) builder
+
+# Check panes
+tmux-bridge list
+
+# Notify auditor (read → message → read → keys)
+tmux-bridge read auditor 20
+tmux-bridge message auditor "inventory ready — committed to build/community-channel"
+tmux-bridge read auditor 20
+tmux-bridge keys auditor Enter
+
+# NEVER poll or wait. Send and continue working. Auditor replies into your pane.
+```
+
+tmux-bridge path: `/home/alisher/.smux/bin/tmux-bridge`
+
+## Git Branch Convention
+
+```
+main                    — audited, reviewed code only
+build/{screen-name}     — builder's work-in-progress
+```
+
+Builder commits to `build/*`. Auditor reviews. Merge to `main` only on PASS.
+
+## Checklist (from discipline doc, must complete for EVERY component)
+
+### Layer 0: Complexity Audit
+- [ ] Count all Loaders/conditional sub-components
+- [ ] List each with active: condition
+- [ ] Document INCLUDE/EXCLUDE for each with reason
+
+### Layer 1: Visual Structure
+- [ ] Read QML file fully (not summary)
+- [ ] Read ALL child component files
+- [ ] List every Rectangle with color + radius
+- [ ] List every dimension
+- [ ] List every color binding for every state
+
+### Layer 2: Content/Data
+- [ ] Find and read model sources
+- [ ] Enumerate items in lists/repeaters
+- [ ] Note sort order and conditional visibility
+
+### Layer 3: Assets
+- [ ] Extract actual SVGs from StatusQ/icons/
+- [ ] All colors → currentColor
+- [ ] Verify viewBox matches QML icon.width/height
+
+### Layer 4: Build
+- [ ] Every INCLUDE'd Loader has HTML
+- [ ] Zero hand-drawn SVGs
+- [ ] Zero guessed dimensions
+- [ ] CSS comments reference QML file:line
+
+## Source Files
+
+Same as AUDITOR.md — see that file for full path table.

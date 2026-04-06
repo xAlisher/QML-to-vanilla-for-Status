@@ -1,0 +1,181 @@
+/* Basecamp — Logos Design System dark theme
+   Source: github.com/logos-co/logos-design-system
+   ColorPalette.qml + DarkTheme.qml — Basecamp MVP v.1
+   Orange-accented, grey-scale dark with warm burnt orange primary */
+
+[data-tokens="basecamp"][data-mode="dark"] {
+  /* === Base colors (from grey scale) === */
+  --base-color-1: #969696; /* gray500 — textTertiary */
+  --base-color-2: #2F2F2F; /* gray340 — backgroundButton */
+  --base-color-3: #262626; /* gray850 — backgroundSecondary */
+  --base-color-4: #1C1C1C; /* gray875 — backgroundTertiary */
+  --base-color-5: #141414; /* gray925 — backgroundInset */
+
+  /* === Primary (orange accent — ED7B58 primary from DarkTheme) === */
+  --primary-color-1: #ED7B58; /* orange300 — primary */
+  --primary-color-2: #ED7B584D;
+  --primary-color-3: #ED7B5833;
+
+  /* === Danger (red from Logos palette) === */
+  --danger-color-1: #FB3748; /* red500 — error */
+  --danger-color-2: #FB37484D;
+  --danger-color-3: #FB374833;
+
+  /* === Warning (yellow from Logos palette) === */
+  --warning-color-1: #FEBC2E; /* yellow400 — warning */
+  --warning-color-2: #FEBC2E33;
+  --warning-color-3: #FEBC2E1A;
+
+  /* === Success (green from Logos palette) === */
+  --success-color-1: #49F563; /* green500 — success */
+  --success-color-2: #49F56333;
+  --success-color-3: #49F5634D;
+
+  /* === Mention (cyan/blue from Logos palette) === */
+  --mention-color-1: #29B6F6; /* cyan400 */
+  --mention-color-2: #29B6F64D;
+  --mention-color-3: #29B6F633;
+  --mention-color-4: #29B6F61A;
+
+  /* === Pin (orange accent) === */
+  --pin-color-1: #FF6F42; /* orange350 — accentOrangeMid */
+  --pin-color-2: #FF6F4233;
+  --pin-color-3: #FF6F421A;
+
+  /* === Direct (foreground — white) === */
+  --direct-color-1: #FFFFFF;
+  --direct-color-2: #FFFFFFE6;
+  --direct-color-3: #FFFFFFCC;
+  --direct-color-4: #FFFFFFB3;
+  --direct-color-5: #FFFFFF66;
+  --direct-color-6: #FFFFFF33;
+  --direct-color-7: #FFFFFF1A;
+  --direct-color-8: #FFFFFF0D;
+  --direct-color-9: #FFFFFF33;
+
+  /* === Indirect (inverse) === */
+  --indirect-color-1: #000000;
+  --indirect-color-2: #000000B3;
+  --indirect-color-3: #00000066;
+  --indirect-color-4: #171717; /* gray900 */
+
+  /* === Misc (Logos accent palette — orange-weighted) === */
+  --misc-color-1: #4A90E2; /* blue400 — info */
+  --misc-color-2: #6C71C4; /* muted purple */
+  --misc-color-3: #29B6F6; /* cyan400 */
+  --misc-color-4: #ED7B58; /* orange300 */
+  --misc-color-5: #FF6F42; /* orange350 — warm accent, not error red */
+  --misc-color-6: #FF8800; /* orange400 */
+  --misc-color-7: #FEBC2E; /* yellow400 */
+  --misc-color-8: #49F563; /* green500 */
+  --misc-color-9: #6CCC93; /* green400 */
+  --misc-color-10: #BF5104; /* orange700 — accentBurntOrange */
+  --misc-color-11: #EEF083; /* yellow300 — accentYellowSoft */
+  --misc-color-12: #A4A4A4; /* gray400 */
+
+  /* === Surfaces (Logos DarkTheme mapping) === */
+  --background: #171717; /* gray900 — background */
+  --background-hover: #2F2F2F; /* gray340 */
+  --card-color: #262626; /* gray850 — backgroundSecondary */
+  --border: #434343; /* gray300 — border */
+  --separator: #FFFFFF1A;
+  --text-color: #FFFFFF;
+  --secondary-text: #A4A4A4; /* gray400 — textSecondary */
+  --secondary-background: #ED7B584D;
+  --secondary-menu-background: #0E121B; /* gray950 — backgroundElevated */
+  --dark-grey: #2F2F2F;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(0, 0, 0, 0.12);
+  --drop-shadow-2: rgba(0, 0, 0, 0.04);
+  --drop-shadow-3: rgba(0, 0, 0, 0.16);
+  --backdrop-color: rgba(28, 28, 28, 0.3); /* overlayDark from gray875 */
+
+  /* === Highlights === */
+  --status-floating-button-highlight: rgba(237, 123, 88, 0.2);
+  --message-highlight-color: rgba(237, 123, 88, 0.15);
+  --desktop-blue-10: #1C1C1C;
+
+  /* === Other === */
+  --neutral-95: #0E121B; /* gray950 */
+  --block-progress-bar-color: #FFFFFF1A;
+
+  /* === Component tokens === */
+  --app-layout-bg: #171717;
+  --app-layout-right-panel-bg: #171717;
+  --app-nav-bar-bg: #0E121B; /* gray950 — backgroundElevated */
+  --toast-message-bg: #262626;
+  --list-item-bg: #262626;
+  --list-item-secondary-hover-bg: #ED7B5833;
+  --list-item-highlight: #ED7B580D;
+  --chat-list-item-hover-bg: #FFFFFF0D;
+  --chat-list-item-selected-bg: #FFFFFF1A;
+  --chat-list-category-button-hover-bg: #FFFFFF1A;
+  --nav-list-item-hover-bg: #FFFFFF0D;
+  --nav-list-item-selected-bg: #FFFFFF1A;
+  --badge-foreground: #171717;
+  --badge-border: #141414;
+  --badge-hover-border: #2F2F2F;
+  --menu-bg: #1C1C1C;
+  --menu-hover-bg: #FFFFFF1A;
+  --menu-separator: #FFFFFF1A;
+  --modal-bg: #1C1C1C;
+  --rounded-image-bg: #262626;
+  --chat-input-secondary-bg: #2F2F2F;
+  --switch-tab-button-bg: #ED7B58;
+  --switch-tab-bar-bg: #ED7B5833;
+  --switch-tab-selected-text: #000000;
+  --switch-tab-text: #ED7B58;
+  --select-menu-item-bg: #1C1C1C;
+  --select-menu-item-hover-bg: #FFFFFF1A;
+  --message-emoji-reaction-bg: #2F2F2F;
+  --message-emoji-reaction-bg-hovered: #ED7B5833;
+  --message-emoji-reaction-border-hovered: #ED7B584D;
+
+  /* === Privacy === */
+  --privacy-primary: #3A2040;
+  --privacy-secondary: #5A3860;
+  --privacy-tertiary: #FFFFFF;
+  --privacy-tertiary-opaque: #FFFFFF4D;
+  --privacy-icon-color: #FFFFFF80;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors === */
+  --black-hovered: #1C1C1C;
+  --blue-hovered: #3578C7;
+  --purple-hovered: #5A52A0;
+  --cyan-hovered: #0284C7;
+  --violet-hovered: #8A60B0;
+  --red-hovered: #DC2626;
+  --yellow-hovered: #FFA726;
+  --green-hovered: #19C332;
+  --moss-hovered: #15803D;
+  --brown-hovered: #BF5104;
+  --brown2-hovered: #8B6914;
+}

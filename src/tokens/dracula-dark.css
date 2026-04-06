@@ -1,0 +1,181 @@
+/* Dracula tokens — dark mode
+   Inspired by the Dracula color theme (draculatheme.com)
+   Deep dark backgrounds with vivid pastel accents
+   Scoped via [data-tokens="dracula"][data-mode="dark"] */
+
+[data-tokens="dracula"][data-mode="dark"] {
+  /* === Base colors === */
+  --base-color-1: #6272A4;
+  --base-color-2: #44475A;
+  --base-color-3: #383A4A;
+  --base-color-4: #282A36;
+  --base-color-5: #21222C;
+
+  /* === Primary === */
+  --primary-color-1: #BD93F9;
+  --primary-color-2: #BD93F94D;
+  --primary-color-3: #BD93F933;
+
+  /* === Danger === */
+  --danger-color-1: #FF5555;
+  --danger-color-2: #FF55554D;
+  --danger-color-3: #FF555533;
+
+  /* === Warning === */
+  --warning-color-1: #FFB86C;
+  --warning-color-2: #FFB86C33;
+  --warning-color-3: #FFB86C1A;
+
+  /* === Success === */
+  --success-color-1: #50FA7B;
+  --success-color-2: #50FA7B33;
+  --success-color-3: #50FA7B4D;
+
+  /* === Mention === */
+  --mention-color-1: #8BE9FD;
+  --mention-color-2: #8BE9FD4D;
+  --mention-color-3: #8BE9FD33;
+  --mention-color-4: #8BE9FD1A;
+
+  /* === Pin === */
+  --pin-color-1: #FFB86C;
+  --pin-color-2: #FFB86C33;
+  --pin-color-3: #FFB86C1A;
+
+  /* === Direct (foreground) === */
+  --direct-color-1: #F8F8F2;
+  --direct-color-2: #F8F8F2E6;
+  --direct-color-3: #F8F8F2CC;
+  --direct-color-4: #F8F8F2B3;
+  --direct-color-5: #F8F8F266;
+  --direct-color-6: #F8F8F233;
+  --direct-color-7: #F8F8F21A;
+  --direct-color-8: #F8F8F20D;
+  --direct-color-9: #F8F8F233;
+
+  /* === Indirect (inverse foreground) === */
+  --indirect-color-1: #000000;
+  --indirect-color-2: #000000B3;
+  --indirect-color-3: #00000066;
+  --indirect-color-4: #282A36;
+
+  /* === Misc (avatar/accent palette) === */
+  --misc-color-1: #BD93F9;
+  --misc-color-2: #FF79C6;
+  --misc-color-3: #8BE9FD;
+  --misc-color-4: #FF5555;
+  --misc-color-5: #FFB86C;
+  --misc-color-6: #F1FA8C;
+  --misc-color-7: #50FA7B;
+  --misc-color-8: #6272A4;
+  --misc-color-9: #9580FF;
+  --misc-color-10: #CC4444;
+  --misc-color-11: #E2F07D;
+  --misc-color-12: #7C8EBF;
+
+  /* === Surfaces === */
+  --background: #282A36;
+  --background-hover: #44475A;
+  --card-color: #44475A;
+  --border: #44475A;
+  --separator: #F8F8F21A;
+  --text-color: #F8F8F2;
+  --secondary-text: #6272A4;
+  --secondary-background: #BD93F94D;
+  --secondary-menu-background: #21222C;
+  --dark-grey: #44475A;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(0, 0, 0, 0.12);
+  --drop-shadow-2: rgba(40, 42, 54, 0.04);
+  --drop-shadow-3: rgba(40, 42, 54, 0.08);
+  --backdrop-color: rgba(0, 0, 0, 0.4);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: rgba(189, 147, 249, 0.3);
+  --message-highlight-color: rgba(189, 147, 249, 0.2);
+  --desktop-blue-10: #2B2640;
+
+  /* === Other === */
+  --neutral-95: #0E0F14;
+  --block-progress-bar-color: #F8F8F21A;
+
+  /* === Component tokens === */
+  --app-layout-bg: #282A36;
+  --app-layout-right-panel-bg: #282A36;
+  --app-nav-bar-bg: #44475A;
+  --toast-message-bg: #282A36;
+  --list-item-bg: #282A36;
+  --list-item-secondary-hover-bg: #BD93F933;
+  --list-item-highlight: #BD93F90D;
+  --chat-list-item-hover-bg: #F8F8F20D;
+  --chat-list-item-selected-bg: #F8F8F21A;
+  --chat-list-category-button-hover-bg: #F8F8F21A;
+  --nav-list-item-hover-bg: #F8F8F20D;
+  --nav-list-item-selected-bg: #F8F8F21A;
+  --badge-foreground: #282A36;
+  --badge-border: #21222C;
+  --badge-hover-border: #383A4A;
+  --menu-bg: #282A36;
+  --menu-hover-bg: #F8F8F21A;
+  --menu-separator: #F8F8F21A;
+  --modal-bg: #282A36;
+  --rounded-image-bg: #282A36;
+  --chat-input-secondary-bg: #383A4A;
+  --switch-tab-button-bg: #BD93F9;
+  --switch-tab-bar-bg: #BD93F933;
+  --switch-tab-selected-text: #282A36;
+  --switch-tab-text: #BD93F9;
+  --select-menu-item-bg: #282A36;
+  --select-menu-item-hover-bg: #F8F8F21A;
+  --message-emoji-reaction-bg: #44475A;
+  --message-emoji-reaction-bg-hovered: #BD93F933;
+  --message-emoji-reaction-border-hovered: #BD93F94D;
+
+  /* === Privacy === */
+  --privacy-primary: #2B2640;
+  --privacy-secondary: #6C5BAE;
+  --privacy-tertiary: #F8F8F2;
+  --privacy-tertiary-opaque: #F8F8F24D;
+  --privacy-icon-color: #F8F8F280;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors (raw) === */
+  --black-hovered: #1A1B24;
+  --blue-hovered: #4E62A0;
+  --purple-hovered: #A67DE0;
+  --cyan-hovered: #6DD4E8;
+  --violet-hovered: #E069B0;
+  --red-hovered: #D94444;
+  --yellow-hovered: #D4C96E;
+  --green-hovered: #40D46A;
+  --moss-hovered: #3BAE7A;
+  --brown-hovered: #6B3030;
+  --brown2-hovered: #7A6530;
+}

@@ -1,0 +1,181 @@
+/* Concept A — Warm Minimalism — light mode
+   Based on Brand Strategy §21: monochrome/low-chroma, high contrast,
+   warm neutrals, generous spacing, typographic hierarchy.
+   Risk mitigation: warm neutrals prevent "plain/cold" perception. */
+
+[data-tokens="concept"][data-mode="light"] {
+  /* === Base colors (warm greys replacing cool greys) === */
+  --base-color-1: #8A8680;
+  --base-color-2: #EDEAE6;
+  --base-color-3: #E5E2DE;
+  --base-color-4: #F5F3F0;
+  --base-color-5: #EFEDE9;
+
+  /* === Primary (desaturated warm blue — less electric than #4360DF) === */
+  --primary-color-1: #4A5578;
+  --primary-color-2: #4A557833;
+  --primary-color-3: #4A55781A;
+
+  /* === Danger (slightly warmer red) === */
+  --danger-color-1: #C44D5E;
+  --danger-color-2: #C44D5E33;
+  --danger-color-3: #C44D5E1A;
+
+  /* === Warning (kept, already warm) === */
+  --warning-color-1: #D4693A;
+  --warning-color-2: #D4693A33;
+  --warning-color-3: #D4693A1A;
+
+  /* === Success (desaturated green) === */
+  --success-color-1: #4A8F56;
+  --success-color-2: #4A8F561A;
+  --success-color-3: #4A8F5633;
+
+  /* === Mention (desaturated teal) === */
+  --mention-color-1: #2E8A9E;
+  --mention-color-2: #2E8A9E4D;
+  --mention-color-3: #2E8A9E33;
+  --mention-color-4: #2E8A9E1A;
+
+  /* === Pin (warmer, lower chroma) === */
+  --pin-color-1: #C47A52;
+  --pin-color-2: #C47A5233;
+  --pin-color-3: #C47A521A;
+
+  /* === Direct (foreground — slightly warm black) === */
+  --direct-color-1: #1A1917;
+  --direct-color-2: #1A1917E6;
+  --direct-color-3: #1A1917CC;
+  --direct-color-4: #1A1917B3;
+  --direct-color-5: #1A191766;
+  --direct-color-6: #1A19174D;
+  --direct-color-7: #1A19171A;
+  --direct-color-8: #1A19170D;
+  --direct-color-9: #1A191733;
+
+  /* === Indirect (inverse — warm white) === */
+  --indirect-color-1: #FAFAF8;
+  --indirect-color-2: #FAFAF8B3;
+  --indirect-color-3: #FAFAF866;
+  --indirect-color-4: #FAFAF8;
+
+  /* === Misc (desaturated accent palette) === */
+  --misc-color-1: #3D4A7A;
+  --misc-color-2: #6E65A8;
+  --misc-color-3: #4AABB8;
+  --misc-color-4: #A872B8;
+  --misc-color-5: #C46060;
+  --misc-color-6: #C47A52;
+  --misc-color-7: #C4A830;
+  --misc-color-8: #6AAE30;
+  --misc-color-9: #3A8A80;
+  --misc-color-10: #7A3838;
+  --misc-color-11: #8A7438;
+  --misc-color-12: #808A52;
+
+  /* === Surfaces (warm off-whites) === */
+  --background: #FAFAF8;
+  --background-hover: #EDEAE6;
+  --card-color: #FAFAF8;
+  --border: #E5E2DE;
+  --separator: #EDEAE6;
+  --text-color: #1A1917;
+  --secondary-text: #8A8680;
+  --secondary-background: #4A557833;
+  --secondary-menu-background: #F5F3F0;
+  --dark-grey: #8A8680;
+
+  /* === Shadows (warm) === */
+  --drop-shadow: rgba(26, 25, 23, 0.03);
+  --drop-shadow-2: rgba(26, 25, 23, 0.02);
+  --drop-shadow-3: rgba(26, 25, 23, 0.10);
+  --backdrop-color: rgba(26, 25, 23, 0.4);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: #E5E2DE;
+  --message-highlight-color: rgba(74, 85, 120, 0.12);
+  --desktop-blue-10: #EFEDE9;
+
+  /* === Other === */
+  --neutral-95: #1A1917;
+  --block-progress-bar-color: #E5E2DE;
+
+  /* === Component tokens (warm neutrals throughout) === */
+  --app-layout-bg: #FAFAF8;
+  --app-layout-right-panel-bg: #FAFAF8;
+  --app-nav-bar-bg: #F5F3F0;
+  --toast-message-bg: #FAFAF8;
+  --list-item-bg: #FAFAF8;
+  --list-item-secondary-hover-bg: #EDEAE6;
+  --list-item-highlight: #4A55780D;
+  --chat-list-item-hover-bg: #EDEAE6;
+  --chat-list-item-selected-bg: #E5E2DE;
+  --chat-list-category-button-hover-bg: #1A19170D;
+  --nav-list-item-hover-bg: #EDEAE6;
+  --nav-list-item-selected-bg: #E5E2DE;
+  --badge-foreground: #FAFAF8;
+  --badge-border: #F5F3F0;
+  --badge-hover-border: #E5E2DE;
+  --menu-bg: #FAFAF8;
+  --menu-hover-bg: #EDEAE6;
+  --menu-separator: #EDEAE6;
+  --modal-bg: #FAFAF8;
+  --rounded-image-bg: #FAFAF8;
+  --chat-input-secondary-bg: #E5E2DE;
+  --switch-tab-button-bg: #4A5578;
+  --switch-tab-bar-bg: #4A55781A;
+  --switch-tab-selected-text: #FAFAF8;
+  --switch-tab-text: #4A5578;
+  --select-menu-item-bg: #FAFAF8;
+  --select-menu-item-hover-bg: #EDEAE6;
+  --message-emoji-reaction-bg: #EDEAE6;
+  --message-emoji-reaction-bg-hovered: #4A557833;
+  --message-emoji-reaction-border-hovered: #4A55781A;
+
+  /* === Privacy === */
+  --privacy-primary: #B0ADE0;
+  --privacy-secondary: #CDD0E8;
+  --privacy-tertiary: #2E2A60;
+  --privacy-tertiary-opaque: #2E2A604D;
+  --privacy-icon-color: #5A5870;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing (same structure, generous) === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors (desaturated) === */
+  --black-hovered: #2A2926;
+  --blue-hovered: #3A4462;
+  --purple-hovered: #5A5490;
+  --cyan-hovered: #2A8098;
+  --violet-hovered: #8A60A0;
+  --red-hovered: #A04050;
+  --yellow-hovered: #A08A28;
+  --green-hovered: #3A7A20;
+  --moss-hovered: #2A7068;
+  --brown-hovered: #5A2A2A;
+  --brown2-hovered: #6A5A28;
+}
