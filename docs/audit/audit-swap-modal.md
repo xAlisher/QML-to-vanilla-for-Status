@@ -88,3 +88,11 @@ Date: 2026-04-07
 - PASS: the account selector, network filter, and token selector now use the exact extracted `chevron-down.svg` path with `currentColor`, replacing the previous text chevrons.
 - PASS: the exchange button now uses the exact extracted `arrow-down.svg` path with `currentColor`, matching `SwapExchangeButton.qml` instead of the earlier hand-drawn arrow.
 - PASS: the network filter indicator spacing and positioning are now aligned to the `StatusComboBox` pattern, and the changes stay within source-backed icon/chrome adjustments.
+
+## Code Audit: swap-modal cutout fix
+Status: FAIL
+Date: 2026-04-07
+
+### Findings:
+- BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L218) implements the notch as a `circle 25px`, but the `SwapInputPanel.qml` path does not use a 25px circle. The actual QML cutout arc is `radiusX: root.swapExchangeButtonWidth/2 + path.strokeWidth` and `radiusY: root.swapExchangeButtonWidth/2 - path.strokeWidth/2`, which resolves to `23px` by `21.5px` for the default 44px exchange button at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L209). The current CSS therefore uses the wrong size and wrong shape.
+- BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L218) also assumes a symmetric radial-gradient notch centered exactly on the edge, but the QML cutout width is driven by `relativeX: root.swapExchangeButtonWidth + (shape.cutoutGap + path.strokeWidth*2)` at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L210), so the current CSS is still a geometric approximation rather than a source-matched translation of the actual `ShapePath`.
