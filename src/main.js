@@ -98,10 +98,12 @@ function render() {
         <div class="presentation__split">
           <div class="presentation__split-pane">
             <div class="presentation__split-label">${themes[currentTheme].label}</div>
+            <div class="presentation__toolbar-reason">${themes[currentTheme].reason || ''}</div>
             <div class="shell" data-tokens="${tokens}" data-mode="${mode}" id="split-left"></div>
           </div>
           <div class="presentation__split-pane">
             <div class="presentation__split-label">${compare.label}</div>
+            <div class="presentation__toolbar-reason">${themes[compareTheme].reason || ''}</div>
             <div class="shell" data-tokens="${compare.tokens}" data-mode="${compare.mode}" id="split-right"></div>
           </div>
         </div>
