@@ -131,7 +131,7 @@
   width: 335px;
   height: 230px;
   border-radius: 20px; /* d.bannerRadius for Big */
-  overflow: hidden;
+  overflow: visible; /* QML logo has z above content — no clipping (StatusCommunityCard.qml:267) */
   cursor: pointer;
   border: 1px solid var(--direct-color-8);
   background: var(--card-color);
@@ -144,10 +144,12 @@
   box-shadow: 0 2px 30px var(--backdrop-color); /* hover: blur 30, color backdropColor (StatusCommunityCard.qml:218,221) */
 }
 
-/* Banner: 64px height, community color bg */
+/* Banner: 64px height, community color bg
+   Has own radius since card overflow is visible (QML mask Rectangle radius: bannerRadius) */
 .community-card__banner {
   height: 64px;
   width: 100%;
+  border-radius: 20px 20px 0 0; /* top corners match card bannerRadius */
 }
 
 /* Logo: 40px in 44px circle, positioned top:16 left:12
