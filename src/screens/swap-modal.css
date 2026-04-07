@@ -201,7 +201,9 @@
 
 /* SwapInputPanel: 492x131, padding Theme.padding(16)
    bg: indirectColor3, border 1px directColor8 (normal) / directColor7 (focused)
-   radius: Theme.radius(8) */
+   radius: Theme.radius(8)
+   Background is a Shape with semicircular cutout for the exchange button
+   (SwapInputPanel.qml:182-257) */
 .swap-panel {
   background: var(--indirect-color-3);
   border: 1px solid var(--direct-color-8);
@@ -211,6 +213,21 @@
   justify-content: space-between;
   gap: 20px; /* RowLayout spacing: 20 */
   min-height: 131px; /* implicitHeight */
+  position: relative;
+}
+
+/* Pay panel: cutout at bottom center (scale: -1 flips Shape)
+   Receive panel: cutout at top center (scale: 1)
+   Cutout radius: 25px (swapExchangeButtonWidth/2 + cutoutGap/2 + strokeWidth = 22+2+1)
+   (SwapInputPanel.qml:191-213) */
+.swap-panel:first-child {
+  -webkit-mask-image: radial-gradient(circle 25px at 50% 100%, transparent 25px, black 25px);
+  mask-image: radial-gradient(circle 25px at 50% 100%, transparent 25px, black 25px);
+}
+
+.swap-panel:nth-child(3) {
+  -webkit-mask-image: radial-gradient(circle 25px at 50% 0%, transparent 25px, black 25px);
+  mask-image: radial-gradient(circle 25px at 50% 0%, transparent 25px, black 25px);
 }
 
 .swap-panel:focus-within {

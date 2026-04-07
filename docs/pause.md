@@ -117,6 +117,14 @@ Captured at: 2026-04-06, mid-session. Resume from here.
     - Root cause: hand-drawn SVG instead of extracted StatusQ icon (same anti-pattern as edit_pencil, password)
     - Need: replace with extracted arrow-down.svg, use currentColor fill
 
+### From Alisher's review round 5
+
+13. **Exchange button embedded between panels with panel cutout**
+    - Live app: the exchange button sits between the two panels, and the panels have a semicircular cutout around the button where their edges meet it
+    - Mockup: button just overlays on top of panels with no cutout
+    - Root cause: SwapInputPanel.qml background is a Shape with a PathArc cutout (lines 182-257), not a simple Rectangle. The cutout was noted in inventory as MISSING (issue #3 in summary) but never implemented.
+    - Need: implement the semicircular cutout in CSS or accept as known limitation
+
 ## Screens 3-4: Pending Same-Level Audit
 
 Discover Communities audit complete (2026-04-07). Wallet Account has NOT been through the Layer 0 complexity audit + component inventory process.
