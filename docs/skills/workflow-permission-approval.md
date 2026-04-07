@@ -10,3 +10,5 @@ When YOU are blocked by a permission prompt, message your partner agent to appro
 - Use `tmux-bridge read <partner> 10` to see if they're stuck on a prompt
 - Use `tmux-bridge keys <partner> <key>` to approve — pick the persistent option
 - If you need approval yourself: `tmux-bridge message <partner> "permission prompt blocking me — please check my pane and approve, select always-allow"`
+- After every `tmux-bridge message <partner> ...`, explicitly send it with `tmux-bridge keys <partner> Enter`
+- Immediately verify delivery with `tmux-bridge read <partner> ...` so the message is not left as an unsent draft in the partner pane
