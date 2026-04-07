@@ -125,6 +125,13 @@ Captured at: 2026-04-06, mid-session. Resume from here.
     - Root cause: SwapInputPanel.qml background is a Shape with a PathArc cutout (lines 182-257), not a simple Rectangle. The cutout was noted in inventory as MISSING (issue #3 in summary) but never implemented.
     - Need: implement the semicircular cutout in CSS or accept as known limitation
 
+### From Alisher's review round 6
+
+14. **Cutout feels too tight around exchange button**
+    - Prod: visible gap/breathing room between button edge and panel cutout edge
+    - Mockup: cutout hugs the button too closely
+    - Root cause: TBD — need to re-check QML cutout math including cutoutGap
+
 ## Screens 3-4: Pending Same-Level Audit
 
 Discover Communities audit complete (2026-04-07). Wallet Account has NOT been through the Layer 0 complexity audit + component inventory process.

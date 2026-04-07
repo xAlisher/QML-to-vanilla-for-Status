@@ -218,18 +218,17 @@
 
 /* Pay panel: cutout at bottom center (scale: -1 flips Shape)
    Receive panel: cutout at top center (scale: 1)
-   QML PathArc: radiusX=23 (buttonWidth/2 + strokeWidth = 22+1)
-   radiusY=21.5 (buttonWidth/2 - strokeWidth/2 = 22-0.5)
-   relativeX=50 (buttonWidth + cutoutGap + strokeWidth*2 = 44+4+2)
-   (SwapInputPanel.qml:209-214) */
+   QML cutout total width: relativeX = buttonWidth + cutoutGap + strokeWidth*2 = 44+4+2 = 50px
+   Half-width: 25px. Arc depth: radiusY = 21.5px
+   (SwapInputPanel.qml:205-214) */
 .swap-panel:first-child {
-  -webkit-mask-image: radial-gradient(ellipse 23px 21.5px at 50% calc(100% + 0.5px), transparent 99%, black 100%);
-  mask-image: radial-gradient(ellipse 23px 21.5px at 50% calc(100% + 0.5px), transparent 99%, black 100%);
+  -webkit-mask-image: radial-gradient(ellipse 25px 21.5px at 50% calc(100% + 0.5px), transparent 99%, black 100%);
+  mask-image: radial-gradient(ellipse 25px 21.5px at 50% calc(100% + 0.5px), transparent 99%, black 100%);
 }
 
 .swap-panel:nth-child(3) {
-  -webkit-mask-image: radial-gradient(ellipse 23px 21.5px at 50% -0.5px, transparent 99%, black 100%);
-  mask-image: radial-gradient(ellipse 23px 21.5px at 50% -0.5px, transparent 99%, black 100%);
+  -webkit-mask-image: radial-gradient(ellipse 25px 21.5px at 50% -0.5px, transparent 99%, black 100%);
+  mask-image: radial-gradient(ellipse 25px 21.5px at 50% -0.5px, transparent 99%, black 100%);
 }
 
 .swap-panel:focus-within {
