@@ -11,16 +11,13 @@ export function renderSwapModal() {
           <div class="swap-modal__title-row">
             <span class="swap-modal__title">Swap</span>
           </div>
-          <div class="swap-modal__header-right">
-            <span class="swap-modal__network">
-              On:
-              <span class="swap-modal__network-filter">
-                <img class="swap-modal__network-icon" src="data:image/svg+xml,%3Csvg fill='none' height='24' viewBox='0 0 500 500' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m250 500c138.071 0 250-111.929 250-250s-111.929-250-250-250-250 111.929-250 250 111.929 250 250 250z' fill='%23627eea'/%3E%3Cg fill='%23fff'%3E%3Cpath d='m254.967 65v253.177l112.947-66.765z' fill-opacity='.8'/%3E%3Cpath d='m254.967 65-112.951 187.412 112.951 66.765v-118.105z'/%3E%3Cpath d='m254.967 340.561v92.436l113.017-159.165z' fill-opacity='.8'/%3E%3Cpath d='m254.967 432.997v-92.436l-112.951-66.729z'/%3E%3C/g%3E%3C/svg%3E" alt="Ethereum" />
-                <span class="swap-modal__network-indicator">▾</span>
-              </span>
+          <span class="swap-modal__network">
+            On:
+            <span class="swap-modal__network-filter">
+              <img class="swap-modal__network-icon" src="data:image/svg+xml,%3Csvg fill='none' height='24' viewBox='0 0 500 500' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m250 500c138.071 0 250-111.929 250-250s-111.929-250-250-250-250 111.929-250 250 111.929 250 250 250z' fill='%23627eea'/%3E%3Cg fill='%23fff'%3E%3Cpath d='m254.967 65v253.177l112.947-66.765z' fill-opacity='.8'/%3E%3Cpath d='m254.967 65-112.951 187.412 112.951 66.765v-118.105z'/%3E%3Cpath d='m254.967 340.561v92.436l113.017-159.165z' fill-opacity='.8'/%3E%3Cpath d='m254.967 432.997v-92.436l-112.951-66.729z'/%3E%3C/g%3E%3C/svg%3E" alt="Ethereum" />
+              <span class="swap-modal__network-indicator">▾</span>
             </span>
-            <button class="swap-modal__close" title="Close">×</button>
-          </div>
+          </span>
         </div>
 
         <div class="swap-modal__body">
