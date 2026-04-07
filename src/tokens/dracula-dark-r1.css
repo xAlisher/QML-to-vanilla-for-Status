@@ -92,8 +92,8 @@
   --backdrop-color: rgba(0, 0, 0, 0.4);
 
   /* === Highlights === */
-  --status-floating-button-highlight: rgba(189, 147, 249, 0.3);
-  --message-highlight-color: rgba(189, 147, 249, 0.2);
+  --status-floating-button-highlight: rgba(139, 164, 248, 0.3);
+  --message-highlight-color: rgba(139, 164, 248, 0.2);
   --desktop-blue-10: #2B2640;
 
   /* === Other === */
