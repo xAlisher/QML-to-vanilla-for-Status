@@ -31,16 +31,16 @@ import { renderWalletAccount } from './screens/wallet-account.js'
 
 // --- Theme registry ---
 const themes = {
-  'current-light':  { label: 'Current Light (70)',   tokens: 'current',   mode: 'light', iteration: 0, reason: 'Status v2 default. Blue-accented with high contrast — established brand identity, clear readability.' },
-  'current-dark':   { label: 'Current Dark (67)',    tokens: 'current',   mode: 'dark',  iteration: 0, reason: 'Status v2 dark mode. Neutral grays with blue accents — reduces eye strain for extended use.' },
+  'current-light':  { label: 'Current Light (70)',   tokens: 'current',   mode: 'light', iteration: 0, reason: 'Status Desktop default. Blue-accented with high contrast — established brand identity, clear readability.' },
+  'current-dark':   { label: 'Current Dark (67)',    tokens: 'current',   mode: 'dark',  iteration: 0, reason: 'Status Desktop dark mode. Neutral grays with blue accents — reduces eye strain for extended use.' },
   'concept-light':  { label: 'Concept A Light (65)', tokens: 'concept',   mode: 'light', iteration: 0, reason: 'Warm minimalism. Desaturated neutrals convey trust and calm — privacy feels approachable, not clinical.' },
   'concept-dark':   { label: 'Concept A Dark (69)',  tokens: 'concept',   mode: 'dark',  iteration: 0, reason: 'Humane dark mode. Warm darks instead of cold grays — comfortable for hours, reduces side-viewer visibility.' },
   'nord-dark':      { label: 'Nord Dark (52)',       tokens: 'nord',      mode: 'dark',  iteration: 0, reason: 'Arctic-inspired muted palette. Low-chroma blues on dark surface — minimal glare, high legibility for privacy-conscious use.' },
   'dracula-dark':   { label: 'Dracula Dark (55)',    tokens: 'dracula',   mode: 'dark',  iteration: 0, reason: 'High-contrast dark with purple accents. Rich darks limit viewing angles — strong readability without bright glare.' },
   'monokai-dark':   { label: 'Monokai Dark (53)',    tokens: 'monokai',   mode: 'dark',  iteration: 0, reason: 'Developer-oriented warm dark. Amber/green accents on charcoal — familiar to technical users, easy on eyes.' },
-  'logos-light':    { label: 'Logos Light (75)',      tokens: 'logos',     mode: 'light', iteration: 0, reason: 'Logos network identity. Purple-accented privacy palette — visually ties Status to the underlying privacy infrastructure.' },
+  'logos-light':    { label: 'Logos Light (75)',      tokens: 'logos',     mode: 'light', iteration: 0, reason: 'Logos network website identity. Purple-accented privacy palette — visually ties Status to the underlying privacy infrastructure.' },
   'solarized-dark': { label: 'Solarized Dark (46)',  tokens: 'solarized', mode: 'dark',  iteration: 0, reason: 'Scientifically optimized contrast. Fewest colors (46) — proven comfortable for extended reading, accessible for color blindness.' },
-  'hacker-dark':    { label: 'Hacker Dark (47)',     tokens: 'hacker',    mode: 'dark',  iteration: 0, reason: 'Monochrome green-on-black. Maximum side-viewer protection — minimal palette reinforces digital sovereignty aesthetic.' },
+  'hacker-dark':    { label: 'Hacker Dark (47)',     tokens: 'hacker',    mode: 'dark',  iteration: 0, reason: 'Hardcore monochrome green-on-black. Maximum side-viewer protection — minimal palette reinforces digital sovereignty, old-school terminal aesthetic.' },
   'basecamp-dark':  { label: 'Basecamp Dark (60)',   tokens: 'basecamp',  mode: 'dark',  iteration: 0, reason: 'Productivity-focused neutral dark. Restrained palette with warm grays — professional trust without visual noise.' },
   'neo-dark':       { label: 'Neo Dark (56)',        tokens: 'neo',       mode: 'dark',  iteration: 0, reason: 'Deep charcoal with cyan accents. High contrast ratio — strong privacy feel with modern, accessible readability.' },
   'neo-light':      { label: 'Neo Light (57)',       tokens: 'neo',       mode: 'light', iteration: 0, reason: 'Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool.' },
@@ -101,6 +101,10 @@ function render() {
   bindToolbarEvents()
 }
 
+function linkify(text) {
+  return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--primary-color-1)">$1</a>')
+}
+
 function renderToolbar() {
   // Filter themes by current iteration
   const filteredThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
@@ -139,7 +143,7 @@ function renderToolbar() {
       <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <div style="flex:1"></div>
-      <span class="presentation__toolbar-reason">${themes[currentTheme].reason || ''}</span>
+      <span class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</span>
     </div>
   `
 }
