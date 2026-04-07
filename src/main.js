@@ -17,6 +17,9 @@ import './tokens/v1-dark.css'
 import './tokens/quiet-light.css'
 import './tokens/quiet-dark.css'
 import './tokens/current-light-r1.css'
+import './tokens/hacker-dark-r1.css'
+import './tokens/solarized-dark-r1.css'
+import './tokens/dracula-dark-r1.css'
 import './tokens/fonts.css'
 
 // Shell styles
@@ -53,7 +56,10 @@ const themes = {
   'v1-dark':        { label: 'Legacy v1 Dark (63)',  tokens: 'v1',        mode: 'dark',  iteration: 1, reason: 'Status v1 dark mode. Deep navy darks (#131D2F) instead of pure gray — more character, better side-viewer protection. Reference: https://github.com/status-im/status-legacy' },
   'quiet-light':    { label: 'Quiet Authority Light (65)', tokens: 'quiet', mode: 'light', iteration: 1, reason: 'Near-monochrome editorial. Single indigo accent on cool slate — reads like documentation, communicates calm authority and trust. Reference: Ned\'s proposal doc' },
   'quiet-dark':     { label: 'Quiet Authority Dark (54)',  tokens: 'quiet', mode: 'dark',  iteration: 1, reason: 'Deep charcoal editorial. Minimal indigo accent — maximum restraint, zero visual noise, strong side-viewer protection. Reference: Ned\'s proposal doc' },
-  'current-light-r1': { label: 'Current Light Compressed (20p)', tokens: 'current-r1', mode: 'light', iteration: 1, reason: 'Proof of concept: 134 semantic tokens mapped to 20 primitives via var() references. Same visual output, structured for palette swapping.' },
+  'current-light-r1': { label: 'Current Light Compressed (20p)', tokens: 'current-r1', mode: 'light', iteration: 1, reason: 'Off-white background (#FAFBFC) reduces glare vs pure white. Also demonstrates 20-primitive compression system for palette swapping.' },
+  'hacker-dark-r1':   { label: 'Hacker Dark Revised (56)',      tokens: 'hacker-r1',    mode: 'dark',  iteration: 1, reason: 'Revised from green-on-black: neutral gray text with subtle blue accent. Legible for extended use, accessible, maintains privacy-dark aesthetic.' },
+  'solarized-dark-r1': { label: 'Solarized Dark Revised (47)',  tokens: 'solarized-r1', mode: 'dark',  iteration: 1, reason: 'Contrast fix: secondary text lightened to #7B8F97 for WCAG AA compliance (4.5:1 ratio). No other changes.' },
+  'dracula-dark-r1':  { label: 'Dracula Dark Revised (58)',     tokens: 'dracula-r1',   mode: 'dark',  iteration: 1, reason: 'Accent shifted from purple (#BD93F9) to blue (#8BA4F8) — feels more sovereign, less playful. Better danger vs accent distinction.' },
 }
 
 // --- Iterations (derived from theme registry) ---
@@ -124,9 +130,9 @@ function renderToolbar() {
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
-  // Iteration buttons
-  const iterationBtns = iterations.map(i =>
-    `<button class="${currentIteration === i ? 'active' : ''}" data-set-iteration="${i}">#${i}</button>`
+  // Iteration dropdown
+  const iterationOptions = iterations.map(i =>
+    `<option value="${i}" ${currentIteration === i ? 'selected' : ''}>#${i}</option>`
   ).join('')
 
   // Font dropdown
@@ -142,7 +148,7 @@ function renderToolbar() {
   return `
     <div class="presentation__toolbar">
       <span class="presentation__toolbar-label">Iteration</span>
-      <div class="presentation__toolbar-group">${iterationBtns}</div>
+      <select class="presentation__toolbar-select" data-set-iteration>${iterationOptions}</select>
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
@@ -223,14 +229,15 @@ function bindToolbarEvents() {
     })
   }
 
-  document.querySelectorAll('[data-set-iteration]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentIteration = parseInt(btn.dataset.setIteration)
+  const iterationSelect = document.querySelector('[data-set-iteration]')
+  if (iterationSelect) {
+    iterationSelect.addEventListener('change', (e) => {
+      currentIteration = parseInt(e.target.value)
       const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
       if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
       render()
     })
-  })
+  }
   document.querySelectorAll('[data-set-screen]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentScreen = btn.dataset.setScreen

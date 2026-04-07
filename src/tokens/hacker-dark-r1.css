@@ -1,0 +1,180 @@
+/* Hacker tokens — dark mode
+   Revised: neutral monochrome with subtle blue accent. Legible, accessible, private.
+   Scoped via [data-tokens="hacker-r1"][data-mode="dark"] */
+
+[data-tokens="hacker-r1"][data-mode="dark"] {
+  /* === Base colors === */
+  --base-color-1: #8A8A8A;   /* neutral gray */
+  --base-color-2: #1A1A1A;
+  --base-color-3: #141414;
+  --base-color-4: #0D0D0D;
+  --base-color-5: #080808;
+
+  /* === Primary === */
+  --primary-color-1: #6B8AFF;   /* subtle blue accent */
+  --primary-color-2: #6B8AFF4D;
+  --primary-color-3: #6B8AFF33;
+
+  /* === Danger === */
+  --danger-color-1: #E05A6F;   /* muted danger */
+  --danger-color-2: #E05A6F4D;
+  --danger-color-3: #E05A6F33;
+
+  /* === Warning === */
+  --warning-color-1: #FFAA00;
+  --warning-color-2: #FFAA0033;
+  --warning-color-3: #FFAA001A;
+
+  /* === Success === */
+  --success-color-1: #4ADE80;   /* readable green */
+  --success-color-2: #4ADE8033;
+  --success-color-3: #4ADE804D;
+
+  /* === Mention === */
+  --mention-color-1: #00CCFF;
+  --mention-color-2: #00CCFF4D;
+  --mention-color-3: #00CCFF33;
+  --mention-color-4: #00CCFF1A;
+
+  /* === Pin === */
+  --pin-color-1: #FFAA00;
+  --pin-color-2: #FFAA0033;
+  --pin-color-3: #FFAA001A;
+
+  /* === Direct (foreground) === */
+  --direct-color-1: #E0E0E0;   /* neutral white text */
+  --direct-color-2: #E0E0E0E6;
+  --direct-color-3: #E0E0E0CC;
+  --direct-color-4: #E0E0E0B3;
+  --direct-color-5: #E0E0E066;
+  --direct-color-6: #E0E0E033;
+  --direct-color-7: #E0E0E01A;
+  --direct-color-8: #E0E0E00D;
+  --direct-color-9: #E0E0E033;
+
+  /* === Indirect (inverse foreground) === */
+  --indirect-color-1: #000000;
+  --indirect-color-2: #000000B3;
+  --indirect-color-3: #00000066;
+  --indirect-color-4: #0A0A0A;
+
+  /* === Misc (avatar/accent palette) === */
+  --misc-color-1: #6B8AFF;
+  --misc-color-2: #A78BFA;
+  --misc-color-3: #00CCFF;
+  --misc-color-4: #FF00AA;
+  --misc-color-5: #FF0040;
+  --misc-color-6: #FFAA00;
+  --misc-color-7: #FFFF00;
+  --misc-color-8: #4ADE80;
+  --misc-color-9: #22D3EE;
+  --misc-color-10: #CC0030;
+  --misc-color-11: #FFAA00;
+  --misc-color-12: #9CA3AF;
+
+  /* === Surfaces === */
+  --background: #0A0A0A;
+  --background-hover: #141414;
+  --card-color: #141414;
+  --border: #1A1A1A;
+  --separator: #E0E0E01A;
+  --text-color: #E0E0E0;
+  --secondary-text: #8A8A8A;
+  --secondary-background: #6B8AFF4D;
+  --secondary-menu-background: #080808;
+  --dark-grey: #1A1A1A;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(0, 0, 0, 0.06);
+  --drop-shadow-2: rgba(0, 0, 0, 0.02);
+  --drop-shadow-3: rgba(0, 0, 0, 0.04);
+  --backdrop-color: rgba(0, 0, 0, 0.7);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: rgba(107, 138, 255, 0.3);
+  --message-highlight-color: rgba(107, 138, 255, 0.15);
+  --desktop-blue-10: #111111;
+
+  /* === Other === */
+  --neutral-95: #050505;
+  --block-progress-bar-color: #E0E0E01A;
+
+  /* === Component tokens === */
+  --app-layout-bg: #0A0A0A;
+  --app-layout-right-panel-bg: #0A0A0A;
+  --app-nav-bar-bg: #0D0D0D;
+  --toast-message-bg: #141414;
+  --list-item-bg: #0A0A0A;
+  --list-item-secondary-hover-bg: #E0E0E033;
+  --list-item-highlight: #E0E0E00D;
+  --chat-list-item-hover-bg: #E0E0E00D;
+  --chat-list-item-selected-bg: #E0E0E01A;
+  --chat-list-category-button-hover-bg: #E0E0E01A;
+  --nav-list-item-hover-bg: #E0E0E00D;
+  --nav-list-item-selected-bg: #E0E0E01A;
+  --badge-foreground: #0A0A0A;
+  --badge-border: #1A1A1A;
+  --badge-hover-border: #2A2A2A;
+  --menu-bg: #080808;
+  --menu-hover-bg: #E0E0E01A;
+  --menu-separator: #E0E0E01A;
+  --modal-bg: #0D0D0D;
+  --rounded-image-bg: #141414;
+  --chat-input-secondary-bg: #141414;
+  --switch-tab-button-bg: #6B8AFF;
+  --switch-tab-bar-bg: #6B8AFF33;
+  --switch-tab-selected-text: #000000;
+  --switch-tab-text: #6B8AFF;
+  --select-menu-item-bg: #080808;
+  --select-menu-item-hover-bg: #E0E0E01A;
+  --message-emoji-reaction-bg: #141414;
+  --message-emoji-reaction-bg-hovered: #E0E0E033;
+  --message-emoji-reaction-border-hovered: #E0E0E04D;
+
+  /* === Privacy === */
+  --privacy-primary: #1A1A2E;
+  --privacy-secondary: #4A4A6A;
+  --privacy-tertiary: #E0E0E0;
+  --privacy-tertiary-opaque: #E0E0E04D;
+  --privacy-icon-color: #8A8A8A;
+
+  /* === Typography === */
+  --font-family-base: 'Roboto Mono', monospace;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors (raw) === */
+  --black-hovered: #141414;
+  --blue-hovered: #00AA33;
+  --purple-hovered: #CC00CC;
+  --cyan-hovered: #00AADD;
+  --violet-hovered: #DD0088;
+  --red-hovered: #CC0033;
+  --yellow-hovered: #DD9900;
+  --green-hovered: #00CC33;
+  --moss-hovered: #00AA88;
+  --brown-hovered: #AA0022;
+  --brown2-hovered: #BB8800;
+}
