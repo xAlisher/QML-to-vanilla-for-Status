@@ -129,3 +129,12 @@ Date: 2026-04-07
 - PASS: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L224) and [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L228) revert the panel notch back to the previously audited `radial-gradient(ellipse 23px 21.5px ...)` implementation, which matches the `SwapInputPanel.qml` `PathArc` radii at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L212) and [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L213).
 - PASS: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L1) removes the hardcoded SVG `clipPath` block that introduced the prior source-mismatch on fixed dimensions, restoring the earlier CSS-only implementation that already cleared audit.
 - PASS: this re-audit is limited to the revert itself. The implementation remains a visually-close approximation of the full `ShapePath`, and that approximation was explicitly accepted for this styling mockup.
+
+## Code Re-Audit: swap-modal network filter background
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L131) now matches [StatusComboboxBackground.qml](/home/alisher/status-desktop/ui/StatusQ/src/StatusQ/Components/private/StatusComboboxBackground.qml#L8): `border: 1px solid directColor7`, `border-radius: Theme.radius`, and transparent idle background.
+- PASS: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L143) now matches the active/hover fill from [StatusComboboxBackground.qml](/home/alisher/status-desktop/ui/StatusQ/src/StatusQ/Components/private/StatusComboboxBackground.qml#L13), using `directColor8` instead of the earlier solid `baseColor4`.
+- PASS: the change stays within the source-backed `NetworkFilter.qml`/`StatusComboboxBackground.qml` styling scope and does not introduce new unsourced layout behavior.
