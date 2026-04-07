@@ -2,13 +2,17 @@ export function renderSwapModal() {
   const center = `
     <div class="swap-backdrop">
       <div class="swap-modal">
+        <div class="swap-modal__account-selector">
+          <span class="swap-modal__account-emoji">🏦</span>
+          Account 1 ▾
+        </div>
         <div class="swap-modal__header">
           <div class="swap-modal__title-row">
             <span class="swap-modal__title">Swap</span>
             <span class="swap-modal__network">
               On:
               <span class="swap-modal__network-badge">E</span>
-              Ethereum
+              ▾
             </span>
           </div>
           <button class="swap-modal__close" title="Close">×</button>
@@ -30,7 +34,7 @@ export function renderSwapModal() {
                   <span class="swap-panel__token-chevron">▾</span>
                 </div>
                 <div class="swap-panel__balance">Balance: 4.2091 ETH</div>
-                <button class="swap-panel__max-btn">Max: 4.2091</button>
+                <button class="swap-panel__max-btn">Max. 4.2091</button>
               </div>
             </div>
 

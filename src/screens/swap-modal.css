@@ -23,15 +23,41 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative; /* for account selector positioning */
 }
 
-/* Header: StatusDialogHeader, padding Theme.padding(16), bg baseColor3, radius top */
+/* Account selector: floats above dialog (SwapModal.qml:168-181)
+   AccountSelectorHeader y: -height - Theme.padding */
+.swap-modal__account-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--primary-color-1);
+  color: var(--indirect-color-1);
+  font-size: var(--font-size-additional);
+  font-weight: 500;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.swap-modal__account-emoji {
+  font-size: 14px;
+}
+
+/* Header: title row is inside body per QML (SwapModal.qml:196-231)
+   No border separator — title is first child of StatusScrollView ColumnLayout */
 .swap-modal__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px; /* Theme.padding */
-  border-bottom: 1px solid var(--separator);
   flex-shrink: 0;
 }
 
@@ -61,16 +87,18 @@
   line-height: 38px;
 }
 
+/* NetworkFilter: dropdown-style button with icon (SwapModal.qml:216-229) */
 .swap-modal__network-badge {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--misc-color-2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 14px;
   color: var(--indirect-color-1);
+  cursor: pointer;
 }
 
 /* Close button: part of StatusHeaderActions */
@@ -222,22 +250,24 @@
   color: var(--base-color-1);
 }
 
-/* Max button: height 22, horizontalPadding 8, verticalPadding 3, radius 20
-   tertiaryTextFontSize(12) */
+/* MaxSendButton: StatusButton, height 22, hPad 8, vPad 3, radius 20
+   Type.Normal = primaryColor3 bg, primaryColor1 text
+   text: "Max. {value}" (MaxSendButton.qml:11) */
 .swap-panel__max-btn {
   height: 22px;
   padding: 3px 8px;
   border-radius: 20px; /* pill */
   font-size: var(--font-size-tertiary); /* 12px */
   color: var(--primary-color-1);
-  background: none;
+  background: var(--primary-color-3); /* StatusButton Type.Normal */
   border: none;
   cursor: pointer;
   font-family: var(--font-family-base);
+  font-weight: 400; /* Font.Normal */
 }
 
 .swap-panel__max-btn:hover {
-  text-decoration: underline;
+  opacity: 0.85;
 }
 
 /* Exchange button: 44x44, round, bg indirectColor3, border 1px directColor8
