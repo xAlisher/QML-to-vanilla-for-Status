@@ -158,7 +158,7 @@ Fergie: @sunleos please take a look. Summary: {what was done}
 **Always show Alisher the @sunleos comment before posting.**
 
 ### 9. Next issue
-Move to the next issue. One issue at a time.
+Immediately proceed to the next issue after posting the Volo comment. Do not wait or ask — just start the next one.
 
 ## Checklist (from discipline doc, must complete for EVERY component)
 
