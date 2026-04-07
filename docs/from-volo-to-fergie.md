@@ -15,7 +15,7 @@ let's make our theme names consistent: them name + [Dark or Light] + # of colors
 each them should have Dark and Light versions
 the number of colors in a theme should be up to 4-5 colors, but not more (Alisher here: I expect 5 is not possible. lets try to compress to around 20 colors for iteration 1)
 let's add a new light and dark theme based on the colors of Status app v1 - here are the mockups: ⁠Status⁠
-let's add a new light and dark theme based on instructions in his document https://docs.google.com/document/d/15LowdNieWaQWhDnwKv_BZYLh79u6wboJXH3d9LOZqfo/edit?tab=t.xakx7v1ltjzs#heading=h.nzwk831mqz5h
+let's add a new light and dark theme based on instructions in the brand strategy document (internal, see Alisher)
 explain your reasoning behind each theme and how it matches the requirements on this github ticket  https://github.com/status-im/status-app/issues/20329
  
 re https://github.com/status-im/status-app/issues/20329

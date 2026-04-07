@@ -31,20 +31,24 @@ import { renderWalletAccount } from './screens/wallet-account.js'
 
 // --- Theme registry ---
 const themes = {
-  'current-light':  { label: 'Current Light',           tokens: 'current', mode: 'light' },
-  'current-dark':   { label: 'Current Dark',            tokens: 'current', mode: 'dark' },
-  'concept-light':  { label: 'Concept A Light',         tokens: 'concept', mode: 'light' },
-  'concept-dark':   { label: 'Concept A Dark',          tokens: 'concept', mode: 'dark' },
-  'nord-dark':      { label: 'Nord',                    tokens: 'nord',    mode: 'dark' },
-  'dracula-dark':   { label: 'Dracula',                 tokens: 'dracula', mode: 'dark' },
-  'monokai-dark':   { label: 'Monokai',                 tokens: 'monokai', mode: 'dark' },
-  'logos-light':    { label: 'Logos',                    tokens: 'logos',   mode: 'light' },
-  'solarized-dark': { label: 'Solarized',              tokens: 'solarized', mode: 'dark' },
-  'hacker-dark':    { label: 'Hacker',                  tokens: 'hacker',  mode: 'dark' },
-  'basecamp-dark':  { label: 'Basecamp',               tokens: 'basecamp', mode: 'dark' },
-  'neo-dark':       { label: 'Neo Dark',               tokens: 'neo',      mode: 'dark' },
-  'neo-light':      { label: 'Neo Light',              tokens: 'neo',      mode: 'light' },
+  'current-light':  { label: 'Current Light',           tokens: 'current', mode: 'light', iteration: 0 },
+  'current-dark':   { label: 'Current Dark',            tokens: 'current', mode: 'dark',  iteration: 0 },
+  'concept-light':  { label: 'Concept A Light',         tokens: 'concept', mode: 'light', iteration: 0 },
+  'concept-dark':   { label: 'Concept A Dark',          tokens: 'concept', mode: 'dark',  iteration: 0 },
+  'nord-dark':      { label: 'Nord Dark',               tokens: 'nord',    mode: 'dark',  iteration: 0 },
+  'dracula-dark':   { label: 'Dracula Dark',            tokens: 'dracula', mode: 'dark',  iteration: 0 },
+  'monokai-dark':   { label: 'Monokai Dark',            tokens: 'monokai', mode: 'dark',  iteration: 0 },
+  'logos-light':    { label: 'Logos Light',              tokens: 'logos',   mode: 'light', iteration: 0 },
+  'solarized-dark': { label: 'Solarized Dark',          tokens: 'solarized', mode: 'dark', iteration: 0 },
+  'hacker-dark':    { label: 'Hacker Dark',             tokens: 'hacker',  mode: 'dark',  iteration: 0 },
+  'basecamp-dark':  { label: 'Basecamp Dark',           tokens: 'basecamp', mode: 'dark', iteration: 0 },
+  'neo-dark':       { label: 'Neo Dark',                tokens: 'neo',      mode: 'dark', iteration: 0 },
+  'neo-light':      { label: 'Neo Light',               tokens: 'neo',      mode: 'light', iteration: 0 },
 }
+
+// --- Iterations ---
+const iterations = [0]
+let currentIteration = 0
 
 // --- Font registry ---
 const fonts = {
@@ -125,14 +129,22 @@ function render() {
 }
 
 function renderToolbar() {
+  // Filter themes by current iteration
+  const filteredThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
+
   // Theme dropdown
-  const themeOptions = Object.entries(themes).map(([key, { label }]) =>
+  const themeOptions = filteredThemes.map(([key, { label }]) =>
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
   // Compare dropdown (for side-by-side)
-  const compareOptions = Object.entries(themes).map(([key, { label }]) =>
+  const compareOptions = filteredThemes.map(([key, { label }]) =>
     `<option value="${key}" ${compareTheme === key ? 'selected' : ''}>${label}</option>`
+  ).join('')
+
+  // Iteration buttons
+  const iterationBtns = iterations.map(i =>
+    `<button class="${currentIteration === i ? 'active' : ''}" data-set-iteration="${i}">#${i}</button>`
   ).join('')
 
   // Font dropdown
@@ -152,6 +164,9 @@ function renderToolbar() {
 
   return `
     <div class="presentation__toolbar">
+      <span class="presentation__toolbar-label">Iteration</span>
+      <div class="presentation__toolbar-group">${iterationBtns}</div>
+      <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
       ${compareDropdown}
@@ -249,6 +264,15 @@ function bindToolbarEvents() {
     })
   }
 
+  document.querySelectorAll('[data-set-iteration]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentIteration = parseInt(btn.dataset.setIteration)
+      // Reset to first theme in the new iteration
+      const firstInIteration = Object.entries(themes).find(([, t]) => t.iteration === currentIteration)
+      if (firstInIteration) currentTheme = firstInIteration[0]
+      render()
+    })
+  })
   document.querySelectorAll('[data-set-screen]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentScreen = btn.dataset.setScreen
