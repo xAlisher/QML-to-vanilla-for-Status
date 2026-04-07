@@ -447,6 +447,8 @@ function bindToolbarEvents() {
       currentIteration = parseInt(e.target.value)
       const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
       if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
+      if (iterationThemes.length > 1) compareTheme = iterationThemes[1][0]
+      else if (iterationThemes.length > 0) compareTheme = iterationThemes[0][0]
       render()
     })
   }
