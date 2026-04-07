@@ -10,6 +10,8 @@ import './tokens/logos-light.css'
 import './tokens/solarized-dark.css'
 import './tokens/hacker-dark.css'
 import './tokens/basecamp-dark.css'
+import './tokens/neo-dark.css'
+import './tokens/neo-light.css'
 import './tokens/fonts.css'
 
 // Shell styles
@@ -40,6 +42,8 @@ const themes = {
   'solarized-dark': { label: 'Solarized',              tokens: 'solarized', mode: 'dark' },
   'hacker-dark':    { label: 'Hacker',                  tokens: 'hacker',  mode: 'dark' },
   'basecamp-dark':  { label: 'Basecamp',               tokens: 'basecamp', mode: 'dark' },
+  'neo-dark':       { label: 'Neo Dark',               tokens: 'neo',      mode: 'dark' },
+  'neo-light':      { label: 'Neo Light',              tokens: 'neo',      mode: 'light' },
 }
 
 // --- Font registry ---

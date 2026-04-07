@@ -1,0 +1,182 @@
+/* Status Neo — dark mode
+   From design spec: deep navy surfaces, blue accent, purple privacy accent.
+   Gradient spectrum: orange-50 #FF7D46, yellow-50 #F6B03C, sky-50 #1992D7, purple-50 #7140FD
+   Surfaces: neutral-95 #0D1625, neutral-80 rgba(27,39,61), neutral-70 #202C42
+   Accent: primary-40 #223BC4, privacy-60 #5A33CA */
+
+[data-tokens="neo"][data-mode="dark"] {
+  /* === Base colors (navy scale) === */
+  --base-color-1: #A1ABBD;
+  --base-color-2: #202C42;
+  --base-color-3: #192438;
+  --base-color-4: #0D1625;
+  --base-color-5: #09101C;
+
+  /* === Primary (blue — primary-40) === */
+  --primary-color-1: #223BC4;
+  --primary-color-2: #223BC44D;
+  --primary-color-3: #223BC433;
+
+  /* === Danger === */
+  --danger-color-1: #E05A6F;
+  --danger-color-2: #E05A6F4D;
+  --danger-color-3: #E05A6F33;
+
+  /* === Warning (gradient orange) === */
+  --warning-color-1: #FF7D46;
+  --warning-color-2: #FF7D4633;
+  --warning-color-3: #FF7D461A;
+
+  /* === Success === */
+  --success-color-1: #34C759;
+  --success-color-2: #34C75933;
+  --success-color-3: #34C7594D;
+
+  /* === Mention (sky blue from gradient) === */
+  --mention-color-1: #1992D7;
+  --mention-color-2: #1992D74D;
+  --mention-color-3: #1992D733;
+  --mention-color-4: #1992D71A;
+
+  /* === Pin (gradient gold) === */
+  --pin-color-1: #F6B03C;
+  --pin-color-2: #F6B03C33;
+  --pin-color-3: #F6B03C1A;
+
+  /* === Direct (foreground — white-100) === */
+  --direct-color-1: #FFFFFF;
+  --direct-color-2: #FFFFFFE6;
+  --direct-color-3: #FFFFFFCC;
+  --direct-color-4: #FFFFFFB3;
+  --direct-color-5: #FFFFFF66;
+  --direct-color-6: #FFFFFF33;
+  --direct-color-7: #FFFFFF1A;
+  --direct-color-8: #FFFFFF0D;
+  --direct-color-9: #FFFFFF33;
+
+  /* === Indirect (inverse foreground) === */
+  --indirect-color-1: #09101C;
+  --indirect-color-2: #09101CB3;
+  --indirect-color-3: #09101C66;
+  --indirect-color-4: #192438;
+
+  /* === Misc (gradient-spectrum accents) === */
+  --misc-color-1: #2A4AF5;
+  --misc-color-2: #5A33CA;
+  --misc-color-3: #1992D7;
+  --misc-color-4: #9B6DFF;
+  --misc-color-5: #E05A6F;
+  --misc-color-6: #FF7D46;
+  --misc-color-7: #F6B03C;
+  --misc-color-8: #34C759;
+  --misc-color-9: #1992D7;
+  --misc-color-10: #B8405A;
+  --misc-color-11: #D4A030;
+  --misc-color-12: #6AAF50;
+
+  /* === Surfaces (neutral-95 #0D1625 base) === */
+  --background: #0D1625;
+  --background-hover: #192438;
+  --card-color: #0D1625;
+  --border: #202C42;
+  --separator: #FFFFFF1A;
+  --text-color: #FFFFFF;
+  --secondary-text: #A1ABBD;
+  --secondary-background: #223BC44D;
+  --secondary-menu-background: #09101C;
+  --dark-grey: #202C42;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(0, 0, 0, 0.16);
+  --drop-shadow-2: rgba(9, 16, 28, 0.08);
+  --drop-shadow-3: rgba(9, 16, 28, 0.20);
+  --backdrop-color: rgba(0, 0, 0, 0.6);
+
+  /* === Highlights (blue glow) === */
+  --status-floating-button-highlight: rgba(34, 59, 196, 0.25);
+  --message-highlight-color: rgba(34, 59, 196, 0.15);
+  --desktop-blue-10: #0D1625;
+
+  /* === Other === */
+  --neutral-95: #09101C;
+  --block-progress-bar-color: #FFFFFF1A;
+
+  /* === Component tokens === */
+  --app-layout-bg: #0D1625;
+  --app-layout-right-panel-bg: #0D1625;
+  --app-nav-bar-bg: #09101C;
+  --toast-message-bg: #192438;
+  --list-item-bg: #0D1625;
+  --list-item-secondary-hover-bg: #223BC433;
+  --list-item-highlight: #223BC40D;
+  --chat-list-item-hover-bg: #FFFFFF0D;
+  --chat-list-item-selected-bg: #FFFFFF1A;
+  --chat-list-category-button-hover-bg: #FFFFFF1A;
+  --nav-list-item-hover-bg: #FFFFFF0D;
+  --nav-list-item-selected-bg: #FFFFFF1A;
+  --badge-foreground: #0D1625;
+  --badge-border: #09101C;
+  --badge-hover-border: #202C42;
+  --menu-bg: #09101C;
+  --menu-hover-bg: #FFFFFF1A;
+  --menu-separator: #FFFFFF1A;
+  --modal-bg: #192438;
+  --rounded-image-bg: #192438;
+  --chat-input-secondary-bg: #192438;
+  --switch-tab-button-bg: #223BC4;
+  --switch-tab-bar-bg: #223BC433;
+  --switch-tab-selected-text: #FFFFFF;
+  --switch-tab-text: #223BC4;
+  --select-menu-item-bg: #09101C;
+  --select-menu-item-hover-bg: #FFFFFF1A;
+  --message-emoji-reaction-bg: #192438;
+  --message-emoji-reaction-bg-hovered: #223BC433;
+  --message-emoji-reaction-border-hovered: #223BC44D;
+
+  /* === Privacy (purple accent — privacy-60 #5A33CA) === */
+  --privacy-primary: #1A0A40;
+  --privacy-secondary: #5A33CA;
+  --privacy-tertiary: #FFFFFF;
+  --privacy-tertiary-opaque: #FFFFFF4D;
+  --privacy-icon-color: #FFFFFF80;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors === */
+  --black-hovered: #192438;
+  --blue-hovered: #2A4AF5;
+  --purple-hovered: #5A33CA;
+  --cyan-hovered: #1680B8;
+  --violet-hovered: #7140FD;
+  --red-hovered: #C04858;
+  --yellow-hovered: #D49830;
+  --green-hovered: #2AAF48;
+  --moss-hovered: #1A7A6A;
+  --brown-hovered: #5A2828;
+  --brown2-hovered: #6A5828;
+}
