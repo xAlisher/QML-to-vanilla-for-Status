@@ -104,3 +104,11 @@ Date: 2026-04-07
 ### Findings:
 - PASS: the cutout now uses an ellipse with `23px` by `21.5px`, which matches the `SwapInputPanel.qml` `PathArc` values `radiusX` and `radiusY` for the default 44px exchange button.
 - PASS: the pay/receive panel cutouts are still placed on opposite edges in line with `scale: -1` for Pay and `scale: 1` for Receive, so the orientation remains consistent with the QML shape logic.
+
+## Code Re-Audit: swap-modal widened cutout opening
+Status: FAIL
+Date: 2026-04-07
+
+### Findings:
+- BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L225) now uses `ellipse 25px 21.5px`, but the QML cutout arc still specifies `radiusX: root.swapExchangeButtonWidth/2 + path.strokeWidth`, which resolves to `23px` for the default 44px button at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L212). The CSS widened the curve itself, not just the opening span, so it no longer matches the source geometry.
+- BLOCKING: the builder’s new rationale follows `relativeX: root.swapExchangeButtonWidth + (shape.cutoutGap + path.strokeWidth*2)` at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L210), which does resolve to a `50px` opening, but QML uses that together with `radiusX: 23px`, not instead of it. The current CSS collapses those two independent parameters into a single `25px` ellipse and therefore changes the actual curve profile.
