@@ -218,15 +218,18 @@
 
 /* Pay panel: cutout at bottom center (scale: -1 flips Shape)
    Receive panel: cutout at top center (scale: 1)
-   QML ShapePath: opening=50px (relativeX), arc radiusX=23, radiusY=21.5
-   CSS can't separate opening width from arc radius in radial-gradient,
-   so we use inline SVG clipPath in the JS (SwapInputPanel.qml:205-214) */
+   QML PathArc: radiusX=23, radiusY=21.5 (SwapInputPanel.qml:209-214)
+   Visual approximation using radial-gradient — exact QML ShapePath
+   has separate opening width (50px) and arc radii, which CSS can't
+   fully replicate. Accepted as visually close for styling mockup. */
 .swap-panel:first-child {
-  clip-path: url(#cutout-bottom);
+  -webkit-mask-image: radial-gradient(ellipse 23px 21.5px at 50% calc(100% + 0.5px), transparent 99%, black 100%);
+  mask-image: radial-gradient(ellipse 23px 21.5px at 50% calc(100% + 0.5px), transparent 99%, black 100%);
 }
 
 .swap-panel:nth-child(3) {
-  clip-path: url(#cutout-top);
+  -webkit-mask-image: radial-gradient(ellipse 23px 21.5px at 50% -0.5px, transparent 99%, black 100%);
+  mask-image: radial-gradient(ellipse 23px 21.5px at 50% -0.5px, transparent 99%, black 100%);
 }
 
 .swap-panel:focus-within {
