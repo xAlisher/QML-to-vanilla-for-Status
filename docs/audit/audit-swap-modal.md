@@ -120,3 +120,12 @@ Date: 2026-04-07
 ### Findings:
 - BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L5) hardcodes the clipPath box as `pw = 520` and `ph = 133`, but the source component is not defined that way. In QML, [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L102) sets `implicitWidth: 492` and [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L103) sets `implicitHeight: 131`, while [SwapModal.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/popups/swap/SwapModal.qml#L227) makes each panel fill its parent width. The current SVG therefore bakes in unsourced absolute dimensions instead of matching the actual panel box.
 - BLOCKING: because the clipPath uses `clipPathUnits="userSpaceOnUse"` with those fixed `520x133` coordinates, the cutout path is no longer derived from `shape.width` and `shape.height` like the QML `ShapePath` at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L206). That means the geometry will drift whenever the rendered panel width differs from the hardcoded SVG width, so this is still not a faithful translation of the source.
+
+## Code Re-Audit: swap-modal cutout revert
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L224) and [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L228) revert the panel notch back to the previously audited `radial-gradient(ellipse 23px 21.5px ...)` implementation, which matches the `SwapInputPanel.qml` `PathArc` radii at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L212) and [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L213).
+- PASS: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L1) removes the hardcoded SVG `clipPath` block that introduced the prior source-mismatch on fixed dimensions, restoring the earlier CSS-only implementation that already cleared audit.
+- PASS: this re-audit is limited to the revert itself. The implementation remains a visually-close approximation of the full `ShapePath`, and that approximation was explicitly accepted for this styling mockup.
