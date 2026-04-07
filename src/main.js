@@ -46,9 +46,9 @@ const themes = {
   'neo-light':      { label: 'Neo Light',               tokens: 'neo',      mode: 'light', iteration: 0 },
 }
 
-// --- Iterations ---
-const iterations = [0]
-let currentIteration = 0
+// --- Iterations (derived from theme registry) ---
+const iterations = [...new Set(Object.values(themes).map(t => t.iteration))].sort()
+let currentIteration = iterations[iterations.length - 1] // default to latest
 
 // --- Font registry ---
 const fonts = {
@@ -267,9 +267,11 @@ function bindToolbarEvents() {
   document.querySelectorAll('[data-set-iteration]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentIteration = parseInt(btn.dataset.setIteration)
-      // Reset to first theme in the new iteration
-      const firstInIteration = Object.entries(themes).find(([, t]) => t.iteration === currentIteration)
-      if (firstInIteration) currentTheme = firstInIteration[0]
+      // Reset both theme and compareTheme to first in the new iteration
+      const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
+      if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
+      if (iterationThemes.length > 1) compareTheme = iterationThemes[1][0]
+      else if (iterationThemes.length > 0) compareTheme = iterationThemes[0][0]
       render()
     })
   })
