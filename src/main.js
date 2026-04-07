@@ -23,6 +23,56 @@ import './tokens/v1-dark-r1.css'
 import './tokens/hacker-dark-r1.css'
 import './tokens/solarized-dark-r1.css'
 import './tokens/dracula-dark-r1.css'
+// Iteration 2 themes
+import './tokens/i2-obsidian-vault-dark.css'
+import './tokens/i2-obsidian-vault-light.css'
+import './tokens/i2-cipher-night-dark.css'
+import './tokens/i2-cipher-night-light.css'
+import './tokens/i2-forest-protocol-dark.css'
+import './tokens/i2-forest-protocol-light.css'
+import './tokens/i2-mercury-steel-dark.css'
+import './tokens/i2-mercury-steel-light.css'
+import './tokens/i2-amber-sentinel-dark.css'
+import './tokens/i2-amber-sentinel-light.css'
+import './tokens/i2-oxide-copper-dark.css'
+import './tokens/i2-oxide-copper-light.css'
+import './tokens/i2-ghost-protocol-dark.css'
+import './tokens/i2-ghost-protocol-light.css'
+import './tokens/i2-crimson-vault-dark.css'
+import './tokens/i2-crimson-vault-light.css'
+import './tokens/i2-glacier-seal-dark.css'
+import './tokens/i2-glacier-seal-light.css'
+import './tokens/i2-dusk-protocol-dark.css'
+import './tokens/i2-dusk-protocol-light.css'
+import './tokens/i2-cb-clarity-blue-dark.css'
+import './tokens/i2-cb-clarity-blue-light.css'
+import './tokens/i2-cb-gold-slate-dark.css'
+import './tokens/i2-cb-gold-slate-light.css'
+// Iteration 3 themes
+import './tokens/i3-vault-dark.css'
+import './tokens/i3-vault-light.css'
+import './tokens/i3-obsidian3-dark.css'
+import './tokens/i3-obsidian3-light.css'
+import './tokens/i3-sovereign-dark.css'
+import './tokens/i3-sovereign-light.css'
+import './tokens/i3-stealth-dark.css'
+import './tokens/i3-stealth-light.css'
+import './tokens/i3-ghost3-dark.css'
+import './tokens/i3-ghost3-light.css'
+import './tokens/i3-cipher3-dark.css'
+import './tokens/i3-cipher3-light.css'
+import './tokens/i3-dusk3-dark.css'
+import './tokens/i3-dusk3-light.css'
+import './tokens/i3-nordic-dark.css'
+import './tokens/i3-nordic-light.css'
+import './tokens/i3-basalt-dark.css'
+import './tokens/i3-basalt-light.css'
+import './tokens/i3-tunnel-dark.css'
+import './tokens/i3-tunnel-light.css'
+import './tokens/i3-visible-blue-orange-dark.css'
+import './tokens/i3-visible-blue-orange-light.css'
+import './tokens/i3-visible-mono-teal-dark.css'
+import './tokens/i3-visible-mono-teal-light.css'
 import './tokens/fonts.css'
 
 // Shell styles
@@ -66,6 +116,56 @@ const themes = {
   'hacker-dark-r1':   { label: 'Hacker Dark Revised (56)',      tokens: 'hacker-r1',    mode: 'dark',  iteration: 1, reason: 'Revised from green-on-black: neutral gray text with subtle blue accent. Legible for extended use, accessible, maintains privacy-dark aesthetic.' },
   'solarized-dark-r1': { label: 'Solarized Dark Revised (47)',  tokens: 'solarized-r1', mode: 'dark',  iteration: 1, reason: 'Contrast fix: secondary text lightened to #7B8F97 for WCAG AA compliance (4.5:1 ratio). No other changes.' },
   'dracula-dark-r1':  { label: 'Dracula Dark Revised (58)',     tokens: 'dracula-r1',   mode: 'dark',  iteration: 1, reason: 'Accent shifted from purple (#BD93F9) to blue (#8BA4F8) — feels more sovereign, less playful. Better danger vs accent distinction.' },
+  // --- Iteration 2: Privacy-inspired themes (from Volo) ---
+  'i2-obsidian-dark':   { label: 'Obsidian Vault Dark',    tokens: 'i2-obsidian-vault',    mode: 'dark',  iteration: 2, reason: 'Deep black + electric indigo. Signal+Mullvad+Tor inspiration. Maximum side-view blackout. ★★★★★' },
+  'i2-obsidian-light':  { label: 'Obsidian Vault Light',   tokens: 'i2-obsidian-vault',    mode: 'light', iteration: 2, reason: 'Soft violet-white + deep indigo accent. Trust-first simplicity.' },
+  'i2-cipher-dark':     { label: 'Cipher Night Dark',      tokens: 'i2-cipher-night',      mode: 'dark',  iteration: 2, reason: 'Rich navy + Signal blue. Professional trust meets deep privacy. ★★★★★' },
+  'i2-cipher-light':    { label: 'Cipher Night Light',     tokens: 'i2-cipher-night',      mode: 'light', iteration: 2, reason: 'Cool blue-white + deep blue accent. Naval authority.' },
+  'i2-forest-dark':     { label: 'Forest Protocol Dark',   tokens: 'i2-forest-protocol',   mode: 'dark',  iteration: 2, reason: 'Muted forest green. Eye comfort for marathon sessions. ★★★★★' },
+  'i2-forest-light':    { label: 'Forest Protocol Light',  tokens: 'i2-forest-protocol',   mode: 'light', iteration: 2, reason: 'Fresh green-white. Organic trust, calm confidence.' },
+  'i2-mercury-dark':    { label: 'Mercury Steel Dark',     tokens: 'i2-mercury-steel',     mode: 'dark',  iteration: 2, reason: 'Silver-charcoal + lavender accent. Mullvad-neutral precision. ★★★★★' },
+  'i2-mercury-light':   { label: 'Mercury Steel Light',    tokens: 'i2-mercury-steel',     mode: 'light', iteration: 2, reason: 'Cool gray-white + blue-violet accent. Hardware-grade neutrality.' },
+  'i2-amber-dark':      { label: 'Amber Sentinel Dark',    tokens: 'i2-amber-sentinel',    mode: 'dark',  iteration: 2, reason: 'Warm amber on charcoal. Brave-inspired watchdog warmth. ★★★★☆' },
+  'i2-amber-light':     { label: 'Amber Sentinel Light',   tokens: 'i2-amber-sentinel',    mode: 'light', iteration: 2, reason: 'Warm cream + deep gold accent. Alert confidence.' },
+  'i2-oxide-dark':      { label: 'Oxide Copper Dark',      tokens: 'i2-oxide-copper',      mode: 'dark',  iteration: 2, reason: 'Deep teal-copper. Status DNA evolved for privacy. ★★★★★' },
+  'i2-oxide-light':     { label: 'Oxide Copper Light',     tokens: 'i2-oxide-copper',      mode: 'light', iteration: 2, reason: 'Fresh teal-white. Original Status brand spirit.' },
+  'i2-ghost-dark':      { label: 'Ghost Protocol Dark',    tokens: 'i2-ghost-protocol',    mode: 'dark',  iteration: 2, reason: 'Pure monochrome. Tor-spirit anonymity, zero noise. ★★★★★' },
+  'i2-ghost-light':     { label: 'Ghost Protocol Light',   tokens: 'i2-ghost-protocol',    mode: 'light', iteration: 2, reason: 'Near-white monochrome. Disciplined, invisible.' },
+  'i2-crimson-dark':    { label: 'Crimson Vault Dark',     tokens: 'i2-crimson-vault',     mode: 'dark',  iteration: 2, reason: 'Dark crimson guard. ProtonMail sovereign power. ★★★★☆' },
+  'i2-crimson-light':   { label: 'Crimson Vault Light',    tokens: 'i2-crimson-vault',     mode: 'light', iteration: 2, reason: 'Soft rose-white + deep red accent. Bold trust.' },
+  'i2-glacier-dark':    { label: 'Glacier Seal Dark',      tokens: 'i2-glacier-seal',      mode: 'dark',  iteration: 2, reason: 'Ice-cold clarity. DuckDuckGo freshness, crisp privacy. ★★★★★' },
+  'i2-glacier-light':   { label: 'Glacier Seal Light',     tokens: 'i2-glacier-seal',      mode: 'light', iteration: 2, reason: 'Icy blue-white. Clean, uncluttered, fresh.' },
+  'i2-dusk-dark':       { label: 'Dusk Protocol Dark',     tokens: 'i2-dusk-protocol',     mode: 'dark',  iteration: 2, reason: 'Plum-navy + violet accent. Premium privacy at dusk. ★★★★★' },
+  'i2-dusk-light':      { label: 'Dusk Protocol Light',    tokens: 'i2-dusk-protocol',     mode: 'light', iteration: 2, reason: 'Soft lavender-white + deep violet. Premium calm.' },
+  'i2-cb-blue-dark':    { label: 'CB: Clarity Blue Dark',  tokens: 'i2-cb-clarity-blue',   mode: 'dark',  iteration: 2, reason: 'Colorblind safe (deuteranopia/protanopia). Blue-white-black only. WCAG AAA.' },
+  'i2-cb-blue-light':   { label: 'CB: Clarity Blue Light', tokens: 'i2-cb-clarity-blue',   mode: 'light', iteration: 2, reason: 'Colorblind safe. Blue-white axis, zero red/green reliance.' },
+  'i2-cb-gold-dark':    { label: 'CB: Gold & Slate Dark',  tokens: 'i2-cb-gold-slate',     mode: 'dark',  iteration: 2, reason: 'Colorblind safe (tritanopia + all CVDs). Blue-yellow axis. WCAG AAA.' },
+  'i2-cb-gold-light':   { label: 'CB: Gold & Slate Light', tokens: 'i2-cb-gold-slate',     mode: 'light', iteration: 2, reason: 'Colorblind safe. Gold on white, universally distinguishable.' },
+  // --- Iteration 3: Refined privacy themes (from Volo) ---
+  'i3-vault-dark':      { label: 'Vault Dark',            tokens: 'i3-vault',             mode: 'dark',  iteration: 3, reason: 'Deep graphite + electric blue. Signal & Mullvad inspired.' },
+  'i3-vault-light':     { label: 'Vault Light',           tokens: 'i3-vault',             mode: 'light', iteration: 3, reason: 'Clean blue-white. Trust signal, minimal chrome.' },
+  'i3-obsidian-dark':   { label: 'Obsidian Dark',         tokens: 'i3-obsidian3',         mode: 'dark',  iteration: 3, reason: 'True black + cyan. Maximum viewing angle protection. Tor-inspired.' },
+  'i3-obsidian-light':  { label: 'Obsidian Light',        tokens: 'i3-obsidian3',         mode: 'light', iteration: 3, reason: 'Cool gray + teal accent. Austere clarity.' },
+  'i3-sovereign-dark':  { label: 'Sovereign Dark',        tokens: 'i3-sovereign',         mode: 'dark',  iteration: 3, reason: 'Dark navy + warm gold. Proton authority meets sovereignty.' },
+  'i3-sovereign-light': { label: 'Sovereign Light',       tokens: 'i3-sovereign',         mode: 'light', iteration: 3, reason: 'Blue-gray + gold accent. You own this.' },
+  'i3-stealth-dark':    { label: 'Stealth Dark',          tokens: 'i3-stealth',           mode: 'dark',  iteration: 3, reason: 'Near-black olive-grey + sage. Tactical calm, DuckDuckGo+Mullvad.' },
+  'i3-stealth-light':   { label: 'Stealth Light',         tokens: 'i3-stealth',           mode: 'light', iteration: 3, reason: 'Warm stone + sage green. Earthy neutrality.' },
+  'i3-ghost-dark':      { label: 'Ghost Dark',            tokens: 'i3-ghost3',            mode: 'dark',  iteration: 3, reason: 'Near-white surfaces + indigo. Proton refreshed. Clean document editor.' },
+  'i3-ghost-light':     { label: 'Ghost Light',           tokens: 'i3-ghost3',            mode: 'light', iteration: 3, reason: 'Off-white + indigo accent. Calm and trustworthy.' },
+  'i3-cipher-dark':     { label: 'Cipher Dark',           tokens: 'i3-cipher3',           mode: 'dark',  iteration: 3, reason: 'Cool dark slate + electric violet. Cryptographic edge for power users.' },
+  'i3-cipher-light':    { label: 'Cipher Light',          tokens: 'i3-cipher3',           mode: 'light', iteration: 3, reason: 'Pale violet-white + deep purple accent. Encryption aesthetic.' },
+  'i3-dusk-dark':       { label: 'Dusk Dark',             tokens: 'i3-dusk3',             mode: 'dark',  iteration: 3, reason: 'Deep burgundy-brown + warm amber. Human-first privacy, candlelight comfort.' },
+  'i3-dusk-light':      { label: 'Dusk Light',            tokens: 'i3-dusk3',             mode: 'light', iteration: 3, reason: 'Warm cream + amber accent. Trust & warmth.' },
+  'i3-nordic-dark':     { label: 'Nordic Dark',           tokens: 'i3-nordic',            mode: 'dark',  iteration: 3, reason: 'Dark blue-grey + frost teal. Mullvad Swedish aesthetic, ProtonVPN clean.' },
+  'i3-nordic-light':    { label: 'Nordic Light',          tokens: 'i3-nordic',            mode: 'light', iteration: 3, reason: 'Cool gray-blue + teal. Northern European privacy law heritage.' },
+  'i3-basalt-dark':     { label: 'Basalt Dark',           tokens: 'i3-basalt',            mode: 'dark',  iteration: 3, reason: 'Warm stone neutrals + slate blue. DuckDuckGo approachability + ProtonMail composure.' },
+  'i3-basalt-light':    { label: 'Basalt Light',          tokens: 'i3-basalt',            mode: 'light', iteration: 3, reason: 'Warm cream + slate blue accent. Calm confidence.' },
+  'i3-tunnel-dark':     { label: 'Tunnel Dark',           tokens: 'i3-tunnel',            mode: 'dark',  iteration: 3, reason: 'Pure near-black + vivid lime. Mullvad VPN "connected" green. Secure tunnel.' },
+  'i3-tunnel-light':    { label: 'Tunnel Light',          tokens: 'i3-tunnel',            mode: 'light', iteration: 3, reason: 'Light gray + green accent. VPN authority.' },
+  'i3-cb-bo-dark':      { label: 'Visible Blue/Orange Dark',  tokens: 'i3-visible-blue-orange', mode: 'dark',  iteration: 3, reason: 'Colorblind safe (deuteranopia/protanopia). Blue-orange, most universally safe pairing.' },
+  'i3-cb-bo-light':     { label: 'Visible Blue/Orange Light', tokens: 'i3-visible-blue-orange', mode: 'light', iteration: 3, reason: 'Colorblind safe. Blue-orange on white, WCAG AAA.' },
+  'i3-cb-mt-dark':      { label: 'Visible Mono+Teal Dark',    tokens: 'i3-visible-mono-teal',   mode: 'dark',  iteration: 3, reason: 'Colorblind safe (all CVDs including Achromatopsia). Luminance contrast + teal.' },
+  'i3-cb-mt-light':     { label: 'Visible Mono+Teal Light',   tokens: 'i3-visible-mono-teal',   mode: 'light', iteration: 3, reason: 'Colorblind safe. Pure monochrome + teal, safe for total colorblindness.' },
 }
 
 // --- Iterations (derived from theme registry) ---
@@ -103,6 +203,8 @@ const primitives = [
 let currentScreen = 'community-channel'
 let currentTheme = 'current-dark'
 let currentFont = 'default'
+let sideBySide = false
+let compareTheme = 'current-dark'
 let customizerOpen = false
 
 const screens = {
@@ -123,27 +225,58 @@ function applyTheme(tokens, mode, font) {
   }
 }
 
+function applySplitTokens(elementId, tokens, mode) {
+  const el = document.getElementById(elementId)
+  if (!el) return
+  el.setAttribute('data-tokens', tokens)
+  el.setAttribute('data-mode', mode)
+}
+
 function render() {
   const { tokens, mode } = themes[currentTheme]
   applyTheme(tokens, mode, currentFont)
 
   const app = document.querySelector('#app')
-  app.innerHTML = `
-    <div class="presentation">
-      ${renderToolbar()}
-      <div class="presentation__main">
-        <div class="presentation__screen-area">
-          <div class="shell" id="main-shell"></div>
-        </div>
-        ${customizerOpen ? renderCustomizer() : ''}
-      </div>
-    </div>
-  `
   const screenFn = screens[currentScreen].render
-  document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
+
+  if (sideBySide && themes[compareTheme]) {
+    const compare = themes[compareTheme]
+    app.innerHTML = `
+      <div class="presentation">
+        ${renderToolbar()}
+        <div class="presentation__split">
+          <div class="presentation__split-pane">
+            <div class="presentation__split-label">${themes[currentTheme].label}</div>
+            <div class="shell" data-tokens="${tokens}" data-mode="${mode}" id="split-left"></div>
+          </div>
+          <div class="presentation__split-pane">
+            <div class="presentation__split-label">${compare.label}</div>
+            <div class="shell" data-tokens="${compare.tokens}" data-mode="${compare.mode}" id="split-right"></div>
+          </div>
+        </div>
+      </div>
+    `
+    document.getElementById('split-left').innerHTML = renderShellInner(screenFn)
+    document.getElementById('split-right').innerHTML = renderShellInner(screenFn)
+    applySplitTokens('split-left', tokens, mode)
+    applySplitTokens('split-right', compare.tokens, compare.mode)
+  } else {
+    app.innerHTML = `
+      <div class="presentation">
+        ${renderToolbar()}
+        <div class="presentation__main">
+          <div class="presentation__screen-area">
+            <div class="shell" id="main-shell"></div>
+          </div>
+          ${customizerOpen ? renderCustomizer() : ''}
+        </div>
+      </div>
+    `
+    document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
+  }
 
   bindToolbarEvents()
-  if (customizerOpen) bindCustomizerEvents()
+  if (customizerOpen && !sideBySide) bindCustomizerEvents()
 }
 
 function renderCustomizer() {
@@ -208,6 +341,11 @@ function renderToolbar() {
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
+  // Compare dropdown
+  const compareOptions = filteredThemes.map(([key, { label }]) =>
+    `<option value="${key}" ${compareTheme === key ? 'selected' : ''}>${label}</option>`
+  ).join('')
+
   // Iteration dropdown
   const iterationOptions = iterations.map(i =>
     `<option value="${i}" ${currentIteration === i ? 'selected' : ''}>#${i}</option>`
@@ -229,7 +367,9 @@ function renderToolbar() {
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
       <div class="presentation__toolbar-group">${screenBtns}</div>
-      ${isCompressed ? `<button class="presentation__toolbar-cta ${customizerOpen ? 'active' : ''}" data-toggle-customizer>Customize</button>` : ''}
+      <button class="${sideBySide ? 'active' : ''}" data-toggle-split>Compare</button>
+      ${sideBySide ? `<select class="presentation__toolbar-select" data-set-compare>${compareOptions}</select>` : ''}
+      ${isCompressed && !sideBySide ? `<button class="presentation__toolbar-cta ${customizerOpen ? 'active' : ''}" data-toggle-customizer>Customize</button>` : ''}
       <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
   `
@@ -307,6 +447,8 @@ function bindToolbarEvents() {
       currentIteration = parseInt(e.target.value)
       const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
       if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
+      if (iterationThemes.length > 1) compareTheme = iterationThemes[1][0]
+      else if (iterationThemes.length > 0) compareTheme = iterationThemes[0][0]
       render()
     })
   }
@@ -316,6 +458,20 @@ function bindToolbarEvents() {
       render()
     })
   })
+  document.querySelectorAll('[data-toggle-split]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      sideBySide = !sideBySide
+      customizerOpen = false
+      render()
+    })
+  })
+  const compareSelect = document.querySelector('[data-set-compare]')
+  if (compareSelect) {
+    compareSelect.addEventListener('change', (e) => {
+      compareTheme = e.target.value
+      render()
+    })
+  }
   document.querySelectorAll('[data-toggle-customizer]').forEach(btn => {
     btn.addEventListener('click', () => {
       customizerOpen = !customizerOpen

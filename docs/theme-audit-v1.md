@@ -34,6 +34,56 @@ Requirements from status-im/status-app#20329. Scale: PASS / WEAK / FAIL.
 | Neo Light (57) | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Light bg hurts side-view. Otherwise clean. |
 | Legacy v1 Light (68) | WEAK | WEAK | PASS | PASS | PASS | FAIL | PASS | PASS | Navy tint adds character. Light bg = weak side-view. |
 | Legacy v1 Dark (63) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep navy darks are distinctive and private-feeling. |
+| **Iteration 2** | | | | | | | | | |
+| Obsidian Vault Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep black + electric indigo. Maximum side-view blackout. ★★★★★ |
+| Obsidian Vault Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Soft violet-white. Light = weak side-view. |
+| Cipher Night Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Rich navy + Signal blue. Professional trust. ★★★★★ |
+| Cipher Night Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Cool blue-white. Naval authority. |
+| Forest Protocol Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Muted forest green. Eye comfort champion. ★★★★★ |
+| Forest Protocol Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Fresh green-white. Organic trust. |
+| Mercury Steel Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Silver-charcoal. Mullvad-neutral precision. ★★★★★ |
+| Mercury Steel Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Cool gray-white. Hardware-grade neutrality. |
+| Amber Sentinel Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | WEAK | Warm amber on charcoal. Brave-inspired. ★★★★☆ |
+| Amber Sentinel Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Warm cream + deep gold. Alert confidence. |
+| Oxide Copper Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Status DNA teal-copper. Unique and principled. ★★★★★ |
+| Oxide Copper Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Fresh teal-white. Original Status spirit. |
+| Ghost Protocol Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Pure monochrome. Tor-spirit anonymity. ★★★★★ |
+| Ghost Protocol Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Near-white monochrome. Disciplined, invisible. |
+| Crimson Vault Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | WEAK | Dark crimson. ProtonMail sovereign power. ★★★★☆ |
+| Crimson Vault Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Soft rose-white. Bold trust. |
+| Glacier Seal Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Ice-cold clarity. DuckDuckGo freshness. ★★★★★ |
+| Glacier Seal Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Icy blue-white. Clean, uncluttered, fresh. |
+| Dusk Protocol Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Plum-navy. Premium privacy. ★★★★★ |
+| Dusk Protocol Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Soft lavender-white. Premium calm. |
+| CB: Clarity Blue Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Colorblind safe (deuteranopia/protanopia). WCAG AAA. |
+| CB: Clarity Blue Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Colorblind safe. Blue-white-black only. |
+| CB: Gold & Slate Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Colorblind safe (tritanopia + all CVDs). WCAG AAA. |
+| CB: Gold & Slate Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Colorblind safe. Gold on white. |
+| **Iteration 3** | | | | | | | | | |
+| Vault Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep graphite + electric blue. Signal & Mullvad. |
+| Vault Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Clean blue-white. Trust signal. |
+| Obsidian Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | True black + cyan. Maximum viewing angle protection. |
+| Obsidian Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Cool gray + teal. Austere clarity. |
+| Sovereign Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Dark navy + warm gold. Proton authority. |
+| Sovereign Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Blue-gray + gold accent. User ownership. |
+| Stealth Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Near-black olive-grey + sage. Tactical calm. |
+| Stealth Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Warm stone + sage green. Earthy neutrality. |
+| Ghost Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Dark indigo surfaces. Proton refreshed. |
+| Ghost Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Off-white + indigo. Calm document editor. |
+| Cipher Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Cool dark slate + electric violet. Cryptographic edge. |
+| Cipher Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Pale violet-white + deep purple. Encryption aesthetic. |
+| Dusk Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep burgundy-brown + warm amber. Human-first privacy. |
+| Dusk Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Warm cream + amber. Trust & warmth. |
+| Nordic Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Dark blue-grey + frost teal. Mullvad Swedish aesthetic. |
+| Nordic Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Cool gray-blue + teal. Northern European privacy. |
+| Basalt Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Warm stone + slate blue. DuckDuckGo approachability. |
+| Basalt Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Warm cream + slate blue. Calm confidence. |
+| Tunnel Dark | PASS | PASS | PASS | PASS | PASS | PASS | WEAK | PASS | Near-black + vivid lime. Mullvad VPN green. Mono-hue risk. |
+| Tunnel Light | PASS | PASS | PASS | PASS | PASS | FAIL | WEAK | PASS | Light gray + green. VPN authority. Mono-hue risk. |
+| Visible Blue/Orange Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Colorblind safe (deuteranopia/protanopia). Blue-orange. |
+| Visible Blue/Orange Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Colorblind safe. Blue-orange on white. |
+| Visible Mono+Teal Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Colorblind safe (all CVDs). Luminance + teal. |
+| Visible Mono+Teal Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Colorblind safe. Pure monochrome + teal. |
 
 ## Themes Needing Revision
 
