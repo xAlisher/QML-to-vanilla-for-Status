@@ -11,11 +11,13 @@ File: /home/alisher/status-desktop/ui/app/AppLayouts/Wallet/popups/swap/SwapModa
 Parent: StatusDialog
 implicitWidth: 556, topPadding: Theme.xlPadding(32), backgroundColor: baseColor3
 
-### A1. header: AccountSelectorHeader
+### A1. header: Item { AccountSelectorHeader }
 Line 168–181
-Positioned y: -height - Theme.padding (above dialog)
-Allows switching wallet accounts
-**EXCLUDE** (account selector dropdown, not visible in static mockup — our header shows title row instead)
+File: AccountSelectorHeader is a StatusQ component
+Positioned y: -height - Theme.padding (floats above dialog top edge)
+Shows: account name, emoji, balance — allows switching wallet accounts via popup
+Coexists with the title row (A2a-1) inside the body — they are separate elements.
+**EXCLUDE** (the AccountSelectorHeader is a floating popup trigger positioned outside the dialog viewport at y: -height - Theme.padding. In the static mockup, the dialog is shown without account switching UI. The close button in our mockup header comes from StatusDialog's built-in headerAction, not from AccountSelectorHeader.)
 
 ### A2. StatusScrollView (body)
 Line 183–456
@@ -194,7 +196,7 @@ Line 182–257
 Rounded rectangle with semicircular cutout at top center (for exchange button)
 fillColor: indirectColor3, strokeColor: directColor8 (normal) / directColor7 (focused)
 strokeWidth: 1, scale: -1 for Pay side (cutout at bottom)
-**INCLUDE** (simplified as plain rectangle — cutout shape is complex SVG path, not critical for styling mockup)
+**INCLUDE** — current CSS renders as plain rectangle. QML has a semicircular cutout sized around the 44px exchange button. This is a MISSING visual detail (see summary).
 
 #### C1-content. RowLayout (contentItem)
 Line 259–355, spacing: 20
@@ -235,10 +237,34 @@ font: tertiaryTextFontSize(12), color: primaryColor1
 
 ---
 
+### C2. SwapExchangeButton
+File: /home/alisher/status-desktop/ui/app/AppLayouts/Wallet/controls/SwapExchangeButton.qml
+Parent: StatusButton
+implicitWidth: 44, implicitHeight: 44
+
+#### C2a. StatusButton properties
+Line 7–22
+isRoundIcon: true — renders as circle (border-radius: 50%)
+normalColor: indirectColor3, disabledColor: normalColor
+hoverColor: directColor8
+borderWidth: 1
+borderColor: hovered ? directColor7 : directColor8
+opacity: enabled ? 1 : 0.4
+focusPolicy: Qt.NoFocus
+**INCLUDE** (already present in CSS)
+
+#### C2b. Icon
+Line 11–12
+icon.name: hovered ? "arrow-up" : "arrow-down"
+icon.color: baseColor1
+**INCLUDE** (already present — static arrow-down SVG, hover state swap excluded for static mockup)
+
+---
+
 ## Summary: INCLUDE items that are MISSING or BROKEN
 
 | # | Section | Component | Issue | Severity |
 |---|---------|-----------|-------|----------|
 | 1 | A3a | Footer left: slippage | CSS has flat row layout. QML has ColumnLayout: label on top, RowLayout (value + edit) below, spacing: 0 | Medium |
 | 2 | A3b | Footer right: fees + button | CSS has flat row. QML has RowLayout spacing bigPadding(24): ColumnLayout (label above, value below) + StatusButton | Medium |
-| 3 | A2b | Panels container body top | CSS body padding top should be 0 (already is per line 98 of swap-modal.css) — verify ✓ | None |
+| 3 | C1-bg | SwapInputPanel background Shape | CSS renders plain rectangle. QML has semicircular cutout path at top center (Pay) / bottom center (Receive) sized around the 44px exchange button. Missing visual detail. | Low |
