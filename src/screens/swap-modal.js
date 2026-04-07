@@ -1,5 +1,23 @@
 export function renderSwapModal() {
+  // SVG clipPath for panel cutouts — matches SwapInputPanel.qml ShapePath
+  // Opening: 50px (relativeX), Arc: radiusX=23, radiusY=21.5
+  // Panel width ~520px, height ~131px
+  const pw = 520, ph = 133
+  const cx = pw / 2 // center x
+  const openHalf = 25 // relativeX/2 = 50/2
+  const rx = 23, ry = 21.5 // arc radii from QML
+
   const center = `
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <clipPath id="cutout-bottom" clipPathUnits="userSpaceOnUse">
+          <path d="M0,0 H${pw} V${ph} H${cx + openHalf} A${rx},${ry} 0 0,0 ${cx - openHalf},${ph} H0 Z"/>
+        </clipPath>
+        <clipPath id="cutout-top" clipPathUnits="userSpaceOnUse">
+          <path d="M0,${ph} H${pw} V0 H${cx + openHalf} A${rx},${ry} 0 0,1 ${cx - openHalf},0 H0 Z"/>
+        </clipPath>
+      </defs>
+    </svg>
     <div class="swap-backdrop">
       <div class="swap-modal">
         <div class="swap-modal__account-selector">
