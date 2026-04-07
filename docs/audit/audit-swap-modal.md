@@ -96,3 +96,11 @@ Date: 2026-04-07
 ### Findings:
 - BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L218) implements the notch as a `circle 25px`, but the `SwapInputPanel.qml` path does not use a 25px circle. The actual QML cutout arc is `radiusX: root.swapExchangeButtonWidth/2 + path.strokeWidth` and `radiusY: root.swapExchangeButtonWidth/2 - path.strokeWidth/2`, which resolves to `23px` by `21.5px` for the default 44px exchange button at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L209). The current CSS therefore uses the wrong size and wrong shape.
 - BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L218) also assumes a symmetric radial-gradient notch centered exactly on the edge, but the QML cutout width is driven by `relativeX: root.swapExchangeButtonWidth + (shape.cutoutGap + path.strokeWidth*2)` at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L210), so the current CSS is still a geometric approximation rather than a source-matched translation of the actual `ShapePath`.
+
+## Code Re-Audit: swap-modal cutout geometry
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: the cutout now uses an ellipse with `23px` by `21.5px`, which matches the `SwapInputPanel.qml` `PathArc` values `radiusX` and `radiusY` for the default 44px exchange button.
+- PASS: the pay/receive panel cutouts are still placed on opposite edges in line with `scale: -1` for Pay and `scale: 1` for Receive, so the orientation remains consistent with the QML shape logic.
