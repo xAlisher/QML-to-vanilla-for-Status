@@ -72,7 +72,7 @@ export function renderSwapModal() {
             <div class="swap-modal__footer-value-row">
               <span class="swap-modal__footer-value">0.5%</span>
               <button class="swap-modal__footer-edit" title="Edit slippage">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2M1 11l.5-2L9 1.5l2 2L3.5 11l-2 .5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path clip-rule="evenodd" d="m16.187 3.24584c1.2612-1.26112 3.3058-1.26112 4.567.00001 1.2611 1.26112 1.2611 3.3058 0 4.56692l-11.75175 11.75173c-.42718.4272-.95618.7384-1.53706.9044l-4.20764 1.2022c-.26236.0749-.54473.0018-.73767-.1912-.19294-.1929-.26611-.4753-.19115-.7376l1.20219-4.2077c.16596-.5809.47723-1.1099.90441-1.5371zm3.5044 1.06253c-.6743-.6743-1.7675-.6743-2.4418 0l-11.75175 11.75173c-.24661.2466-.4263.552-.52211.8873-.36205 1.2672.80948 2.4387 2.07664 2.0767.33534-.0958.64073-.2755.88734-.5222l11.75168-11.75166c.6743-.6743.6743-1.76756 0-2.44187z" fill="currentColor" fill-rule="evenodd"/></svg>
               </button>
             </div>
           </div>
@@ -82,7 +82,7 @@ export function renderSwapModal() {
               <span class="swap-modal__fees-value">$12.45</span>
             </div>
             <button class="swap-modal__submit">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8a4 4 0 018 0M8 4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 8h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><g fill="currentColor"><path d="m4 19.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h16c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z"/><path d="m12.75 4c0-.41421-.3358-.75-.75-.75s-.75.33579-.75.75v4.52442c0 .30897-.2774.544-.5822.4932l-4.5445-.75742c-.40858-.06809-.795.20792-.8631.6165-.06809.40858.20792.795.6165.8631l4.2021.7003c.3464.0578.5269.4453.3482.7476l-2.32269 3.9308c-.21073.3566-.09246.8165.26414 1.0272.35661.2107.81652.0925 1.02724-.2642l2.17381-3.6788c.1936-.3275.6674-.3275.861 0l2.1738 3.6788c.2107.3567.6706.4749 1.0272.2642.3567-.2107.4749-.6706.2642-1.0272l-2.3227-3.9308c-.1787-.3023.0018-.6898.3482-.7476l4.2021-.7003c.4086-.0681.6846-.45452.6165-.8631s-.4545-.68459-.8631-.6165l-4.5445.75742c-.3048.0508-.5822-.18423-.5822-.4932z"/></g></svg>
               Swap
             </button>
           </div>
