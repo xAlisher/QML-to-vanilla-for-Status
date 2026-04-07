@@ -3,9 +3,11 @@
 ## Rule 0: Never rely on session memory
 
 Every session starts cold. All knowledge must be recoverable from files in this repo.
+- **Audit workflow** lives in `docs/audit/` — read `BUILDER.md` before any build work
 - **Plans** live in `docs/plans/` — read before starting work
 - **Skills** live in `docs/skills/` — reusable techniques, decisions, patterns
 - **Tasks** live in `TASKS.md` — current state of all work items
+- **Pause state** lives in `docs/pause.md` — unresolved items from prior sessions
 - **This file** has project rules and context — read it first every session
 
 ## Rule 1: Skills-driven workflow
@@ -45,7 +47,24 @@ When building screens, extracting tokens, or translating layouts:
 
 ## Rule 5: Ask Alisher before approval-triggering commands
 
-Commands like `pnpm create`, `pnpm install`, `pnpm add` need user approval. Ask Alisher first. (Senty is not involved in this project.)
+Commands like `pnpm create`, `pnpm install`, `pnpm add` need user approval. Ask Alisher first.
+
+## Rule 6: Audit before merge — builder/auditor workflow
+
+You are the **builder**. Senty is the **auditor** (a Codex agent in a separate tmux pane).
+Every screen change follows this loop — no exceptions:
+
+1. Write component inventory → `docs/audit/inventory-{screen}.md`
+2. Commit → notify Senty via `tmux-bridge message auditor "inventory ready"`
+3. Wait for Senty's audit PASS (findings go to `docs/audit/audit-{screen}.md`)
+4. Build CSS/HTML only after inventory PASS
+5. Commit code → notify Senty for code audit
+6. Wait for code audit PASS
+7. Then ask Alisher for visual review
+8. Then merge to main
+
+Full protocol: `docs/audit/BUILDER.md`. Auditor protocol: `docs/audit/AUDITOR.md`.
+Communication: `tmux-bridge` (path: `/home/alisher/.smux/bin/tmux-bridge`).
 
 ---
 
