@@ -30,3 +30,11 @@ Date: 2026-04-07
 ### Findings:
 - PASS: the slippage edit control now uses the exact extracted `edit_pencil.svg` path from StatusQ with `currentColor`, so it matches the QML `icon.name: "edit_pencil"` requirement instead of using a hand-drawn substitute.
 - PASS: the submit button now uses the exact extracted `password.svg` path from StatusQ with `currentColor`, and [Constants.qml](/home/alisher/status-desktop/ui/imports/utils/Constants.qml#L1124) confirms `LoginType.Password` maps to `"password"`, matching the current mockup state.
+
+## Code Audit: swap-modal visual fixes
+Status: FAIL
+Date: 2026-04-07
+
+### Findings:
+- BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L5) and [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L28) render the account selector as a centered pill with emoji text `"🏦 Account 1 ▾"`, but [AccountSelectorHeader.qml](/home/alisher/status-desktop/ui/imports/shared/controls/AccountSelectorHeader.qml#L1) is an `AccountSelector` with an 8px-radius rectangular background, a 32x32 `StatusSmartIdenticon`, and the current account name text. The current HTML is structurally and visually different from the real component.
+- BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L12) and [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L81) reduce `NetworkFilter` to `"On:" + 32px circle + external chevron`, but [NetworkFilter.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/controls/NetworkFilter.qml#L1) is a `StatusComboBox` with a 38px combobox background, built-in indicator, 24x24 network identicon/image, and control padding. With `showTitle: false`, the title text is hidden, but the combobox chrome remains. The current HTML omits that structure and uses the wrong icon sizing/chrome.
