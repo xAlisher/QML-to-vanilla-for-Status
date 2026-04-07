@@ -81,10 +81,29 @@ const fonts = {
   'terminal':   { label: 'Monospace' },
 }
 
+// --- Primitives definition (for customizer panel) ---
+const primitives = [
+  { key: '--p-surface-0', label: 'Surface 0', group: 'Neutrals' },
+  { key: '--p-surface-1', label: 'Surface 1', group: 'Neutrals' },
+  { key: '--p-surface-2', label: 'Surface 2', group: 'Neutrals' },
+  { key: '--p-surface-3', label: 'Surface 3', group: 'Neutrals' },
+  { key: '--p-surface-4', label: 'Surface 4', group: 'Neutrals' },
+  { key: '--p-text', label: 'Text', group: 'Neutrals' },
+  { key: '--p-text-secondary', label: 'Text Secondary', group: 'Neutrals' },
+  { key: '--p-brand', label: 'Brand', group: 'Brand' },
+  { key: '--p-brand-subtle', label: 'Brand Subtle', group: 'Brand' },
+  { key: '--p-success', label: 'Success', group: 'Status' },
+  { key: '--p-danger', label: 'Danger', group: 'Status' },
+  { key: '--p-warning', label: 'Warning', group: 'Status' },
+  { key: '--p-mention', label: 'Mention', group: 'Status' },
+  { key: '--p-pin', label: 'Pin', group: 'Status' },
+]
+
 // --- State ---
 let currentScreen = 'community-channel'
 let currentTheme = 'current-dark'
 let currentFont = 'default'
+let customizerOpen = false
 
 const screens = {
   'community-channel': { label: 'Community Channel', render: renderCommunityChannel },
@@ -112,8 +131,11 @@ function render() {
   app.innerHTML = `
     <div class="presentation">
       ${renderToolbar()}
-      <div class="presentation__screen-area">
-        <div class="shell" id="main-shell"></div>
+      <div class="presentation__main">
+        <div class="presentation__screen-area">
+          <div class="shell" id="main-shell"></div>
+        </div>
+        ${customizerOpen ? renderCustomizer() : ''}
       </div>
     </div>
   `
@@ -121,6 +143,53 @@ function render() {
   document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
 
   bindToolbarEvents()
+  if (customizerOpen) bindCustomizerEvents()
+}
+
+function renderCustomizer() {
+  let lastGroup = ''
+  const rows = primitives.map(({ key, label, group }) => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(key).trim()
+    const groupHeader = group !== lastGroup ? `<div class="customizer__group">${group}</div>` : ''
+    lastGroup = group
+    return `${groupHeader}
+      <div class="customizer__row">
+        <label class="customizer__label">${label}</label>
+        <input type="color" class="customizer__swatch" data-primitive="${key}" value="${value || '#000000'}" />
+        <span class="customizer__hex">${value}</span>
+      </div>`
+  }).join('')
+
+  return `
+    <div class="customizer">
+      <div class="customizer__header">
+        <span>Primitives</span>
+        <button class="customizer__close" data-toggle-customizer>×</button>
+      </div>
+      <div class="customizer__body">${rows}</div>
+    </div>
+  `
+}
+
+function bindCustomizerEvents() {
+  document.querySelectorAll('.customizer__swatch').forEach(input => {
+    input.addEventListener('input', (e) => {
+      const key = e.target.dataset.primitive
+      document.documentElement.style.setProperty(key, e.target.value)
+      const hexSpan = e.target.nextElementSibling
+      if (hexSpan) hexSpan.textContent = e.target.value
+    })
+  })
+  document.querySelectorAll('[data-toggle-customizer]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      customizerOpen = !customizerOpen
+      // Clear inline overrides when closing
+      if (!customizerOpen) {
+        primitives.forEach(({ key }) => document.documentElement.style.removeProperty(key))
+      }
+      render()
+    })
+  })
 }
 
 function linkify(text) {
@@ -128,6 +197,9 @@ function linkify(text) {
 }
 
 function renderToolbar() {
+  // Check if current theme has primitives (compressed)
+  const isCompressed = currentTheme.includes('-r1')
+
   // Filter themes by current iteration
   const filteredThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
 
@@ -157,6 +229,7 @@ function renderToolbar() {
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
       <div class="presentation__toolbar-group">${screenBtns}</div>
+      ${isCompressed ? `<button class="${customizerOpen ? 'active' : ''}" data-toggle-customizer>Customize</button>` : ''}
       <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
   `
@@ -243,8 +316,12 @@ function bindToolbarEvents() {
       render()
     })
   })
-  document.querySelectorAll('[data-toggle-split]').forEach(btn => {
+  document.querySelectorAll('[data-toggle-customizer]').forEach(btn => {
     btn.addEventListener('click', () => {
+      customizerOpen = !customizerOpen
+      if (!customizerOpen) {
+        primitives.forEach(({ key }) => document.documentElement.style.removeProperty(key))
+      }
       render()
     })
   })
