@@ -99,6 +99,29 @@ html, body, #app {
   background: var(--border);
 }
 
+.presentation__toolbar-cta {
+  margin-left: auto;
+  padding: 6px 16px;
+  border-radius: 6px;
+  background: var(--primary-color-1);
+  color: var(--indirect-color-1);
+  border: none;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.presentation__toolbar-cta:hover {
+  opacity: 0.9;
+}
+
+.presentation__toolbar-cta.active {
+  background: var(--danger-color-1);
+}
+
 .presentation__toolbar-reason {
   flex-basis: 100%;
   width: 100%;

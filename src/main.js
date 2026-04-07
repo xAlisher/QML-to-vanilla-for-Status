@@ -229,8 +229,8 @@ function renderToolbar() {
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
       <div class="presentation__toolbar-group">${screenBtns}</div>
-      ${isCompressed ? `<button class="${customizerOpen ? 'active' : ''}" data-toggle-customizer>Customize</button>` : ''}
       <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
+      ${isCompressed ? `<button class="presentation__toolbar-cta ${customizerOpen ? 'active' : ''}" data-toggle-customizer>Customize</button>` : ''}
     </div>
   `
 }
