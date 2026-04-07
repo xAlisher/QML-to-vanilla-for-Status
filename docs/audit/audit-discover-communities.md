@@ -24,3 +24,11 @@ Date: 2026-04-07
 - PASS: `.community-card { overflow: visible; }` matches the QML layering where the community logo is rendered above the content card via `z: content.z + 1`, so the avatar should not be clipped by the card container.
 - PASS: `.community-card__banner { border-radius: 20px 20px 0 0; }` matches the QML banner mask, where the banner owns its own rounded top corners through `Rectangle { radius: d.bannerRadius }` instead of relying on parent clipping.
 - PASS: the fix stays limited to the visual clipping issue from review and does not change the previously-audited shadow or spacing behavior.
+
+## Code Re-Audit: discover-communities avatar z-index fix
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: `.community-card__avatar { z-index: 2; }` correctly mirrors the QML logo layering at `StatusCommunityCard.qml`, where the logo rectangle uses `z: content.z + 1` and therefore must render above the content card.
+- PASS: the one-line diff stays scoped to the approved visual regression and does not alter any previously-audited spacing, masking, or shadow behavior.
