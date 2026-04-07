@@ -1,40 +1,40 @@
-/* Current tokens — light mode — iteration 1 (compressed)
+/* Current tokens — dark mode — iteration 1 (compressed)
    20 primitives → 134 semantic tokens via var() references
-   Scoped via [data-tokens="current-r1"][data-mode="light"] */
+   Scoped via [data-tokens="current-r1"][data-mode="dark"] */
 
-[data-tokens="current-r1"][data-mode="light"] {
+[data-tokens="current-r1"][data-mode="dark"] {
 
   /* =============================================
      PRIMITIVES (20 core colors)
      ============================================= */
 
   /* --- Neutrals (7) --- */
-  --p-surface-0: #FAFBFC;        /* off-white — reduces glare vs pure #FFF */
-  --p-surface-1: #F6F8FA;        /* secondary panels */
-  --p-surface-2: #EEF2F5;        /* borders, hover bg */
-  --p-surface-3: #E9EDF1;        /* active/selected bg */
-  --p-surface-4: #E2E6E8;        /* strong dividers */
-  --p-text: #000000;             /* primary text */
-  --p-text-secondary: #939BA1;   /* labels, placeholders */
+  --p-surface-0: #2C2C2C;        /* neutral dark */
+  --p-surface-1: #252525;        /* secondary panels */
+  --p-surface-2: #373737;        /* borders, hover bg */
+  --p-surface-3: #2C2C2C;        /* active/selected bg */
+  --p-surface-4: #414141;        /* strong dividers */
+  --p-text: #FFFFFF;             /* primary text */
+  --p-text-secondary: #909090;   /* labels, placeholders */
 
   /* --- Brand (4) --- */
-  --p-brand: #4360DF;            /* primary action */
-  --p-brand-10: #4360DF1A;       /* ghost fills */
-  --p-brand-20: #4360DF33;       /* secondary bg */
-  --p-brand-subtle: #ECEFFB;     /* nav bg, tint */
+  --p-brand: #88B0FF;            /* primary action */
+  --p-brand-10: #869EFF33;       /* ghost fills */
+  --p-brand-20: #869EFF4D;       /* secondary bg */
+  --p-brand-subtle: #273251;     /* nav bg, tint */
 
   /* --- Status (5) --- */
-  --p-success: #4EBC60;
-  --p-danger: #FF2D55;
+  --p-success: #60C370;
+  --p-danger: #FF5C7B;
   --p-warning: #F6793C;
-  --p-mention: #0DA4C9;
-  --p-pin: #FE8F59;
+  --p-mention: #7BE5FF;
+  --p-pin: #FFA67B;
 
   /* --- Overlay (4) --- */
   --p-overlay: rgba(0, 0, 0, 0.4);
-  --p-shadow-1: rgba(0, 34, 51, 0.03);
-  --p-shadow-2: rgba(9, 16, 28, 0.02);
-  --p-shadow-3: rgba(0, 0, 0, 0.15);
+  --p-shadow-1: rgba(0, 0, 0, 0.08);
+  --p-shadow-2: rgba(107, 111, 118, 0.02);
+  --p-shadow-3: rgba(107, 111, 118, 0.05);
 
   /* =============================================
      SEMANTIC TOKENS (134, mapped to primitives)
@@ -96,18 +96,18 @@
   --indirect-color-4: var(--p-surface-0);
 
   /* === Misc (identity colors — outside 20 primitives) === */
-  --misc-color-1: #2946C4;
+  --misc-color-1: #AAC6FF;
   --misc-color-2: #887AF9;
   --misc-color-3: #51D0F0;
   --misc-color-4: #D37EF4;
   --misc-color-5: #FA6565;
   --misc-color-6: #FE8F59;
   --misc-color-7: #FFCA0F;
-  --misc-color-8: #7CDA00;
-  --misc-color-9: #26A69A;
-  --misc-color-10: #8B3131;
-  --misc-color-11: #9B832F;
-  --misc-color-12: #9EA85D;
+  --misc-color-8: #93DB33;
+  --misc-color-9: #10A88E;
+  --misc-color-10: #AD4343;
+  --misc-color-11: #EAD27B;
+  --misc-color-12: #AFB551;
 
   /* === Surfaces === */
   --background: var(--p-surface-0);
@@ -169,11 +169,11 @@
   --message-emoji-reaction-border-hovered: var(--p-brand-10);
 
   /* === Privacy === */
-  --privacy-primary: #BEBCF9;
-  --privacy-secondary: #D6D7F7;
-  --privacy-tertiary: #201C76;
-  --privacy-tertiary-opaque: #201C764D;
-  --privacy-icon-color: #647084;
+  --privacy-primary: #341D65;
+  --privacy-secondary: #5B438E;
+  --privacy-tertiary: #FFFFFF;
+  --privacy-tertiary-opaque: #FFFFFF4D;
+  --privacy-icon-color: #FFFFFF80;
 
   /* === Typography === */
   --font-family-base: 'Inter', sans-serif;

@@ -1,40 +1,40 @@
-/* Current tokens — light mode — iteration 1 (compressed)
+/* Quiet Authority — dark mode — iteration 1 (compressed)
    20 primitives → 134 semantic tokens via var() references
-   Scoped via [data-tokens="current-r1"][data-mode="light"] */
+   Scoped via [data-tokens="quiet-r1"][data-mode="dark"] */
 
-[data-tokens="current-r1"][data-mode="light"] {
+[data-tokens="quiet-r1"][data-mode="dark"] {
 
   /* =============================================
      PRIMITIVES (20 core colors)
      ============================================= */
 
   /* --- Neutrals (7) --- */
-  --p-surface-0: #FAFBFC;        /* off-white — reduces glare vs pure #FFF */
-  --p-surface-1: #F6F8FA;        /* secondary panels */
-  --p-surface-2: #EEF2F5;        /* borders, hover bg */
-  --p-surface-3: #E9EDF1;        /* active/selected bg */
-  --p-surface-4: #E2E6E8;        /* strong dividers */
-  --p-text: #000000;             /* primary text */
-  --p-text-secondary: #939BA1;   /* labels, placeholders */
+  --p-surface-0: #111827;        /* deep charcoal */
+  --p-surface-1: #0F172A;        /* secondary panels */
+  --p-surface-2: #374151;        /* borders, hover bg */
+  --p-surface-3: #1F2937;        /* active/selected bg */
+  --p-surface-4: #4B5563;        /* strong dividers */
+  --p-text: #F9FAFB;             /* primary text */
+  --p-text-secondary: #9CA3AF;   /* labels, placeholders */
 
   /* --- Brand (4) --- */
-  --p-brand: #4360DF;            /* primary action */
-  --p-brand-10: #4360DF1A;       /* ghost fills */
-  --p-brand-20: #4360DF33;       /* secondary bg */
-  --p-brand-subtle: #ECEFFB;     /* nav bg, tint */
+  --p-brand: #818CF8;            /* primary action */
+  --p-brand-10: #818CF833;       /* ghost fills */
+  --p-brand-20: #818CF84D;       /* secondary bg */
+  --p-brand-subtle: #1E1B4B;     /* nav bg, tint */
 
   /* --- Status (5) --- */
-  --p-success: #4EBC60;
-  --p-danger: #FF2D55;
-  --p-warning: #F6793C;
-  --p-mention: #0DA4C9;
-  --p-pin: #FE8F59;
+  --p-success: #2DD4BF;
+  --p-danger: #F87171;
+  --p-warning: #FBBF24;
+  --p-mention: #22D3EE;
+  --p-pin: #FBBF24;
 
   /* --- Overlay (4) --- */
-  --p-overlay: rgba(0, 0, 0, 0.4);
-  --p-shadow-1: rgba(0, 34, 51, 0.03);
-  --p-shadow-2: rgba(9, 16, 28, 0.02);
-  --p-shadow-3: rgba(0, 0, 0, 0.15);
+  --p-overlay: rgba(0, 0, 0, 0.6);
+  --p-shadow-1: rgba(0, 0, 0, 0.12);
+  --p-shadow-2: rgba(0, 0, 0, 0.04);
+  --p-shadow-3: rgba(0, 0, 0, 0.20);
 
   /* =============================================
      SEMANTIC TOKENS (134, mapped to primitives)
@@ -96,18 +96,18 @@
   --indirect-color-4: var(--p-surface-0);
 
   /* === Misc (identity colors — outside 20 primitives) === */
-  --misc-color-1: #2946C4;
-  --misc-color-2: #887AF9;
-  --misc-color-3: #51D0F0;
-  --misc-color-4: #D37EF4;
-  --misc-color-5: #FA6565;
-  --misc-color-6: #FE8F59;
-  --misc-color-7: #FFCA0F;
-  --misc-color-8: #7CDA00;
-  --misc-color-9: #26A69A;
-  --misc-color-10: #8B3131;
-  --misc-color-11: #9B832F;
-  --misc-color-12: #9EA85D;
+  --misc-color-1: #A5B4FC;
+  --misc-color-2: #A78BFA;
+  --misc-color-3: #22D3EE;
+  --misc-color-4: #C084FC;
+  --misc-color-5: #F87171;
+  --misc-color-6: #FB923C;
+  --misc-color-7: #FBBF24;
+  --misc-color-8: #A3E635;
+  --misc-color-9: #2DD4BF;
+  --misc-color-10: #FCA5A5;
+  --misc-color-11: #FDE68A;
+  --misc-color-12: #BEF264;
 
   /* === Surfaces === */
   --background: var(--p-surface-0);
@@ -169,11 +169,11 @@
   --message-emoji-reaction-border-hovered: var(--p-brand-10);
 
   /* === Privacy === */
-  --privacy-primary: #BEBCF9;
-  --privacy-secondary: #D6D7F7;
-  --privacy-tertiary: #201C76;
-  --privacy-tertiary-opaque: #201C764D;
-  --privacy-icon-color: #647084;
+  --privacy-primary: #312E81;
+  --privacy-secondary: #4338CA;
+  --privacy-tertiary: #F9FAFB;
+  --privacy-tertiary-opaque: #F9FAFB4D;
+  --privacy-icon-color: #F9FAFB80;
 
   /* === Typography === */
   --font-family-base: 'Inter', sans-serif;
