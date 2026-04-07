@@ -46,3 +46,11 @@ Date: 2026-04-07
 ### Findings:
 - BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L5) still hardcodes the account selector colors inline as `#4360DF`, `#fff`, and `rgba(...)`. [AccountSelectorHeader.qml](/home/alisher/status-desktop/ui/imports/shared/controls/AccountSelectorHeader.qml#L1) resolves these from theme/account-color logic (`Utils.getColorForId`, `Utils.getContrastingColor`, `Theme.palette.primaryColor3`), and the audit rules require theme/token-driven colors rather than hardcoded values.
 - BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L14) and [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L101) still render the network filter icon as a text `"E"` badge. [NetworkFilter.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/controls/NetworkFilter.qml#L76) uses a real 24x24 `StatusSmartIdenticon`/network image asset (`Assets.svg(d.singleSelectionIconUrl)`), so the current HTML is still using a placeholder instead of the actual icon treatment.
+
+## Code Re-Audit: swap-modal token colors and real network icon
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: the account selector no longer hardcodes inline colors; it now uses CSS token variables for the background, identicon background, text, and indicator, which clears the previous theme/token mismatch against `AccountSelectorHeader.qml`.
+- PASS: the network filter now uses a real Ethereum SVG image as the 24x24 icon instead of a text placeholder badge, which matches the `NetworkFilter.qml` image-based icon treatment for single selection.
