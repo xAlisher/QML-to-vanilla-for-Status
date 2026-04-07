@@ -40,3 +40,9 @@ Deep charcoal with cyan accents. High contrast ratio — strong privacy feel wit
 
 ## Neo Light (57)
 Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool. Reference: Francesca's exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0
+
+## Quiet Authority Light (65)
+Near-monochrome editorial. Single indigo accent on cool slate — reads like documentation, communicates calm authority and trust. Reference: Ned's proposal doc
+
+## Quiet Authority Dark (54)
+Deep charcoal editorial. Minimal indigo accent — maximum restraint, zero visual noise, strong side-viewer protection. Reference: Ned's proposal doc
