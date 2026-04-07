@@ -16,6 +16,7 @@ import './tokens/v1-light.css'
 import './tokens/v1-dark.css'
 import './tokens/quiet-light.css'
 import './tokens/quiet-dark.css'
+import './tokens/current-light-r1.css'
 import './tokens/fonts.css'
 
 // Shell styles
@@ -52,6 +53,7 @@ const themes = {
   'v1-dark':        { label: 'Legacy v1 Dark (63)',  tokens: 'v1',        mode: 'dark',  iteration: 1, reason: 'Status v1 dark mode. Deep navy darks (#131D2F) instead of pure gray — more character, better side-viewer protection. Reference: https://github.com/status-im/status-legacy' },
   'quiet-light':    { label: 'Quiet Authority Light (65)', tokens: 'quiet', mode: 'light', iteration: 1, reason: 'Near-monochrome editorial. Single indigo accent on cool slate — reads like documentation, communicates calm authority and trust. Reference: Ned\'s proposal doc' },
   'quiet-dark':     { label: 'Quiet Authority Dark (54)',  tokens: 'quiet', mode: 'dark',  iteration: 1, reason: 'Deep charcoal editorial. Minimal indigo accent — maximum restraint, zero visual noise, strong side-viewer protection. Reference: Ned\'s proposal doc' },
+  'current-light-r1': { label: 'Current Light Compressed (20p)', tokens: 'current-r1', mode: 'light', iteration: 1, reason: 'Proof of concept: 134 semantic tokens mapped to 20 primitives via var() references. Same visual output, structured for palette swapping.' },
 }
 
 // --- Iterations (derived from theme registry) ---
