@@ -30,12 +30,16 @@
    AccountSelector with Rectangle bg radius 8, account color
    contentItem: RowLayout with StatusSmartIdenticon 32×32 + name text
    (AccountSelectorHeader.qml) */
+/* AccountSelectorHeader: AccountSelector with bg from account colorId
+   All colors theme-driven per AccountSelectorHeader.qml:59-63
+   Utils.getColorForId → account color, Utils.getContrastingColor → text */
 .swap-modal__account-selector {
   display: flex;
   align-items: center;
   gap: 4px; /* control.spacing: 4 */
   padding: 0;
   border-radius: 8px; /* Rectangle radius: 8 */
+  background: var(--primary-color-1); /* account colorId default maps to primaryColor1 */
   cursor: pointer;
   position: absolute;
   top: -24px;
@@ -51,7 +55,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--primary-color-3);
+  background: var(--primary-color-3); /* asset.bgColor: Theme.palette.primaryColor3 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,10 +63,19 @@
   flex-shrink: 0;
 }
 
+/* Name text: contrasting color against account bg (AccountSelectorHeader.qml:55) */
 .swap-modal__account-name {
   font-size: var(--font-size-primary);
   font-weight: 500;
+  color: var(--indirect-color-1); /* Utils.getContrastingColor on primaryColor1 → white */
+  padding-right: 4px;
+}
+
+/* Indicator: indirectColor1 (AccountSelectorHeader.qml:17) */
+.swap-modal__account-indicator {
+  color: var(--indirect-color-1);
   padding-right: 8px;
+  font-size: 10px;
 }
 
 /* Header: title row is inside body per QML (SwapModal.qml:196-231)
@@ -115,16 +128,11 @@
   position: relative;
 }
 
+/* 24×24 network image (NetworkFilter.qml:90-98, Assets.svg(iconUrl)) */
 .swap-modal__network-icon {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--misc-color-2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: var(--indirect-color-1);
 }
 
 /* StatusComboboxIndicator: positioned right (NetworkFilter.qml:81-86) */

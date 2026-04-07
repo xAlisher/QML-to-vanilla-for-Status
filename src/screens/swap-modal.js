@@ -2,10 +2,10 @@ export function renderSwapModal() {
   const center = `
     <div class="swap-backdrop">
       <div class="swap-modal">
-        <div class="swap-modal__account-selector" style="background:#4360DF">
+        <div class="swap-modal__account-selector">
           <span class="swap-modal__account-identicon">🏦</span>
-          <span class="swap-modal__account-name" style="color:#fff">Account 1</span>
-          <span style="color:rgba(255,255,255,0.7);padding-right:8px">▾</span>
+          <span class="swap-modal__account-name">Account 1</span>
+          <span class="swap-modal__account-indicator">▾</span>
         </div>
         <div class="swap-modal__header">
           <div class="swap-modal__title-row">
@@ -13,7 +13,7 @@ export function renderSwapModal() {
             <span class="swap-modal__network">
               On:
               <span class="swap-modal__network-filter">
-                <span class="swap-modal__network-icon">E</span>
+                <img class="swap-modal__network-icon" src="data:image/svg+xml,%3Csvg fill='none' height='24' viewBox='0 0 500 500' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m250 500c138.071 0 250-111.929 250-250s-111.929-250-250-250-250 111.929-250 250 111.929 250 250 250z' fill='%23627eea'/%3E%3Cg fill='%23fff'%3E%3Cpath d='m254.967 65v253.177l112.947-66.765z' fill-opacity='.8'/%3E%3Cpath d='m254.967 65-112.951 187.412 112.951 66.765v-118.105z'/%3E%3Cpath d='m254.967 340.561v92.436l113.017-159.165z' fill-opacity='.8'/%3E%3Cpath d='m254.967 432.997v-92.436l-112.951-66.729z'/%3E%3C/g%3E%3C/svg%3E" alt="Ethereum" />
                 <span class="swap-modal__network-indicator">▾</span>
               </span>
             </span>
