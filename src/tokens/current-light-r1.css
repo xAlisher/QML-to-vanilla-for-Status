@@ -9,7 +9,7 @@
      ============================================= */
 
   /* --- Neutrals (7) --- */
-  --p-surface-0: #FFFFFF;        /* page bg, cards, modals */
+  --p-surface-0: #FAFBFC;        /* off-white — reduces glare vs pure #FFF */
   --p-surface-1: #F6F8FA;        /* secondary panels */
   --p-surface-2: #EEF2F5;        /* borders, hover bg */
   --p-surface-3: #E9EDF1;        /* active/selected bg */
