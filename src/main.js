@@ -146,8 +146,7 @@ function renderToolbar() {
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
-      <div style="flex:1"></div>
-      <span class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</span>
+      <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
   `
 }
