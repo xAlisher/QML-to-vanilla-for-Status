@@ -79,3 +79,12 @@ Date: 2026-04-07
 - PASS: the title weight, close-button removal, token-symbol weight, and header row structure now align with the visible `SwapModal.qml` row composition and the referenced component defaults.
 - PASS: the account selector is now left-positioned above the modal with visible overflow, which matches the `AccountSelectorHeader` anchoring pattern (`y: -height - Theme.padding`) instead of the earlier centered/cropped treatment.
 - PASS: the pay-panel redundant balance text is removed and the remaining layout changes stay within the source-backed scope of the requested visual corrections.
+
+## Code Re-Audit: swap-modal round 4 extracted chevrons and arrow
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: the account selector, network filter, and token selector now use the exact extracted `chevron-down.svg` path with `currentColor`, replacing the previous text chevrons.
+- PASS: the exchange button now uses the exact extracted `arrow-down.svg` path with `currentColor`, matching `SwapExchangeButton.qml` instead of the earlier hand-drawn arrow.
+- PASS: the network filter indicator spacing and positioning are now aligned to the `StatusComboBox` pattern, and the changes stay within source-backed icon/chrome adjustments.
