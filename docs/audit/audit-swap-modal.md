@@ -112,3 +112,11 @@ Date: 2026-04-07
 ### Findings:
 - BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L225) now uses `ellipse 25px 21.5px`, but the QML cutout arc still specifies `radiusX: root.swapExchangeButtonWidth/2 + path.strokeWidth`, which resolves to `23px` for the default 44px button at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L212). The CSS widened the curve itself, not just the opening span, so it no longer matches the source geometry.
 - BLOCKING: the builder’s new rationale follows `relativeX: root.swapExchangeButtonWidth + (shape.cutoutGap + path.strokeWidth*2)` at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L210), which does resolve to a `50px` opening, but QML uses that together with `radiusX: 23px`, not instead of it. The current CSS collapses those two independent parameters into a single `25px` ellipse and therefore changes the actual curve profile.
+
+## Code Re-Audit: swap-modal SVG clipPath cutout
+Status: FAIL
+Date: 2026-04-07
+
+### Findings:
+- BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L5) hardcodes the clipPath box as `pw = 520` and `ph = 133`, but the source component is not defined that way. In QML, [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L102) sets `implicitWidth: 492` and [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L103) sets `implicitHeight: 131`, while [SwapModal.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/popups/swap/SwapModal.qml#L227) makes each panel fill its parent width. The current SVG therefore bakes in unsourced absolute dimensions instead of matching the actual panel box.
+- BLOCKING: because the clipPath uses `clipPathUnits="userSpaceOnUse"` with those fixed `520x133` coordinates, the cutout path is no longer derived from `shape.width` and `shape.height` like the QML `ShapePath` at [SwapInputPanel.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/panels/SwapInputPanel.qml#L206). That means the geometry will drift whenever the rendered panel width differs from the hardcoded SVG width, so this is still not a faithful translation of the source.
