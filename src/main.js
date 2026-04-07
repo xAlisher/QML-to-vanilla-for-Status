@@ -17,6 +17,9 @@ import './tokens/v1-dark.css'
 import './tokens/quiet-light.css'
 import './tokens/quiet-dark.css'
 import './tokens/current-light-r1.css'
+import './tokens/current-dark-r1.css'
+import './tokens/quiet-dark-r1.css'
+import './tokens/v1-dark-r1.css'
 import './tokens/hacker-dark-r1.css'
 import './tokens/solarized-dark-r1.css'
 import './tokens/dracula-dark-r1.css'
@@ -56,7 +59,10 @@ const themes = {
   'v1-dark':        { label: 'Legacy v1 Dark (63)',  tokens: 'v1',        mode: 'dark',  iteration: 1, reason: 'Status v1 dark mode. Deep navy darks (#131D2F) instead of pure gray — more character, better side-viewer protection. Reference: https://github.com/status-im/status-legacy' },
   'quiet-light':    { label: 'Quiet Authority Light (65)', tokens: 'quiet', mode: 'light', iteration: 1, reason: 'Near-monochrome editorial. Single indigo accent on cool slate — reads like documentation, communicates calm authority and trust. Reference: Ned\'s proposal doc' },
   'quiet-dark':     { label: 'Quiet Authority Dark (54)',  tokens: 'quiet', mode: 'dark',  iteration: 1, reason: 'Deep charcoal editorial. Minimal indigo accent — maximum restraint, zero visual noise, strong side-viewer protection. Reference: Ned\'s proposal doc' },
-  'current-light-r1': { label: 'Current Light Compressed (20p)', tokens: 'current-r1', mode: 'light', iteration: 1, reason: 'Off-white background (#FAFBFC) reduces glare vs pure white. Also demonstrates 20-primitive compression system for palette swapping.' },
+  'current-light-r1': { label: 'Current Light Compressed (20p)', tokens: 'current-r1', mode: 'light', iteration: 1, reason: 'Off-white background (#FAFBFC) reduces glare vs pure white. 20 primitives + color-mix() for all derived tokens.' },
+  'current-dark-r1':  { label: 'Current Dark Compressed (20p)',  tokens: 'current-r1', mode: 'dark',  iteration: 1, reason: 'Same neutral dark as iteration 0, now with 20-primitive compression. All alpha variants derived via color-mix().' },
+  'quiet-dark-r1':    { label: 'Quiet Authority Dark Compressed (20p)', tokens: 'quiet-r1', mode: 'dark', iteration: 1, reason: 'Deep charcoal editorial with 20-primitive compression. Same visual as iteration 0, structured for palette swapping.' },
+  'v1-dark-r1':       { label: 'Legacy v1 Dark Compressed (20p)', tokens: 'v1-r1', mode: 'dark', iteration: 1, reason: 'Deep navy v1 palette with 20-primitive compression. All alpha variants derived via color-mix().' },
   'hacker-dark-r1':   { label: 'Hacker Dark Revised (56)',      tokens: 'hacker-r1',    mode: 'dark',  iteration: 1, reason: 'Revised from green-on-black: neutral gray text with subtle blue accent. Legible for extended use, accessible, maintains privacy-dark aesthetic.' },
   'solarized-dark-r1': { label: 'Solarized Dark Revised (47)',  tokens: 'solarized-r1', mode: 'dark',  iteration: 1, reason: 'Contrast fix: secondary text lightened to #7B8F97 for WCAG AA compliance (4.5:1 ratio). No other changes.' },
   'dracula-dark-r1':  { label: 'Dracula Dark Revised (58)',     tokens: 'dracula-r1',   mode: 'dark',  iteration: 1, reason: 'Accent shifted from purple (#BD93F9) to blue (#8BA4F8) — feels more sovereign, less playful. Better danger vs accent distinction.' },
@@ -147,16 +153,9 @@ function renderToolbar() {
 
   return `
     <div class="presentation__toolbar">
-      <span class="presentation__toolbar-label">Iteration</span>
       <select class="presentation__toolbar-select" data-set-iteration>${iterationOptions}</select>
-      <span class="presentation__toolbar-separator"></span>
-      <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
-      <span class="presentation__toolbar-separator"></span>
-      <span class="presentation__toolbar-label">Font</span>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
-      <span class="presentation__toolbar-separator"></span>
-      <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
