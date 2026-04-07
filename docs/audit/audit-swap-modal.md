@@ -22,3 +22,11 @@ Date: 2026-04-07
 ### Findings:
 - BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L74) now adds a pencil glyph, but it is still an inline hand-drawn SVG. QML specifies `icon.name: "edit_pencil"` on a `StatusFlatButton`; per audit rules this must use the matching StatusQ icon asset, not a custom-drawn substitute.
 - BLOCKING: [swap-modal.js](/home/alisher/status-redesign/src/screens/swap-modal.js#L85) now adds an auth glyph before `Swap`, but it is also an inline hand-drawn SVG. `signButton` in [SwapModal.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/popups/swap/SwapModal.qml#L540) uses a real icon chosen from `Constants.authenticationIconByType[...]`, so the HTML must use the corresponding StatusQ asset rather than an approximated SVG.
+
+## Code Re-Audit: swap-modal extracted footer icons
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: the slippage edit control now uses the exact extracted `edit_pencil.svg` path from StatusQ with `currentColor`, so it matches the QML `icon.name: "edit_pencil"` requirement instead of using a hand-drawn substitute.
+- PASS: the submit button now uses the exact extracted `password.svg` path from StatusQ with `currentColor`, and [Constants.qml](/home/alisher/status-desktop/ui/imports/utils/Constants.qml#L1124) confirms `LoginType.Password` maps to `"password"`, matching the current mockup state.
