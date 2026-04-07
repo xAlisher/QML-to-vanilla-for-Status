@@ -98,6 +98,14 @@ html, body, #app {
   background: var(--border);
 }
 
+.presentation__toolbar-reason {
+  padding: 2px 12px 4px;
+  font-size: 11px;
+  color: var(--base-color-1);
+  font-style: italic;
+  line-height: 1.3;
+}
+
 .presentation__screen-area {
   flex: 1;
   display: flex;

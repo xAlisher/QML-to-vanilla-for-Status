@@ -31,19 +31,19 @@ import { renderWalletAccount } from './screens/wallet-account.js'
 
 // --- Theme registry ---
 const themes = {
-  'current-light':  { label: 'Current Light (70)',          tokens: 'current', mode: 'light', iteration: 0 },
-  'current-dark':   { label: 'Current Dark (67)',           tokens: 'current', mode: 'dark',  iteration: 0 },
-  'concept-light':  { label: 'Concept A Light (65)',        tokens: 'concept', mode: 'light', iteration: 0 },
-  'concept-dark':   { label: 'Concept A Dark (69)',         tokens: 'concept', mode: 'dark',  iteration: 0 },
-  'nord-dark':      { label: 'Nord Dark (52)',              tokens: 'nord',    mode: 'dark',  iteration: 0 },
-  'dracula-dark':   { label: 'Dracula Dark (55)',           tokens: 'dracula', mode: 'dark',  iteration: 0 },
-  'monokai-dark':   { label: 'Monokai Dark (53)',           tokens: 'monokai', mode: 'dark',  iteration: 0 },
-  'logos-light':    { label: 'Logos Light (75)',             tokens: 'logos',   mode: 'light', iteration: 0 },
-  'solarized-dark': { label: 'Solarized Dark (46)',         tokens: 'solarized', mode: 'dark', iteration: 0 },
-  'hacker-dark':    { label: 'Hacker Dark (47)',            tokens: 'hacker',  mode: 'dark',  iteration: 0 },
-  'basecamp-dark':  { label: 'Basecamp Dark (60)',          tokens: 'basecamp', mode: 'dark', iteration: 0 },
-  'neo-dark':       { label: 'Neo Dark (56)',               tokens: 'neo',      mode: 'dark', iteration: 0 },
-  'neo-light':      { label: 'Neo Light (57)',              tokens: 'neo',      mode: 'light', iteration: 0 },
+  'current-light':  { label: 'Current Light (70)',   tokens: 'current',   mode: 'light', iteration: 0, reason: 'Status v2 default. Blue-accented with high contrast — established brand identity, clear readability.' },
+  'current-dark':   { label: 'Current Dark (67)',    tokens: 'current',   mode: 'dark',  iteration: 0, reason: 'Status v2 dark mode. Neutral grays with blue accents — reduces eye strain for extended use.' },
+  'concept-light':  { label: 'Concept A Light (65)', tokens: 'concept',   mode: 'light', iteration: 0, reason: 'Warm minimalism. Desaturated neutrals convey trust and calm — privacy feels approachable, not clinical.' },
+  'concept-dark':   { label: 'Concept A Dark (69)',  tokens: 'concept',   mode: 'dark',  iteration: 0, reason: 'Humane dark mode. Warm darks instead of cold grays — comfortable for hours, reduces side-viewer visibility.' },
+  'nord-dark':      { label: 'Nord Dark (52)',       tokens: 'nord',      mode: 'dark',  iteration: 0, reason: 'Arctic-inspired muted palette. Low-chroma blues on dark surface — minimal glare, high legibility for privacy-conscious use.' },
+  'dracula-dark':   { label: 'Dracula Dark (55)',    tokens: 'dracula',   mode: 'dark',  iteration: 0, reason: 'High-contrast dark with purple accents. Rich darks limit viewing angles — strong readability without bright glare.' },
+  'monokai-dark':   { label: 'Monokai Dark (53)',    tokens: 'monokai',   mode: 'dark',  iteration: 0, reason: 'Developer-oriented warm dark. Amber/green accents on charcoal — familiar to technical users, easy on eyes.' },
+  'logos-light':    { label: 'Logos Light (75)',      tokens: 'logos',     mode: 'light', iteration: 0, reason: 'Logos network identity. Purple-accented privacy palette — visually ties Status to the underlying privacy infrastructure.' },
+  'solarized-dark': { label: 'Solarized Dark (46)',  tokens: 'solarized', mode: 'dark',  iteration: 0, reason: 'Scientifically optimized contrast. Fewest colors (46) — proven comfortable for extended reading, accessible for color blindness.' },
+  'hacker-dark':    { label: 'Hacker Dark (47)',     tokens: 'hacker',    mode: 'dark',  iteration: 0, reason: 'Monochrome green-on-black. Maximum side-viewer protection — minimal palette reinforces digital sovereignty aesthetic.' },
+  'basecamp-dark':  { label: 'Basecamp Dark (60)',   tokens: 'basecamp',  mode: 'dark',  iteration: 0, reason: 'Productivity-focused neutral dark. Restrained palette with warm grays — professional trust without visual noise.' },
+  'neo-dark':       { label: 'Neo Dark (56)',        tokens: 'neo',       mode: 'dark',  iteration: 0, reason: 'Deep charcoal with cyan accents. High contrast ratio — strong privacy feel with modern, accessible readability.' },
+  'neo-light':      { label: 'Neo Light (57)',       tokens: 'neo',       mode: 'light', iteration: 0, reason: 'Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool.' },
 }
 
 // --- Iterations (derived from theme registry) ---
@@ -180,6 +180,7 @@ function renderToolbar() {
       <button class="${sideBySide ? 'active' : ''}" data-toggle-split>Compare</button>
       <span class="presentation__toolbar-label" style="opacity:0.5">Styling exploration</span>
     </div>
+    <div class="presentation__toolbar-reason">${themes[currentTheme].reason || ''}</div>
   `
 }
 
