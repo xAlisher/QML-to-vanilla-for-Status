@@ -4,6 +4,8 @@
 
 Every session starts cold. All knowledge must be recoverable from files in this repo.
 - **Audit workflow** lives in `docs/audit/` — read `BUILDER.md` before any build work
+- **Issue-based workflow** lives in `docs/audit/BUILDER.md` § "Issue-Based Workflow" — one branch per GitHub issue
+- **Volo's instructions** live in `docs/from-volo-to-fergie.md` — check for updates each session
 - **Plans** live in `docs/plans/` — read before starting work
 - **Skills** live in `docs/skills/` — reusable techniques, decisions, patterns
 - **Tasks** live in `TASKS.md` — current state of all work items
