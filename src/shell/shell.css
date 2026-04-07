@@ -151,6 +151,8 @@ html, body, #app {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 51; /* above swap backdrop (z-index: 50) */
+  position: relative;
 }
 
 .customizer__header {
