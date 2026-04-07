@@ -111,11 +111,54 @@ tmux-bridge path: `/home/alisher/.smux/bin/tmux-bridge`
 ## Git Branch Convention
 
 ```
-main                    — audited, reviewed code only
-build/{screen-name}     — builder's work-in-progress
+main                    — audited, reviewed, merged code only
+issue/{issue-number}    — one branch per GitHub issue
+build/{screen-name}     — legacy builder's work-in-progress
 ```
 
-Builder commits to `build/*`. Auditor reviews. Merge to `main` only on PASS.
+## Issue-Based Workflow
+
+For every GitHub issue, follow this exact loop:
+
+### 1. Branch
+```bash
+git checkout -b issue/{number} main
+```
+
+### 2. Build + Commit
+Do the work on the issue branch. Commit when ready.
+
+### 3. Post summary on GitHub issue
+Post a comment summarizing what was done. Start with "Fergie: ".
+
+### 4. Notify Senty for review via tmux
+```bash
+tmux-bridge message auditor "Issue #{number} ready for review on branch issue/{number}. Please check and post LGTM or blockers on the GitHub issue."
+```
+Senty reviews and posts either blockers (with reasons) or LGTM on the issue.
+
+### 5. Fix blockers if any
+Address all blockers, re-commit, re-notify Senty.
+
+### 6. Ask Alisher to test
+After Senty's LGTM, ensure dev server is running, then ask Alisher to review.
+
+### 7. Merge + publish
+After Alisher's approval:
+```bash
+git checkout main && git merge issue/{number}
+git push github main
+```
+
+### 8. Notify Volo
+Post a comment on the issue mentioning @sunleos:
+```
+Fergie: @sunleos please take a look. Summary: {what was done}
+```
+**Always show Alisher the @sunleos comment before posting.**
+
+### 9. Next issue
+Move to the next issue. One issue at a time.
 
 ## Checklist (from discipline doc, must complete for EVERY component)
 

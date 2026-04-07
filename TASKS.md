@@ -44,6 +44,10 @@ Plan: `docs/plans/styling-concepts-v1.md`
 - [x] 7e. Wallet account: rebuilt from LeftTabView + RightTabView + WalletAccountHeader QML
 - [x] 7f. Extract skills from completed work
 
+### 7.5. Detail pass (from QML re-reading)
+- [x] 7.5a. Discover Communities: bottom padding 64px, card shadow default+hover, avatar overflow/z-index fix
+- [x] 7.5b. Swap Modal: footer restructure, extracted icons, account selector, network filter, panel cutouts
+
 ### 8. Visual review
 - [~] 8a. All 4 screens render correctly with current tokens — NEEDS VISUAL REVIEW
 - [~] 8b. All 4 screens render correctly with concept tokens — NEEDS VISUAL REVIEW

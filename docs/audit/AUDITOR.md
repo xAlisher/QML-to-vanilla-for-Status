@@ -34,10 +34,19 @@ tmux-bridge keys builder Enter
 ## Git workflow
 
 ```
-main                    — audited code only
-build/{screen-name}     — builder's work-in-progress
+main                    — audited, reviewed, merged code only
+issue/{issue-number}    — one branch per GitHub issue
+build/{screen-name}     — legacy builder's work-in-progress
 ```
 
+### Issue-based workflow (current)
+- Builder creates branch `issue/{number}`, does work, commits
+- Builder posts summary comment on the GitHub issue, then notifies you via tmux
+- You review the branch → post **LGTM** or **blockers with reasons** as a comment on the GitHub issue
+- Builder fixes blockers → re-commits → re-notifies you
+- On LGTM: builder asks Alisher to test, then merges to main
+
+### Legacy screen-based workflow
 - Builder commits inventory to `build/{screen}` → notifies you
 - You review → write findings to `docs/audit/audit-{screen}.md` → commit → notify builder
 - Builder fixes → re-commits → notifies you
