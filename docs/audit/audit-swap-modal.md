@@ -70,3 +70,12 @@ Date: 2026-04-07
 ### Findings:
 - PASS: `.swap-modal__header` no longer adds the extra `padding-top: 24px`, so the title/network row is back in line with the `StatusScrollView` `topPadding: 0` layout from `SwapModal.qml`.
 - PASS: `.swap-exchange-btn` no longer adds a shadow, so it now matches `SwapExchangeButton.qml`, which specifies only background, border, icon, and hover state styling.
+
+## Code Re-Audit: swap-modal round 3 visual fixes
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: the title weight, close-button removal, token-symbol weight, and header row structure now align with the visible `SwapModal.qml` row composition and the referenced component defaults.
+- PASS: the account selector is now left-positioned above the modal with visible overflow, which matches the `AccountSelectorHeader` anchoring pattern (`y: -height - Theme.padding`) instead of the earlier centered/cropped treatment.
+- PASS: the pay-panel redundant balance text is removed and the remaining layout changes stay within the source-backed scope of the requested visual corrections.
