@@ -153,16 +153,9 @@ function renderToolbar() {
 
   return `
     <div class="presentation__toolbar">
-      <span class="presentation__toolbar-label">Iteration</span>
       <select class="presentation__toolbar-select" data-set-iteration>${iterationOptions}</select>
-      <span class="presentation__toolbar-separator"></span>
-      <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
-      <span class="presentation__toolbar-separator"></span>
-      <span class="presentation__toolbar-label">Font</span>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
-      <span class="presentation__toolbar-separator"></span>
-      <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
