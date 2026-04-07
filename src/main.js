@@ -31,19 +31,19 @@ import { renderWalletAccount } from './screens/wallet-account.js'
 
 // --- Theme registry ---
 const themes = {
-  'current-light':  { label: 'Current Light (70)',          tokens: 'current', mode: 'light', iteration: 0 },
-  'current-dark':   { label: 'Current Dark (67)',           tokens: 'current', mode: 'dark',  iteration: 0 },
-  'concept-light':  { label: 'Concept A Light (65)',        tokens: 'concept', mode: 'light', iteration: 0 },
-  'concept-dark':   { label: 'Concept A Dark (69)',         tokens: 'concept', mode: 'dark',  iteration: 0 },
-  'nord-dark':      { label: 'Nord Dark (52)',              tokens: 'nord',    mode: 'dark',  iteration: 0 },
-  'dracula-dark':   { label: 'Dracula Dark (55)',           tokens: 'dracula', mode: 'dark',  iteration: 0 },
-  'monokai-dark':   { label: 'Monokai Dark (53)',           tokens: 'monokai', mode: 'dark',  iteration: 0 },
-  'logos-light':    { label: 'Logos Light (75)',             tokens: 'logos',   mode: 'light', iteration: 0 },
-  'solarized-dark': { label: 'Solarized Dark (46)',         tokens: 'solarized', mode: 'dark', iteration: 0 },
-  'hacker-dark':    { label: 'Hacker Dark (47)',            tokens: 'hacker',  mode: 'dark',  iteration: 0 },
-  'basecamp-dark':  { label: 'Basecamp Dark (60)',          tokens: 'basecamp', mode: 'dark', iteration: 0 },
-  'neo-dark':       { label: 'Neo Dark (56)',               tokens: 'neo',      mode: 'dark', iteration: 0 },
-  'neo-light':      { label: 'Neo Light (57)',              tokens: 'neo',      mode: 'light', iteration: 0 },
+  'current-light':  { label: 'Current Light (70)',   tokens: 'current',   mode: 'light', iteration: 0, reason: 'Status Desktop default. Blue-accented with high contrast — established brand identity, clear readability.' },
+  'current-dark':   { label: 'Current Dark (67)',    tokens: 'current',   mode: 'dark',  iteration: 0, reason: 'Status Desktop dark mode. Neutral grays with blue accents — reduces eye strain for extended use.' },
+  'concept-light':  { label: 'Concept A Light (65)', tokens: 'concept',   mode: 'light', iteration: 0, reason: 'Warm minimalism. Desaturated neutrals convey trust and calm — privacy feels approachable, not clinical.' },
+  'concept-dark':   { label: 'Concept A Dark (69)',  tokens: 'concept',   mode: 'dark',  iteration: 0, reason: 'Humane dark mode. Warm darks instead of cold grays — comfortable for hours, reduces side-viewer visibility.' },
+  'nord-dark':      { label: 'Nord Dark (52)',       tokens: 'nord',      mode: 'dark',  iteration: 0, reason: 'Arctic-inspired muted palette. Low-chroma blues on dark surface — minimal glare, high legibility for privacy-conscious use. Reference: https://bananalarry.net/' },
+  'dracula-dark':   { label: 'Dracula Dark (55)',    tokens: 'dracula',   mode: 'dark',  iteration: 0, reason: 'High-contrast dark with purple accents. Rich darks limit viewing angles — strong readability without bright glare. Reference: https://bananalarry.net/' },
+  'monokai-dark':   { label: 'Monokai Dark (53)',    tokens: 'monokai',   mode: 'dark',  iteration: 0, reason: 'Developer-oriented warm dark. Amber/green accents on charcoal — familiar to technical users, easy on eyes. Reference: https://bananalarry.net/' },
+  'logos-light':    { label: 'Logos Light (75)',      tokens: 'logos',     mode: 'light', iteration: 0, reason: 'Logos network website identity. Purple-accented privacy palette — visually ties Status to the underlying privacy infrastructure.' },
+  'solarized-dark': { label: 'Solarized Dark (46)',  tokens: 'solarized', mode: 'dark',  iteration: 0, reason: 'Scientifically optimized contrast. Fewest colors (46) — proven comfortable for extended reading, accessible for color blindness. Reference: https://bananalarry.net/' },
+  'hacker-dark':    { label: 'Hacker Dark (47)',     tokens: 'hacker',    mode: 'dark',  iteration: 0, reason: 'Hardcore monochrome green-on-black. Maximum side-viewer protection — minimal palette reinforces digital sovereignty, old-school terminal aesthetic.' },
+  'basecamp-dark':  { label: 'Basecamp Dark (60)',   tokens: 'basecamp',  mode: 'dark',  iteration: 0, reason: 'Productivity-focused neutral dark. Restrained palette with warm grays — professional trust without visual noise. Reference: https://github.com/logos-co/logos-design-system' },
+  'neo-dark':       { label: 'Neo Dark (56)',        tokens: 'neo',       mode: 'dark',  iteration: 0, reason: 'Deep charcoal with cyan accents. High contrast ratio — strong privacy feel with modern, accessible readability. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
+  'neo-light':      { label: 'Neo Light (57)',       tokens: 'neo',       mode: 'light', iteration: 0, reason: 'Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
 }
 
 // --- Iterations (derived from theme registry) ---
@@ -63,8 +63,6 @@ const fonts = {
 let currentScreen = 'community-channel'
 let currentTheme = 'current-dark'
 let currentFont = 'default'
-let sideBySide = false
-let compareTheme = 'concept-dark'
 
 const screens = {
   'community-channel': { label: 'Community Channel', render: renderCommunityChannel },
@@ -89,43 +87,22 @@ function render() {
   applyTheme(tokens, mode, currentFont)
 
   const app = document.querySelector('#app')
-
-  if (sideBySide) {
-    const compare = themes[compareTheme]
-    app.innerHTML = `
-      <div class="presentation">
-        ${renderToolbar()}
-        <div class="presentation__split">
-          <div class="presentation__split-pane">
-            <div class="presentation__split-label">${themes[currentTheme].label}</div>
-            <div class="shell" data-tokens="${tokens}" data-mode="${mode}" id="split-left"></div>
-          </div>
-          <div class="presentation__split-pane">
-            <div class="presentation__split-label">${compare.label}</div>
-            <div class="shell" data-tokens="${compare.tokens}" data-mode="${compare.mode}" id="split-right"></div>
-          </div>
-        </div>
+  app.innerHTML = `
+    <div class="presentation">
+      ${renderToolbar()}
+      <div class="presentation__screen-area">
+        <div class="shell" id="main-shell"></div>
       </div>
-    `
-    const screenFn = screens[currentScreen].render
-    document.getElementById('split-left').innerHTML = renderShellInner(screenFn)
-    document.getElementById('split-right').innerHTML = renderShellInner(screenFn)
-    applySplitTokens('split-left', tokens, mode)
-    applySplitTokens('split-right', compare.tokens, compare.mode)
-  } else {
-    app.innerHTML = `
-      <div class="presentation">
-        ${renderToolbar()}
-        <div class="presentation__screen-area">
-          <div class="shell" id="main-shell"></div>
-        </div>
-      </div>
-    `
-    const screenFn = screens[currentScreen].render
-    document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
-  }
+    </div>
+  `
+  const screenFn = screens[currentScreen].render
+  document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
 
   bindToolbarEvents()
+}
+
+function linkify(text) {
+  return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--primary-color-1)">$1</a>')
 }
 
 function renderToolbar() {
@@ -135,11 +112,6 @@ function renderToolbar() {
   // Theme dropdown
   const themeOptions = filteredThemes.map(([key, { label }]) =>
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
-  ).join('')
-
-  // Compare dropdown (for side-by-side)
-  const compareOptions = filteredThemes.map(([key, { label }]) =>
-    `<option value="${key}" ${compareTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
   // Iteration buttons
@@ -157,11 +129,6 @@ function renderToolbar() {
     `<button class="${currentScreen === key ? 'active' : ''}" data-set-screen="${key}">${label}</button>`
   ).join('')
 
-  const compareDropdown = sideBySide ? `
-    <span class="presentation__toolbar-label">vs</span>
-    <select class="presentation__toolbar-select" data-set-compare>${compareOptions}</select>
-  ` : ''
-
   return `
     <div class="presentation__toolbar">
       <span class="presentation__toolbar-label">Iteration</span>
@@ -169,7 +136,6 @@ function renderToolbar() {
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
-      ${compareDropdown}
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Font</span>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
@@ -177,8 +143,7 @@ function renderToolbar() {
       <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <div style="flex:1"></div>
-      <button class="${sideBySide ? 'active' : ''}" data-toggle-split>Compare</button>
-      <span class="presentation__toolbar-label" style="opacity:0.5">Styling exploration</span>
+      <span class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</span>
     </div>
   `
 }
@@ -232,13 +197,6 @@ function renderDefaultNav() {
   `
 }
 
-function applySplitTokens(elementId, tokens, mode) {
-  const el = document.getElementById(elementId)
-  if (!el) return
-  el.setAttribute('data-tokens', tokens)
-  el.setAttribute('data-mode', mode)
-}
-
 function bindToolbarEvents() {
   const themeSelect = document.querySelector('[data-set-theme]')
   if (themeSelect) {
@@ -256,22 +214,11 @@ function bindToolbarEvents() {
     })
   }
 
-  const compareSelect = document.querySelector('[data-set-compare]')
-  if (compareSelect) {
-    compareSelect.addEventListener('change', (e) => {
-      compareTheme = e.target.value
-      render()
-    })
-  }
-
   document.querySelectorAll('[data-set-iteration]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentIteration = parseInt(btn.dataset.setIteration)
-      // Reset both theme and compareTheme to first in the new iteration
       const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
       if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
-      if (iterationThemes.length > 1) compareTheme = iterationThemes[1][0]
-      else if (iterationThemes.length > 0) compareTheme = iterationThemes[0][0]
       render()
     })
   })
@@ -283,7 +230,6 @@ function bindToolbarEvents() {
   })
   document.querySelectorAll('[data-toggle-split]').forEach(btn => {
     btn.addEventListener('click', () => {
-      sideBySide = !sideBySide
       render()
     })
   })
