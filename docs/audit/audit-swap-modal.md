@@ -62,3 +62,11 @@ Date: 2026-04-07
 ### Findings:
 - BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L78) adds `padding-top: 24px` to `.swap-modal__header`, but in [SwapModal.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/popups/swap/SwapModal.qml#L183) the title row lives inside the `StatusScrollView` with `topPadding: 0` and no extra header spacer. This shifts the visible title/network row away from the QML layout.
 - BLOCKING: [swap-modal.css](/home/alisher/status-redesign/src/screens/swap-modal.css#L323) adds `box-shadow: 0 2px 8px var(--drop-shadow)` to `.swap-exchange-btn`, but [SwapExchangeButton.qml](/home/alisher/status-desktop/ui/app/AppLayouts/Wallet/controls/SwapExchangeButton.qml#L7) defines only background, border, icon, and hover states. There is no shadow in the source component, so this is an unsupported visual addition.
+
+## Code Re-Audit: swap-modal unsourced additions removed
+Status: PASS
+Date: 2026-04-07
+
+### Findings:
+- PASS: `.swap-modal__header` no longer adds the extra `padding-top: 24px`, so the title/network row is back in line with the `StatusScrollView` `topPadding: 0` layout from `SwapModal.qml`.
+- PASS: `.swap-exchange-btn` no longer adds a shadow, so it now matches `SwapExchangeButton.qml`, which specifies only background, border, icon, and hover state styling.
