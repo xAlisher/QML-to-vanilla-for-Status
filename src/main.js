@@ -12,6 +12,8 @@ import './tokens/hacker-dark.css'
 import './tokens/basecamp-dark.css'
 import './tokens/neo-dark.css'
 import './tokens/neo-light.css'
+import './tokens/v1-light.css'
+import './tokens/v1-dark.css'
 import './tokens/fonts.css'
 
 // Shell styles
@@ -44,6 +46,8 @@ const themes = {
   'basecamp-dark':  { label: 'Basecamp Dark (60)',   tokens: 'basecamp',  mode: 'dark',  iteration: 0, reason: 'Productivity-focused neutral dark. Restrained palette with warm grays — professional trust without visual noise. Reference: https://github.com/logos-co/logos-design-system' },
   'neo-dark':       { label: 'Neo Dark (56)',        tokens: 'neo',       mode: 'dark',  iteration: 0, reason: 'Deep charcoal with cyan accents. High contrast ratio — strong privacy feel with modern, accessible readability. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
   'neo-light':      { label: 'Neo Light (57)',       tokens: 'neo',       mode: 'light', iteration: 0, reason: 'Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
+  'v1-light':       { label: 'Legacy v1 Light (68)', tokens: 'v1',        mode: 'light', iteration: 0, reason: 'Status v1 (mobile) palette. Navy-tinted neutrals with teal success — the original identity before the desktop redesign. Reference: https://github.com/status-im/status-legacy' },
+  'v1-dark':        { label: 'Legacy v1 Dark (63)',  tokens: 'v1',        mode: 'dark',  iteration: 0, reason: 'Status v1 dark mode. Deep navy darks (#131D2F) instead of pure gray — more character, better side-viewer protection. Reference: https://github.com/status-im/status-legacy' },
 }
 
 // --- Iterations (derived from theme registry) ---
@@ -142,8 +146,7 @@ function renderToolbar() {
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
-      <div style="flex:1"></div>
-      <span class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</span>
+      <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
   `
 }
