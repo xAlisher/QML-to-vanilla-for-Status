@@ -54,9 +54,25 @@ The auditor reviews your CSS/HTML against QML source. They check dimensions, col
 
 Fix all blocking findings. Re-commit. Wait for PASS.
 
-### Step 5: Merge
+### Step 5: Visual Review
 
-Only after auditor PASS, merge to main.
+Before asking Alisher to review, always ensure the dev server is running:
+```bash
+source ~/.nvm/nvm.sh && nvm use 22 && pnpm dev
+```
+Verify it's serving before telling Alisher the screen is ready.
+
+### Step 6: Publish
+
+After Alisher's visual approval, push to GitHub Pages:
+```bash
+git push github clean-main:main
+```
+Always publish immediately after Alisher's pass — don't wait to be asked.
+
+### Step 7: Extract Skills + Update TASKS.md
+
+After merge/publish, extract lessons to `docs/skills/` and update TASKS.md.
 
 ## Communication via smux
 
