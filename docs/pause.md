@@ -97,6 +97,26 @@ Captured at: 2026-04-06, mid-session. Resume from here.
    - Mockup: uses border-top: 1px solid
    - Need: replace border with box-shadow matching StatusDialogFooter dropShadow
 
+### From Alisher's review round 4
+
+10. **All dropdown chevrons wrong**
+    - Mockup: text character `▾`
+    - Source: StatusComboboxIndicator = 16×16 `chevron-down` StatusIcon, color baseColor1
+    - Root cause: hand-drawn text substitute instead of extracted icon
+    - Need: replace all `▾` with extracted chevron-down.svg (16×16, currentColor)
+
+11. **Network selector spacing wrong**
+    - Mockup: cramped padding around icon
+    - Source: NetworkFilter.qml control.padding: 12, control.rightPadding: 36, control.topPadding: 7
+    - Root cause: CSS padding values don't match StatusComboBox padding properties
+    - Need: verify padding matches QML exactly
+
+12. **Exchange/arrow button constantly wrong**
+    - Mockup: hand-drawn arrow SVG, different visual weight
+    - Source: SwapExchangeButton.qml icon.name: "arrow-down" → StatusQ/icons/arrow-down.svg
+    - Root cause: hand-drawn SVG instead of extracted StatusQ icon (same anti-pattern as edit_pencil, password)
+    - Need: replace with extracted arrow-down.svg, use currentColor fill
+
 ## Screens 3-4: Pending Same-Level Audit
 
 Discover Communities audit complete (2026-04-07). Wallet Account has NOT been through the Layer 0 complexity audit + component inventory process.

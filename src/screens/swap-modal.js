@@ -5,7 +5,7 @@ export function renderSwapModal() {
         <div class="swap-modal__account-selector">
           <span class="swap-modal__account-identicon">🏦</span>
           <span class="swap-modal__account-name">Account 1</span>
-          <span class="swap-modal__account-indicator">▾</span>
+          <svg class="swap-modal__account-indicator" width="16" height="16" viewBox="0 0 24 24" fill="none"><path clip-rule="evenodd" d="m6.46967 9.46967c.29289-.29289.76777-.29289 1.06066 0l4.11607 4.11613c.1953.1952.5119.1952.7072 0l4.1161-4.11613c.2929-.29289.7677-.29289 1.0606 0s.2929.76773 0 1.06063l-4.6464 4.6465c-.4882.4881-1.2796.4881-1.7678 0l-4.64643-4.6465c-.29289-.2929-.29289-.76774 0-1.06063z" fill="currentColor" fill-rule="evenodd"/></svg>
         </div>
         <div class="swap-modal__header">
           <div class="swap-modal__title-row">
@@ -15,7 +15,7 @@ export function renderSwapModal() {
             On:
             <span class="swap-modal__network-filter">
               <img class="swap-modal__network-icon" src="data:image/svg+xml,%3Csvg fill='none' height='24' viewBox='0 0 500 500' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m250 500c138.071 0 250-111.929 250-250s-111.929-250-250-250-250 111.929-250 250 111.929 250 250 250z' fill='%23627eea'/%3E%3Cg fill='%23fff'%3E%3Cpath d='m254.967 65v253.177l112.947-66.765z' fill-opacity='.8'/%3E%3Cpath d='m254.967 65-112.951 187.412 112.951 66.765v-118.105z'/%3E%3Cpath d='m254.967 340.561v92.436l113.017-159.165z' fill-opacity='.8'/%3E%3Cpath d='m254.967 432.997v-92.436l-112.951-66.729z'/%3E%3C/g%3E%3C/svg%3E" alt="Ethereum" />
-              <span class="swap-modal__network-indicator">▾</span>
+              <svg class="swap-modal__network-indicator" width="16" height="16" viewBox="0 0 24 24" fill="none"><path clip-rule="evenodd" d="m6.46967 9.46967c.29289-.29289.76777-.29289 1.06066 0l4.11607 4.11613c.1953.1952.5119.1952.7072 0l4.1161-4.11613c.2929-.29289.7677-.29289 1.0606 0s.2929.76773 0 1.06063l-4.6464 4.6465c-.4882.4881-1.2796.4881-1.7678 0l-4.64643-4.6465c-.29289-.2929-.29289-.76774 0-1.06063z" fill="currentColor" fill-rule="evenodd"/></svg>
             </span>
           </span>
         </div>
@@ -33,7 +33,7 @@ export function renderSwapModal() {
                 <div class="swap-panel__token-selector">
                   <div class="swap-panel__token-icon" style="background:#627EEA">E</div>
                   <span class="swap-panel__token-symbol">ETH</span>
-                  <span class="swap-panel__token-chevron">▾</span>
+                  <svg class="swap-panel__token-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path clip-rule="evenodd" d="m6.46967 9.46967c.29289-.29289.76777-.29289 1.06066 0l4.11607 4.11613c.1953.1952.5119.1952.7072 0l4.1161-4.11613c.2929-.29289.7677-.29289 1.0606 0s.2929.76773 0 1.06063l-4.6464 4.6465c-.4882.4881-1.2796.4881-1.7678 0l-4.64643-4.6465c-.29289-.2929-.29289-.76774 0-1.06063z" fill="currentColor" fill-rule="evenodd"/></svg>
                 </div>
                 <button class="swap-panel__max-btn">Max. 4.2091</button>
               </div>
@@ -41,9 +41,7 @@ export function renderSwapModal() {
 
             <!-- Exchange button -->
             <button class="swap-exchange-btn" title="Swap direction">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 4v12M10 16l-3-3M10 16l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m6.53033 13.4697c-.29289-.2929-.76777-.2929-1.06066 0s-.29289.7677 0 1.0606l6.00003 6c.2929.2929.7677.2929 1.0606 0l6-6c.2929-.2929.2929-.7677 0-1.0606s-.7677-.2929-1.0606 0l-3.8661 3.8661c-.315.315-.8536.0919-.8536-.3536v-12.9822c0-.41421-.3358-.75-.75-.75s-.75.33579-.75.75v12.9822c0 .4455-.5386.6686-.8536.3536z" fill="currentColor"/></svg>
             </button>
 
             <!-- Receive panel -->
@@ -57,7 +55,7 @@ export function renderSwapModal() {
                 <div class="swap-panel__token-selector">
                   <div class="swap-panel__token-icon" style="background:#2775CA">D</div>
                   <span class="swap-panel__token-symbol">DAI</span>
-                  <span class="swap-panel__token-chevron">▾</span>
+                  <svg class="swap-panel__token-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path clip-rule="evenodd" d="m6.46967 9.46967c.29289-.29289.76777-.29289 1.06066 0l4.11607 4.11613c.1953.1952.5119.1952.7072 0l4.1161-4.11613c.2929-.29289.7677-.29289 1.0606 0s.2929.76773 0 1.06063l-4.6464 4.6465c-.4882.4881-1.2796.4881-1.7678 0l-4.64643-4.6465c-.29289-.2929-.29289-.76774 0-1.06063z" fill="currentColor" fill-rule="evenodd"/></svg>
                 </div>
               </div>
             </div>

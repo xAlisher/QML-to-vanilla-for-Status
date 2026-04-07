@@ -62,6 +62,18 @@ source ~/.nvm/nvm.sh && nvm use 22 && pnpm dev
 ```
 Verify it's serving before telling Alisher the screen is ready.
 
+### Step 5b: Handling Visual Review Feedback
+
+When Alisher submits issues after visual review, follow this exact sequence:
+
+1. **Log all issues** — update `docs/pause.md` with every issue, numbered
+2. **Research root cause in QML source** — for each issue, find the exact QML property/component that's mismatched. Never derive values from screenshots — screenshots identify WHAT's wrong, QML source tells you HOW to fix
+3. **Reflect and update skills** — update `docs/skills/` with lessons so the same mistake doesn't repeat
+4. **Fix ALL issues in one pass** — don't submit after fixing 2 of 6
+5. **Notify Senty before committing** — ask to watch pane, wait for acknowledgment
+6. **Commit and request code audit** — same as Step 3→4
+7. **Re-present to Alisher** — ensure dev server running, then ask for review
+
 ### Step 6: Publish
 
 After Alisher's visual approval, push to GitHub Pages:

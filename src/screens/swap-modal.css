@@ -72,11 +72,13 @@
   padding-right: 4px;
 }
 
-/* Indicator: indirectColor1 (AccountSelectorHeader.qml:17) */
+/* Indicator: indirectColor1, 16×16 chevron-down (AccountSelectorHeader.qml:17) */
 .swap-modal__account-indicator {
   color: var(--indirect-color-1);
-  padding-right: 8px;
-  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  flex-shrink: 0;
 }
 
 /* Header: title row inside body (SwapModal.qml:196-231)
@@ -144,12 +146,15 @@
   border-radius: 50%;
 }
 
-/* StatusComboboxIndicator: positioned right (NetworkFilter.qml:81-86) */
+/* StatusComboboxIndicator: 16×16 chevron-down, baseColor1 (NetworkFilter.qml:81-86) */
 .swap-modal__network-indicator {
   position: absolute;
-  right: 12px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--base-color-1);
-  font-size: 10px;
+  width: 16px;
+  height: 16px;
 }
 
 /* Close button: part of StatusHeaderActions */
@@ -292,9 +297,13 @@
   line-height: 38px;
 }
 
+/* StatusComboboxIndicator: 16×16 chevron-down, baseColor1
+   (StatusComboboxIndicator.qml) */
 .swap-panel__token-chevron {
-  color: var(--base-color-1);
-  font-size: 10px;
+  color: var(--primary-color-1); /* TokenSelectorButton indicator color (line 106) */
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 /* Balance text: tertiaryTextFontSize(12), baseColor1 */
