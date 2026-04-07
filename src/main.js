@@ -130,9 +130,9 @@ function renderToolbar() {
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
-  // Iteration buttons
-  const iterationBtns = iterations.map(i =>
-    `<button class="${currentIteration === i ? 'active' : ''}" data-set-iteration="${i}">#${i}</button>`
+  // Iteration dropdown
+  const iterationOptions = iterations.map(i =>
+    `<option value="${i}" ${currentIteration === i ? 'selected' : ''}>#${i}</option>`
   ).join('')
 
   // Font dropdown
@@ -148,7 +148,7 @@ function renderToolbar() {
   return `
     <div class="presentation__toolbar">
       <span class="presentation__toolbar-label">Iteration</span>
-      <div class="presentation__toolbar-group">${iterationBtns}</div>
+      <select class="presentation__toolbar-select" data-set-iteration>${iterationOptions}</select>
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
@@ -229,14 +229,15 @@ function bindToolbarEvents() {
     })
   }
 
-  document.querySelectorAll('[data-set-iteration]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentIteration = parseInt(btn.dataset.setIteration)
+  const iterationSelect = document.querySelector('[data-set-iteration]')
+  if (iterationSelect) {
+    iterationSelect.addEventListener('change', (e) => {
+      currentIteration = parseInt(e.target.value)
       const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
       if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
       render()
     })
-  })
+  }
   document.querySelectorAll('[data-set-screen]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentScreen = btn.dataset.setScreen
