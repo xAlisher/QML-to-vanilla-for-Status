@@ -63,8 +63,6 @@ const fonts = {
 let currentScreen = 'community-channel'
 let currentTheme = 'current-dark'
 let currentFont = 'default'
-let sideBySide = false
-let compareTheme = 'concept-dark'
 
 const screens = {
   'community-channel': { label: 'Community Channel', render: renderCommunityChannel },
@@ -89,43 +87,16 @@ function render() {
   applyTheme(tokens, mode, currentFont)
 
   const app = document.querySelector('#app')
-
-  if (sideBySide) {
-    const compare = themes[compareTheme]
-    app.innerHTML = `
-      <div class="presentation">
-        ${renderToolbar()}
-        <div class="presentation__split">
-          <div class="presentation__split-pane">
-            <div class="presentation__split-label">${themes[currentTheme].label}</div>
-            <div class="presentation__toolbar-reason">${themes[currentTheme].reason || ''}</div>
-            <div class="shell" data-tokens="${tokens}" data-mode="${mode}" id="split-left"></div>
-          </div>
-          <div class="presentation__split-pane">
-            <div class="presentation__split-label">${compare.label}</div>
-            <div class="presentation__toolbar-reason">${themes[compareTheme].reason || ''}</div>
-            <div class="shell" data-tokens="${compare.tokens}" data-mode="${compare.mode}" id="split-right"></div>
-          </div>
-        </div>
+  app.innerHTML = `
+    <div class="presentation">
+      ${renderToolbar()}
+      <div class="presentation__screen-area">
+        <div class="shell" id="main-shell"></div>
       </div>
-    `
-    const screenFn = screens[currentScreen].render
-    document.getElementById('split-left').innerHTML = renderShellInner(screenFn)
-    document.getElementById('split-right').innerHTML = renderShellInner(screenFn)
-    applySplitTokens('split-left', tokens, mode)
-    applySplitTokens('split-right', compare.tokens, compare.mode)
-  } else {
-    app.innerHTML = `
-      <div class="presentation">
-        ${renderToolbar()}
-        <div class="presentation__screen-area">
-          <div class="shell" id="main-shell"></div>
-        </div>
-      </div>
-    `
-    const screenFn = screens[currentScreen].render
-    document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
-  }
+    </div>
+  `
+  const screenFn = screens[currentScreen].render
+  document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
 
   bindToolbarEvents()
 }
@@ -137,11 +108,6 @@ function renderToolbar() {
   // Theme dropdown
   const themeOptions = filteredThemes.map(([key, { label }]) =>
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
-  ).join('')
-
-  // Compare dropdown (for side-by-side)
-  const compareOptions = filteredThemes.map(([key, { label }]) =>
-    `<option value="${key}" ${compareTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
   // Iteration buttons
@@ -159,11 +125,6 @@ function renderToolbar() {
     `<button class="${currentScreen === key ? 'active' : ''}" data-set-screen="${key}">${label}</button>`
   ).join('')
 
-  const compareDropdown = sideBySide ? `
-    <span class="presentation__toolbar-label">vs</span>
-    <select class="presentation__toolbar-select" data-set-compare>${compareOptions}</select>
-  ` : ''
-
   return `
     <div class="presentation__toolbar">
       <span class="presentation__toolbar-label">Iteration</span>
@@ -171,7 +132,6 @@ function renderToolbar() {
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Theme</span>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
-      ${compareDropdown}
       <span class="presentation__toolbar-separator"></span>
       <span class="presentation__toolbar-label">Font</span>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
@@ -179,10 +139,8 @@ function renderToolbar() {
       <span class="presentation__toolbar-label">Screen</span>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <div style="flex:1"></div>
-      <button class="${sideBySide ? 'active' : ''}" data-toggle-split>Compare</button>
-      <span class="presentation__toolbar-label" style="opacity:0.5">Styling exploration</span>
+      <span class="presentation__toolbar-reason">${themes[currentTheme].reason || ''}</span>
     </div>
-    <div class="presentation__toolbar-reason">${themes[currentTheme].reason || ''}</div>
   `
 }
 
@@ -235,13 +193,6 @@ function renderDefaultNav() {
   `
 }
 
-function applySplitTokens(elementId, tokens, mode) {
-  const el = document.getElementById(elementId)
-  if (!el) return
-  el.setAttribute('data-tokens', tokens)
-  el.setAttribute('data-mode', mode)
-}
-
 function bindToolbarEvents() {
   const themeSelect = document.querySelector('[data-set-theme]')
   if (themeSelect) {
@@ -259,22 +210,11 @@ function bindToolbarEvents() {
     })
   }
 
-  const compareSelect = document.querySelector('[data-set-compare]')
-  if (compareSelect) {
-    compareSelect.addEventListener('change', (e) => {
-      compareTheme = e.target.value
-      render()
-    })
-  }
-
   document.querySelectorAll('[data-set-iteration]').forEach(btn => {
     btn.addEventListener('click', () => {
       currentIteration = parseInt(btn.dataset.setIteration)
-      // Reset both theme and compareTheme to first in the new iteration
       const iterationThemes = Object.entries(themes).filter(([, t]) => t.iteration === currentIteration)
       if (iterationThemes.length > 0) currentTheme = iterationThemes[0][0]
-      if (iterationThemes.length > 1) compareTheme = iterationThemes[1][0]
-      else if (iterationThemes.length > 0) compareTheme = iterationThemes[0][0]
       render()
     })
   })
@@ -286,7 +226,6 @@ function bindToolbarEvents() {
   })
   document.querySelectorAll('[data-toggle-split]').forEach(btn => {
     btn.addEventListener('click', () => {
-      sideBySide = !sideBySide
       render()
     })
   })
