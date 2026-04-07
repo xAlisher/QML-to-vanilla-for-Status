@@ -10,6 +10,8 @@ export function renderSwapModal() {
         <div class="swap-modal__header">
           <div class="swap-modal__title-row">
             <span class="swap-modal__title">Swap</span>
+          </div>
+          <div class="swap-modal__header-right">
             <span class="swap-modal__network">
               On:
               <span class="swap-modal__network-filter">
@@ -17,8 +19,8 @@ export function renderSwapModal() {
                 <span class="swap-modal__network-indicator">▾</span>
               </span>
             </span>
+            <button class="swap-modal__close" title="Close">×</button>
           </div>
-          <button class="swap-modal__close" title="Close">×</button>
         </div>
 
         <div class="swap-modal__body">
@@ -36,7 +38,6 @@ export function renderSwapModal() {
                   <span class="swap-panel__token-symbol">ETH</span>
                   <span class="swap-panel__token-chevron">▾</span>
                 </div>
-                <div class="swap-panel__balance">Balance: 4.2091 ETH</div>
                 <button class="swap-panel__max-btn">Max. 4.2091</button>
               </div>
             </div>
@@ -61,7 +62,6 @@ export function renderSwapModal() {
                   <span class="swap-panel__token-symbol">DAI</span>
                   <span class="swap-panel__token-chevron">▾</span>
                 </div>
-                <div class="swap-panel__balance">Balance: 1,200.00 DAI</div>
               </div>
             </div>
           </div>

@@ -48,9 +48,58 @@ Captured at: 2026-04-06, mid-session. Resume from here.
 9. Message origin info (bridge messages only)
 10. Verification icons (need contact state data)
 
-## Screens 2-4: Pending Same-Level Audit
+## Screen 2: Swap Modal — Outstanding Fixes (from visual comparison 2026-04-07)
 
-Discover Communities, Swap Modal, Wallet Account were rebuilt from QML specs but have NOT been through the Layer 0 complexity audit + component inventory process. They likely have similar gaps to what we found in Screen 1 across 5 passes.
+### From Alisher's review (comparing mockup vs live app)
+
+1. **Header looks different**
+   - Live app: title row is inside the body (no border separator), network filter is a dropdown with full icon
+   - Mockup: title + "On:" + small badge in a bordered header section
+   - Need: remove header border, match network filter style to real app
+
+2. **Account selector missing**
+   - Live app: "Account 1" pill with emoji+color floats above dialog
+   - Mockup: not present (was EXCLUDED in inventory)
+   - Need: add account selector pill above dialog header
+
+3. **Max button looks different**
+   - Live app: "Max. 0.009441" as colored pill/link, right-aligned
+   - Mockup: "Max: 4.2091" as plain text
+   - Need: style as colored pill matching MaxSendButton QML (height 22, radius 20, primaryColor1 text)
+
+4. **Arrow/exchange button looks different**
+   - Live app: larger prominent circle with subtle border and shadow, sits between panels with overlap
+   - Mockup: simpler, smaller appearance, no shadow
+   - Need: match SwapExchangeButton.qml (44×44, indirectColor3 bg, directColor8 border) + add shadow
+
+5. **Network selector position and style wrong (round 2)**
+   - Live app: "On:" label and network dropdown are right-aligned in header row, dropdown has combobox chrome with proper spacing
+   - Mockup: network filter is inside title row but positioning/style still off vs prod
+   - Need: right-align "On:" + filter in title row, match combobox visual weight
+
+6. **Account selector cropped and wrong position (round 2)**
+   - Live app: account pill sits above and to the LEFT of the dialog, not centered
+   - Mockup: centered, cropped at top
+   - Need: left-align, ensure fully visible above dialog
+
+7. **Token ticker style wrong**
+   - Live app: token symbol is larger, bolder, with colored icon and dropdown chevron
+   - Mockup: token symbol styling doesn't match the visual weight of prod
+   - Need: verify font size (28px per QML), icon sizing (24×24), chevron style
+
+8. **Redundant "Balance:" text**
+   - Live app: no separate "Balance:" line — only "Max." button shown on Pay panel
+   - Mockup: shows both "Balance: X ETH" and "Max. X" — redundant
+   - Need: remove Balance text from Pay panel, keep only Max button
+
+9. **Footer divider is line not shadow**
+   - Live app: footer has a drop shadow at top (dropShadowEnabled: true in StatusDialogFooter)
+   - Mockup: uses border-top: 1px solid
+   - Need: replace border with box-shadow matching StatusDialogFooter dropShadow
+
+## Screens 3-4: Pending Same-Level Audit
+
+Discover Communities audit complete (2026-04-07). Wallet Account has NOT been through the Layer 0 complexity audit + component inventory process.
 
 ## Process Issue: No Enforcement Gate
 

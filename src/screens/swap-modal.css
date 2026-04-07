@@ -42,9 +42,8 @@
   background: var(--primary-color-1); /* account colorId default maps to primaryColor1 */
   cursor: pointer;
   position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -20px;
+  left: 16px; /* left-aligned above dialog, not centered */
   z-index: 3;
   white-space: nowrap;
   overflow: hidden;
@@ -78,14 +77,21 @@
   font-size: 10px;
 }
 
-/* Header: title row is inside body per QML (SwapModal.qml:196-231)
-   No border separator — title is first child of StatusScrollView ColumnLayout */
+/* Header: title row inside body (SwapModal.qml:196-231)
+   No border separator. Title left, On: + filter + close right */
 .swap-modal__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px; /* Theme.padding */
+  padding-top: 24px; /* extra space for account selector above */
   flex-shrink: 0;
+}
+
+.swap-modal__header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Title row: spacing 12 */
@@ -314,7 +320,8 @@
 
 /* Exchange button: 44x44, round, bg indirectColor3, border 1px directColor8
    icon: arrow-down (normal), arrow-up (hover)
-   hover bg: directColor8, hover border: directColor7 */
+   hover bg: directColor8, hover border: directColor7
+   (SwapExchangeButton.qml) */
 .swap-exchange-btn {
   position: absolute;
   top: 50%;
@@ -331,6 +338,7 @@
   justify-content: center;
   color: var(--base-color-1); /* icon.color */
   z-index: 2;
+  box-shadow: 0 2px 8px var(--drop-shadow); /* visual weight matching prod */
   transition: all 0.15s;
 }
 
@@ -362,7 +370,7 @@
   align-items: flex-end;
   justify-content: space-between;
   padding: 16px; /* Theme.padding */
-  border-top: 1px solid var(--separator);
+  box-shadow: 0 -2px 8px var(--drop-shadow); /* dropShadowEnabled: true per StatusDialogFooter */
   flex-shrink: 0;
   background: var(--base-color-3);
 }
