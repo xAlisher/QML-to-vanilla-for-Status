@@ -84,7 +84,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px; /* Theme.padding */
-  padding-top: 24px; /* extra space for account selector above */
+  /* topPadding: 0 per StatusScrollView (SwapModal.qml:186) — no extra header spacer */
   flex-shrink: 0;
 }
 
@@ -338,7 +338,7 @@
   justify-content: center;
   color: var(--base-color-1); /* icon.color */
   z-index: 2;
-  box-shadow: 0 2px 8px var(--drop-shadow); /* visual weight matching prod */
+  /* no shadow in SwapExchangeButton.qml — only bg, border, icon, hover */
   transition: all 0.15s;
 }
 
