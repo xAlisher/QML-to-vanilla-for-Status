@@ -6,7 +6,7 @@
    margins: topMargin=smallPadding(10), leftMargin=xlPadding*2(64), rightMargin=xlPadding(32)
    ColumnLayout spacing: 18 */
 .discover {
-  padding: 10px 32px 32px 64px; /* top:smallPadding right:xlPadding bottom:xlPadding*2 left:xlPadding*2 */
+  padding: 10px 32px 64px 64px; /* top:smallPadding right:xlPadding bottom:xlPadding*2 left:xlPadding*2 */
   overflow-y: auto;
   flex: 1;
   display: flex;
@@ -136,11 +136,12 @@
   border: 1px solid var(--direct-color-8);
   background: var(--card-color);
   position: relative;
+  box-shadow: 0 2px 20px var(--drop-shadow); /* DropShadow: vOffset 2, blur 20, color dropShadow (StatusCommunityCard.qml:217) */
   transition: box-shadow 0.2s;
 }
 
 .community-card:hover {
-  box-shadow: 0 2px 30px var(--drop-shadow-3);
+  box-shadow: 0 2px 30px var(--backdrop-color); /* hover: blur 30, color backdropColor (StatusCommunityCard.qml:218,221) */
 }
 
 /* Banner: 64px height, community color bg */
