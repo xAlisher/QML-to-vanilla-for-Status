@@ -1,0 +1,216 @@
+/* Current tokens — light mode — iteration 1 (compressed)
+   20 primitives → 134 semantic tokens via var() references
+   Scoped via [data-tokens="current-r1"][data-mode="light"] */
+
+[data-tokens="current-r1"][data-mode="light"] {
+
+  /* =============================================
+     PRIMITIVES (20 core colors)
+     ============================================= */
+
+  /* --- Neutrals (7) --- */
+  --p-surface-0: #FFFFFF;        /* page bg, cards, modals */
+  --p-surface-1: #F6F8FA;        /* secondary panels */
+  --p-surface-2: #EEF2F5;        /* borders, hover bg */
+  --p-surface-3: #E9EDF1;        /* active/selected bg */
+  --p-surface-4: #E2E6E8;        /* strong dividers */
+  --p-text: #000000;             /* primary text */
+  --p-text-secondary: #939BA1;   /* labels, placeholders */
+
+  /* --- Brand (4) --- */
+  --p-brand: #4360DF;            /* primary action */
+  --p-brand-10: #4360DF1A;       /* ghost fills */
+  --p-brand-20: #4360DF33;       /* secondary bg */
+  --p-brand-subtle: #ECEFFB;     /* nav bg, tint */
+
+  /* --- Status (5) --- */
+  --p-success: #4EBC60;
+  --p-danger: #FF2D55;
+  --p-warning: #F6793C;
+  --p-mention: #0DA4C9;
+  --p-pin: #FE8F59;
+
+  /* --- Overlay (4) --- */
+  --p-overlay: rgba(0, 0, 0, 0.4);
+  --p-shadow-1: rgba(0, 34, 51, 0.03);
+  --p-shadow-2: rgba(9, 16, 28, 0.02);
+  --p-shadow-3: rgba(0, 0, 0, 0.15);
+
+  /* =============================================
+     SEMANTIC TOKENS (134, mapped to primitives)
+     ============================================= */
+
+  /* === Base colors === */
+  --base-color-1: var(--p-text-secondary);
+  --base-color-2: var(--p-surface-2);
+  --base-color-3: var(--p-surface-3);
+  --base-color-4: var(--p-surface-1);
+  --base-color-5: #F0F2F5;
+
+  /* === Primary === */
+  --primary-color-1: var(--p-brand);
+  --primary-color-2: var(--p-brand-20);
+  --primary-color-3: var(--p-brand-10);
+
+  /* === Danger === */
+  --danger-color-1: var(--p-danger);
+  --danger-color-2: #FF2D5533;
+  --danger-color-3: #FF2D551A;
+
+  /* === Warning === */
+  --warning-color-1: var(--p-warning);
+  --warning-color-2: #F6793C33;
+  --warning-color-3: #F6793C1A;
+
+  /* === Success === */
+  --success-color-1: var(--p-success);
+  --success-color-2: #4EBC601A;
+  --success-color-3: #4EBC6033;
+
+  /* === Mention === */
+  --mention-color-1: var(--p-mention);
+  --mention-color-2: #07BCE94D;
+  --mention-color-3: #07BCE933;
+  --mention-color-4: #07BCE91A;
+
+  /* === Pin === */
+  --pin-color-1: var(--p-pin);
+  --pin-color-2: #FF9F0F33;
+  --pin-color-3: #FF9F0F1A;
+
+  /* === Direct (foreground opacity scale from --p-text) === */
+  --direct-color-1: var(--p-text);
+  --direct-color-2: #000000E6;
+  --direct-color-3: #000000CC;
+  --direct-color-4: #000000B3;
+  --direct-color-5: #00000066;
+  --direct-color-6: #0000004D;
+  --direct-color-7: #0000001A;
+  --direct-color-8: #0000000D;
+  --direct-color-9: #00000033;
+
+  /* === Indirect (inverse foreground) === */
+  --indirect-color-1: var(--p-surface-0);
+  --indirect-color-2: #FFFFFFB3;
+  --indirect-color-3: #FFFFFF66;
+  --indirect-color-4: var(--p-surface-0);
+
+  /* === Misc (identity colors — outside 20 primitives) === */
+  --misc-color-1: #2946C4;
+  --misc-color-2: #887AF9;
+  --misc-color-3: #51D0F0;
+  --misc-color-4: #D37EF4;
+  --misc-color-5: #FA6565;
+  --misc-color-6: #FE8F59;
+  --misc-color-7: #FFCA0F;
+  --misc-color-8: #7CDA00;
+  --misc-color-9: #26A69A;
+  --misc-color-10: #8B3131;
+  --misc-color-11: #9B832F;
+  --misc-color-12: #9EA85D;
+
+  /* === Surfaces === */
+  --background: var(--p-surface-0);
+  --background-hover: var(--p-surface-2);
+  --card-color: var(--p-surface-0);
+  --border: var(--p-surface-2);
+  --separator: var(--p-surface-2);
+  --text-color: var(--p-text);
+  --secondary-text: var(--p-text-secondary);
+  --secondary-background: var(--p-brand-20);
+  --secondary-menu-background: var(--p-surface-1);
+  --dark-grey: var(--p-text-secondary);
+
+  /* === Shadows === */
+  --drop-shadow: var(--p-shadow-1);
+  --drop-shadow-2: var(--p-shadow-2);
+  --drop-shadow-3: var(--p-shadow-3);
+  --backdrop-color: var(--p-overlay);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: #CDF2FB;
+  --message-highlight-color: rgba(67, 96, 223, 0.2);
+  --desktop-blue-10: var(--p-brand-subtle);
+
+  /* === Other === */
+  --neutral-95: #0D1625;
+  --block-progress-bar-color: var(--p-surface-3);
+
+  /* === Component tokens === */
+  --app-layout-bg: var(--p-surface-0);
+  --app-layout-right-panel-bg: var(--p-surface-0);
+  --app-nav-bar-bg: var(--p-brand-subtle);
+  --toast-message-bg: var(--p-surface-0);
+  --list-item-bg: var(--p-surface-0);
+  --list-item-secondary-hover-bg: #ECEFFC;
+  --list-item-highlight: #4360DF0D;
+  --chat-list-item-hover-bg: var(--p-surface-2);
+  --chat-list-item-selected-bg: var(--p-surface-3);
+  --chat-list-category-button-hover-bg: #0000000D;
+  --nav-list-item-hover-bg: var(--p-surface-2);
+  --nav-list-item-selected-bg: var(--p-surface-3);
+  --badge-foreground: var(--p-surface-0);
+  --badge-border: var(--p-surface-1);
+  --badge-hover-border: #DDE3F3;
+  --menu-bg: var(--p-surface-0);
+  --menu-hover-bg: var(--p-surface-2);
+  --menu-separator: var(--p-surface-2);
+  --modal-bg: var(--p-surface-0);
+  --rounded-image-bg: var(--p-surface-0);
+  --chat-input-secondary-bg: var(--p-surface-4);
+  --switch-tab-button-bg: var(--p-brand);
+  --switch-tab-bar-bg: var(--p-brand-10);
+  --switch-tab-selected-text: var(--p-surface-0);
+  --switch-tab-text: var(--p-brand);
+  --select-menu-item-bg: var(--p-surface-0);
+  --select-menu-item-hover-bg: var(--p-surface-2);
+  --message-emoji-reaction-bg: var(--p-surface-2);
+  --message-emoji-reaction-bg-hovered: var(--p-brand-20);
+  --message-emoji-reaction-border-hovered: var(--p-brand-10);
+
+  /* === Privacy === */
+  --privacy-primary: #BEBCF9;
+  --privacy-secondary: #D6D7F7;
+  --privacy-tertiary: #201C76;
+  --privacy-tertiary-opaque: #201C764D;
+  --privacy-icon-color: #647084;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors === */
+  --black-hovered: #1D232E;
+  --blue-hovered: #364DB2;
+  --purple-hovered: #6D62C7;
+  --cyan-hovered: #41A6C0;
+  --violet-hovered: #A965C3;
+  --red-hovered: #C85151;
+  --yellow-hovered: #CCA20C;
+  --green-hovered: #63AE00;
+  --moss-hovered: #1E857B;
+  --brown-hovered: #6F2727;
+  --brown2-hovered: #7C6926;
+}
