@@ -165,6 +165,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2; /* QML: z: content.z + 1 — logo renders above content card (StatusCommunityCard.qml:267) */
 }
 
 .community-card__avatar-inner {
