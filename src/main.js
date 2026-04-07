@@ -31,19 +31,19 @@ import { renderWalletAccount } from './screens/wallet-account.js'
 
 // --- Theme registry ---
 const themes = {
-  'current-light':  { label: 'Current Light',           tokens: 'current', mode: 'light', iteration: 0 },
-  'current-dark':   { label: 'Current Dark',            tokens: 'current', mode: 'dark',  iteration: 0 },
-  'concept-light':  { label: 'Concept A Light',         tokens: 'concept', mode: 'light', iteration: 0 },
-  'concept-dark':   { label: 'Concept A Dark',          tokens: 'concept', mode: 'dark',  iteration: 0 },
-  'nord-dark':      { label: 'Nord Dark',               tokens: 'nord',    mode: 'dark',  iteration: 0 },
-  'dracula-dark':   { label: 'Dracula Dark',            tokens: 'dracula', mode: 'dark',  iteration: 0 },
-  'monokai-dark':   { label: 'Monokai Dark',            tokens: 'monokai', mode: 'dark',  iteration: 0 },
-  'logos-light':    { label: 'Logos Light',              tokens: 'logos',   mode: 'light', iteration: 0 },
-  'solarized-dark': { label: 'Solarized Dark',          tokens: 'solarized', mode: 'dark', iteration: 0 },
-  'hacker-dark':    { label: 'Hacker Dark',             tokens: 'hacker',  mode: 'dark',  iteration: 0 },
-  'basecamp-dark':  { label: 'Basecamp Dark',           tokens: 'basecamp', mode: 'dark', iteration: 0 },
-  'neo-dark':       { label: 'Neo Dark',                tokens: 'neo',      mode: 'dark', iteration: 0 },
-  'neo-light':      { label: 'Neo Light',               tokens: 'neo',      mode: 'light', iteration: 0 },
+  'current-light':  { label: 'Current Light 70',         tokens: 'current', mode: 'light', iteration: 0 },
+  'current-dark':   { label: 'Current Dark 67',          tokens: 'current', mode: 'dark',  iteration: 0 },
+  'concept-light':  { label: 'Concept A Light 65',       tokens: 'concept', mode: 'light', iteration: 0 },
+  'concept-dark':   { label: 'Concept A Dark 69',        tokens: 'concept', mode: 'dark',  iteration: 0 },
+  'nord-dark':      { label: 'Nord Dark 52',             tokens: 'nord',    mode: 'dark',  iteration: 0 },
+  'dracula-dark':   { label: 'Dracula Dark 55',          tokens: 'dracula', mode: 'dark',  iteration: 0 },
+  'monokai-dark':   { label: 'Monokai Dark 53',          tokens: 'monokai', mode: 'dark',  iteration: 0 },
+  'logos-light':    { label: 'Logos Light 75',            tokens: 'logos',   mode: 'light', iteration: 0 },
+  'solarized-dark': { label: 'Solarized Dark 46',        tokens: 'solarized', mode: 'dark', iteration: 0 },
+  'hacker-dark':    { label: 'Hacker Dark 47',           tokens: 'hacker',  mode: 'dark',  iteration: 0 },
+  'basecamp-dark':  { label: 'Basecamp Dark 60',         tokens: 'basecamp', mode: 'dark', iteration: 0 },
+  'neo-dark':       { label: 'Neo Dark 56',              tokens: 'neo',      mode: 'dark', iteration: 0 },
+  'neo-light':      { label: 'Neo Light 57',             tokens: 'neo',      mode: 'light', iteration: 0 },
 }
 
 // --- Iterations (derived from theme registry) ---
