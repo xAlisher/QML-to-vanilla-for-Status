@@ -126,17 +126,23 @@
 }
 
 /* NetworkFilter: StatusComboBox Size.Small, bg height 38
-   contentItem: 24×24 network icon + indicator
-   (NetworkFilter.qml:26-86, control.padding 12, rightPadding 36) */
+   StatusComboboxBackground: transparent normal, directColor8 hover
+   border: 1px directColor7, radius Theme.radius
+   (StatusComboboxBackground.qml:10-13, NetworkFilter.qml:56-59) */
 .swap-modal__network-filter {
   display: flex;
   align-items: center;
   height: 38px;
   padding: 7px 36px 7px 12px; /* topPadding 7, padding 12, rightPadding 36 for indicator */
   border-radius: var(--radius);
-  background: var(--base-color-4);
+  background: transparent; /* StatusComboboxBackground color: transparent (normal) */
+  border: 1px solid var(--direct-color-7); /* border.color: directColor7 */
   cursor: pointer;
   position: relative;
+}
+
+.swap-modal__network-filter:hover {
+  background: var(--direct-color-8); /* active: directColor8 */
 }
 
 /* 24×24 network image (NetworkFilter.qml:90-98, Assets.svg(iconUrl)) */
