@@ -2,17 +2,20 @@ export function renderSwapModal() {
   const center = `
     <div class="swap-backdrop">
       <div class="swap-modal">
-        <div class="swap-modal__account-selector">
-          <span class="swap-modal__account-emoji">🏦</span>
-          Account 1 ▾
+        <div class="swap-modal__account-selector" style="background:#4360DF">
+          <span class="swap-modal__account-identicon">🏦</span>
+          <span class="swap-modal__account-name" style="color:#fff">Account 1</span>
+          <span style="color:rgba(255,255,255,0.7);padding-right:8px">▾</span>
         </div>
         <div class="swap-modal__header">
           <div class="swap-modal__title-row">
             <span class="swap-modal__title">Swap</span>
             <span class="swap-modal__network">
               On:
-              <span class="swap-modal__network-badge">E</span>
-              ▾
+              <span class="swap-modal__network-filter">
+                <span class="swap-modal__network-icon">E</span>
+                <span class="swap-modal__network-indicator">▾</span>
+              </span>
             </span>
           </div>
           <button class="swap-modal__close" title="Close">×</button>
