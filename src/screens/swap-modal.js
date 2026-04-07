@@ -71,7 +71,9 @@ export function renderSwapModal() {
             <span class="swap-modal__footer-label">Max slippage:</span>
             <div class="swap-modal__footer-value-row">
               <span class="swap-modal__footer-value">0.5%</span>
-              <button class="swap-modal__footer-edit">Edit</button>
+              <button class="swap-modal__footer-edit" title="Edit slippage">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2M1 11l.5-2L9 1.5l2 2L3.5 11l-2 .5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
           </div>
           <div class="swap-modal__footer-right">
@@ -79,7 +81,10 @@ export function renderSwapModal() {
               <span class="swap-modal__fees-label">Max fees:</span>
               <span class="swap-modal__fees-value">$12.45</span>
             </div>
-            <button class="swap-modal__submit">Swap</button>
+            <button class="swap-modal__submit">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8a4 4 0 018 0M8 4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 8h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Swap
+            </button>
           </div>
         </div>
       </div>
