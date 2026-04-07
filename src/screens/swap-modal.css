@@ -282,11 +282,12 @@
   margin-left: 4px;
 }
 
-/* Footer: StatusDialogFooter, padding Theme.padding(16), bg baseColor3
-   dropShadow: verticalOffset -2, color dropShadow */
+/* Footer: StatusDialogFooter — nested column layout per QML (SwapModal.qml:458-592)
+   leftButtons: ColumnLayout (label above, value+edit below)
+   rightButtons: RowLayout spacing bigPadding(24) (fees column + Swap button) */
 .swap-modal__footer {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 16px; /* Theme.padding */
   border-top: 1px solid var(--separator);
@@ -294,10 +295,11 @@
   background: var(--base-color-3);
 }
 
+/* Left: ColumnLayout, spacing 0 (SwapModal.qml:462-491) */
 .swap-modal__footer-left {
   display: flex;
-  align-items: center;
-  gap: 8px; /* halfPadding */
+  flex-direction: column;
+  gap: 0;
   font-size: var(--font-size-additional); /* additionalTextSize */
 }
 
@@ -307,12 +309,19 @@
   font-weight: 500;
 }
 
+/* Value + edit row (SwapModal.qml:471-490) */
+.swap-modal__footer-value-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .swap-modal__footer-value {
   color: var(--direct-color-4);
   font-weight: 500;
 }
 
-/* Edit button: icon edit_pencil, Tiny size, directColor5 */
+/* Edit button: icon edit_pencil, Tiny size, directColor5 (SwapModal.qml:479-489) */
 .swap-modal__footer-edit {
   color: var(--direct-color-5);
   background: none;
@@ -326,14 +335,22 @@
   color: var(--direct-color-1);
 }
 
+/* Right: RowLayout, spacing bigPadding(24) (SwapModal.qml:494-496) */
 .swap-modal__footer-right {
   display: flex;
-  align-items: center;
-  gap: 16px; /* padding */
+  align-items: flex-end;
+  gap: 24px; /* Theme.bigPadding */
 }
 
-.swap-modal__fees {
+/* Fees column: ColumnLayout (SwapModal.qml:497-545) */
+.swap-modal__fees-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   font-size: var(--font-size-additional);
+}
+
+.swap-modal__fees-label {
   color: var(--direct-color-5);
   font-weight: 500;
 }
