@@ -14,6 +14,8 @@ import './tokens/neo-dark.css'
 import './tokens/neo-light.css'
 import './tokens/v1-light.css'
 import './tokens/v1-dark.css'
+import './tokens/quiet-light.css'
+import './tokens/quiet-dark.css'
 import './tokens/fonts.css'
 
 // Shell styles
@@ -48,6 +50,8 @@ const themes = {
   'neo-light':      { label: 'Neo Light (57)',       tokens: 'neo',       mode: 'light', iteration: 0, reason: 'Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
   'v1-light':       { label: 'Legacy v1 Light (68)', tokens: 'v1',        mode: 'light', iteration: 0, reason: 'Status v1 (mobile) palette. Navy-tinted neutrals with teal success — the original identity before the desktop redesign. Reference: https://github.com/status-im/status-legacy' },
   'v1-dark':        { label: 'Legacy v1 Dark (63)',  tokens: 'v1',        mode: 'dark',  iteration: 0, reason: 'Status v1 dark mode. Deep navy darks (#131D2F) instead of pure gray — more character, better side-viewer protection. Reference: https://github.com/status-im/status-legacy' },
+  'quiet-light':    { label: 'Quiet Authority Light (65)', tokens: 'quiet', mode: 'light', iteration: 0, reason: 'Near-monochrome editorial. Single indigo accent on cool slate — reads like documentation, communicates calm authority and trust.' },
+  'quiet-dark':     { label: 'Quiet Authority Dark (54)',  tokens: 'quiet', mode: 'dark',  iteration: 0, reason: 'Deep charcoal editorial. Minimal indigo accent — maximum restraint, zero visual noise, strong side-viewer protection.' },
 }
 
 // --- Iterations (derived from theme registry) ---
