@@ -60,7 +60,7 @@
   --indirect-color-4: #282A36;
 
   /* === Misc (avatar/accent palette) === */
-  --misc-color-1: #BD93F9;
+  --misc-color-1: #8BA4F8;
   --misc-color-2: #FF79C6;
   --misc-color-3: #8BE9FD;
   --misc-color-4: #FF5555;
@@ -81,7 +81,7 @@
   --separator: #F8F8F21A;
   --text-color: #F8F8F2;
   --secondary-text: #6272A4;
-  --secondary-background: #BD93F94D;
+  --secondary-background: #8BA4F84D;
   --secondary-menu-background: #21222C;
   --dark-grey: #44475A;
 
@@ -106,8 +106,8 @@
   --app-nav-bar-bg: #44475A;
   --toast-message-bg: #282A36;
   --list-item-bg: #282A36;
-  --list-item-secondary-hover-bg: #BD93F933;
-  --list-item-highlight: #BD93F90D;
+  --list-item-secondary-hover-bg: #8BA4F833;
+  --list-item-highlight: #8BA4F80D;
   --chat-list-item-hover-bg: #F8F8F20D;
   --chat-list-item-selected-bg: #F8F8F21A;
   --chat-list-category-button-hover-bg: #F8F8F21A;
@@ -122,15 +122,15 @@
   --modal-bg: #282A36;
   --rounded-image-bg: #282A36;
   --chat-input-secondary-bg: #383A4A;
-  --switch-tab-button-bg: #BD93F9;
-  --switch-tab-bar-bg: #BD93F933;
+  --switch-tab-button-bg: #8BA4F8;
+  --switch-tab-bar-bg: #8BA4F833;
   --switch-tab-selected-text: #282A36;
-  --switch-tab-text: #BD93F9;
+  --switch-tab-text: #8BA4F8;
   --select-menu-item-bg: #282A36;
   --select-menu-item-hover-bg: #F8F8F21A;
   --message-emoji-reaction-bg: #44475A;
-  --message-emoji-reaction-bg-hovered: #BD93F933;
-  --message-emoji-reaction-border-hovered: #BD93F94D;
+  --message-emoji-reaction-bg-hovered: #8BA4F833;
+  --message-emoji-reaction-border-hovered: #8BA4F84D;
 
   /* === Privacy === */
   --privacy-primary: #2B2640;
