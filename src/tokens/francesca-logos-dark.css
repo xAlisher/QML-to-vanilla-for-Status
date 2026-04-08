@@ -81,7 +81,7 @@
   --text-color: #d6d5d0;
   --secondary-text: #83979f;
   --secondary-background: #b8cbd233;
-  --secondary-menu-background: #1a1d1e;   /* slightly darker left panel */
+  --secondary-menu-background: #232628;   /* surface-1 for left panel */
   --dark-grey: #282c2f;
 
   /* === Shadows === */
@@ -102,7 +102,7 @@
   /* === Component tokens === */
   --app-layout-bg: #1e2122;
   --app-layout-right-panel-bg: #1e2122;
-  --app-nav-bar-bg: #171a1b;   /* darker nav sidebar */
+  --app-nav-bar-bg: #363a35;   /* brand-subtle — greenish tint matching Francesca's screenshot */
   --toast-message-bg: #232628;
   --list-item-bg: #1e2122;
   --list-item-secondary-hover-bg: #b8cbd226;
