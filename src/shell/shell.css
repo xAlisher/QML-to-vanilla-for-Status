@@ -275,6 +275,14 @@ html, body, #app {
   flex-direction: column;
 }
 
+.phone-frame__screen *::-webkit-scrollbar {
+  display: none;
+}
+
+.phone-frame__screen * {
+  scrollbar-width: none;
+}
+
 .phone-frame__home {
   height: 20px;
   display: flex;
