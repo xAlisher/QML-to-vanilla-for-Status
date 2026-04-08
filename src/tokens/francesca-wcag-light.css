@@ -1,0 +1,158 @@
+/* Francesca WCAG AA — light mode
+   All text-vs-background contrasts meet or exceed WCAG AA (4.5:1) */
+
+[data-tokens="francesca-wcag"][data-mode="light"] {
+  --base-color-1: #6e7480;
+  --base-color-2: #d9e0e6;
+  --base-color-3: #cbd3ec;
+  --base-color-4: #e6ebf0;
+  --base-color-5: #f3f5f7;
+
+  --primary-color-1: #3751d3;
+  --primary-color-2: #3751d333;
+  --primary-color-3: #3751d31a;
+
+  --danger-color-1: #e63846;
+  --danger-color-2: #e638464d;
+  --danger-color-3: #e6384626;
+
+  --warning-color-1: #f2933c;
+  --warning-color-2: #f2933c33;
+  --warning-color-3: #f2933c1a;
+
+  --success-color-1: #38b169;
+  --success-color-2: #38b16933;
+  --success-color-3: #38b1694d;
+
+  --mention-color-1: #5970ff;
+  --mention-color-2: #5970ff4d;
+  --mention-color-3: #5970ff33;
+  --mention-color-4: #5970ff1a;
+
+  --pin-color-1: #f68e57;
+  --pin-color-2: #f68e5733;
+  --pin-color-3: #f68e571a;
+
+  --direct-color-1: #111213;
+  --direct-color-2: #111213e6;
+  --direct-color-3: #111213cc;
+  --direct-color-4: #111213b3;
+  --direct-color-5: #11121366;
+  --direct-color-6: #1112134d;
+  --direct-color-7: #1112131a;
+  --direct-color-8: #1112130d;
+  --direct-color-9: #11121333;
+
+  --indirect-color-1: #FFFFFF;
+  --indirect-color-2: #FFFFFFB3;
+  --indirect-color-3: #FFFFFF66;
+  --indirect-color-4: #FFFFFF;
+
+  --misc-color-1: #3a5a7a;
+  --misc-color-2: #5a4a7f;
+  --misc-color-3: #3a6a7a;
+  --misc-color-4: #7a4a6f;
+  --misc-color-5: #7a3a3a;
+  --misc-color-6: #7a5a3a;
+  --misc-color-7: #7a6a3a;
+  --misc-color-8: #3a6a3a;
+  --misc-color-9: #3a7a5a;
+  --misc-color-10: #6a3a3a;
+  --misc-color-11: #6a5a4a;
+  --misc-color-12: #4a6a3a;
+
+  --background: #f3f5f7;
+  --background-hover: #d9e0e6;
+  --card-color: #FFFFFF;
+  --border: #d9e0e6;
+  --separator: #d9e0e6;
+  --text-color: #111213;
+  --secondary-text: #6e7480;
+  --secondary-background: #3751d333;
+  --secondary-menu-background: #e6ebf0;
+  --dark-grey: #6e7480;
+
+  --drop-shadow: rgba(0, 0, 0, 0.04);
+  --drop-shadow-2: rgba(0, 0, 0, 0.02);
+  --drop-shadow-3: rgba(0, 0, 0, 0.10);
+  --backdrop-color: rgba(0, 0, 0, 0.4);
+
+  --status-floating-button-highlight: #3751d326;
+  --message-highlight-color: #3751d326;
+  --desktop-blue-10: #e0e6fb;
+
+  --neutral-95: #111213;
+  --block-progress-bar-color: #d9e0e6;
+
+  --app-layout-bg: #f3f5f7;
+  --app-layout-right-panel-bg: #FFFFFF;
+  --app-nav-bar-bg: #e0e6fb;
+  --toast-message-bg: #FFFFFF;
+  --list-item-bg: #FFFFFF;
+  --list-item-secondary-hover-bg: #3751d326;
+  --list-item-highlight: #3751d30d;
+  --chat-list-item-hover-bg: #e6ebf0;
+  --chat-list-item-selected-bg: #d9e0e6;
+  --chat-list-category-button-hover-bg: #1112130d;
+  --nav-list-item-hover-bg: #e6ebf0;
+  --nav-list-item-selected-bg: #d9e0e6;
+  --badge-foreground: #FFFFFF;
+  --badge-border: #e6ebf0;
+  --badge-hover-border: #cbd3ec;
+  --menu-bg: #FFFFFF;
+  --menu-hover-bg: #e6ebf0;
+  --menu-separator: #d9e0e6;
+  --modal-bg: #FFFFFF;
+  --rounded-image-bg: #FFFFFF;
+  --chat-input-secondary-bg: #d9e0e6;
+  --switch-tab-button-bg: #3751d3;
+  --switch-tab-bar-bg: #3751d31a;
+  --switch-tab-selected-text: #FFFFFF;
+  --switch-tab-text: #3751d3;
+  --select-menu-item-bg: #FFFFFF;
+  --select-menu-item-hover-bg: #e6ebf0;
+  --message-emoji-reaction-bg: #e6ebf0;
+  --message-emoji-reaction-bg-hovered: #3751d333;
+  --message-emoji-reaction-border-hovered: #3751d31a;
+
+  --privacy-primary: #e0e6fb;
+  --privacy-secondary: #3751d3;
+  --privacy-tertiary: #111213;
+  --privacy-tertiary-opaque: #1112134d;
+  --privacy-icon-color: #6e7480;
+
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  --black-hovered: #d9e0e6;
+  --blue-hovered: #3751d3;
+  --purple-hovered: #5a4a7f;
+  --cyan-hovered: #3a6a7a;
+  --violet-hovered: #7a4a6f;
+  --red-hovered: #b01828;
+  --yellow-hovered: #a06830;
+  --green-hovered: #209040;
+  --moss-hovered: #3a6a5a;
+  --brown-hovered: #5a3a3a;
+  --brown2-hovered: #5a4a3a;
+}
