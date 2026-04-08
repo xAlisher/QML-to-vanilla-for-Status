@@ -236,6 +236,115 @@ html, body, #app {
   min-width: 60px;
 }
 
+/* === Phone frame (mobile view) === */
+.phone-frame {
+  width: 412px;
+  height: 860px;
+  border-radius: 40px;
+  border: 3px solid var(--direct-color-7);
+  background: var(--background);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  margin: 16px auto;
+}
+
+.phone-frame__notch {
+  height: 32px;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.phone-frame__notch::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--direct-color-7);
+}
+
+.phone-frame__screen {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-frame__home {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.phone-frame__home::after {
+  content: '';
+  width: 120px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--direct-color-7);
+}
+
+/* Mobile shell layout */
+.shell--mobile {
+  flex-direction: column;
+}
+
+.shell--mobile .shell__nav,
+.shell--mobile .shell__left,
+.shell--mobile .shell__right {
+  display: none;
+}
+
+.shell--mobile .shell__center {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.shell__mobile-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--app-layout-right-panel-bg);
+}
+
+.shell__mobile-tabs {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--secondary-menu-background);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  padding: 0 16px;
+}
+
+.shell__mobile-tab {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: var(--base-color-1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shell__mobile-tab:hover {
+  background: var(--background-hover);
+}
+
+.shell__mobile-tab.active {
+  color: var(--primary-color-1);
+}
+
 /* === Side-by-side === */
 .presentation__split {
   flex: 1;

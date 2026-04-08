@@ -215,6 +215,7 @@ const primitives = [
 let currentScreen = 'community-channel'
 let currentTheme = 'current-dark'
 let currentFont = 'default'
+let currentView = 'desktop' // desktop or mobile
 let sideBySide = false
 let compareTheme = 'current-dark'
 let customizerOpen = false
@@ -273,18 +274,38 @@ function render() {
     applySplitTokens('split-left', tokens, mode)
     applySplitTokens('split-right', compare.tokens, compare.mode)
   } else {
-    app.innerHTML = `
-      <div class="presentation">
-        ${renderToolbar()}
-        <div class="presentation__main">
-          <div class="presentation__screen-area">
-            <div class="shell" id="main-shell"></div>
+    if (currentView === 'mobile') {
+      app.innerHTML = `
+        <div class="presentation">
+          ${renderToolbar()}
+          <div class="presentation__main">
+            <div class="presentation__screen-area" style="justify-content:center;background:var(--base-color-5)">
+              <div class="phone-frame">
+                <div class="phone-frame__notch"></div>
+                <div class="phone-frame__screen">
+                  <div class="shell shell--mobile" id="main-shell"></div>
+                </div>
+                <div class="phone-frame__home"></div>
+              </div>
+            </div>
           </div>
-          ${customizerOpen ? renderCustomizer() : ''}
         </div>
-      </div>
-    `
-    document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
+      `
+      document.getElementById('main-shell').innerHTML = renderMobileShellInner(screenFn)
+    } else {
+      app.innerHTML = `
+        <div class="presentation">
+          ${renderToolbar()}
+          <div class="presentation__main">
+            <div class="presentation__screen-area">
+              <div class="shell" id="main-shell"></div>
+            </div>
+            ${customizerOpen ? renderCustomizer() : ''}
+          </div>
+        </div>
+      `
+      document.getElementById('main-shell').innerHTML = renderShellInner(screenFn)
+    }
   }
 
   bindToolbarEvents()
@@ -378,6 +399,10 @@ function renderToolbar() {
       <select class="presentation__toolbar-select" data-set-iteration>${iterationOptions}</select>
       <select class="presentation__toolbar-select" data-set-theme>${themeOptions}</select>
       <select class="presentation__toolbar-select" data-set-font>${fontOptions}</select>
+      <select class="presentation__toolbar-select" data-set-view>
+        <option value="desktop" ${currentView === 'desktop' ? 'selected' : ''}>Desktop</option>
+        <option value="mobile" ${currentView === 'mobile' ? 'selected' : ''}>Mobile</option>
+      </select>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <button class="${sideBySide ? 'active' : ''}" data-toggle-split>Compare</button>
       ${sideBySide ? `<select class="presentation__toolbar-select" data-set-compare>${compareOptions}</select>` : ''}
@@ -396,6 +421,22 @@ function renderShellInner(screenFn) {
       ${center}
     </div>
     ${right ? `<div class="shell__right">${right}</div>` : ''}
+  `
+}
+
+function renderMobileShellInner(screenFn) {
+  const { nav, left, center, right } = screenFn()
+  // Mobile: show center panel only (full width), with bottom tab bar
+  return `
+    <div class="shell__mobile-content">
+      ${center}
+    </div>
+    <div class="shell__mobile-tabs">
+      <button class="shell__mobile-tab active" title="Messages"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2.3C17.36 2.3 21.7 6.64 21.7 12V18C21.7 20.04 20.04 21.7 18 21.7H12C6.64 21.7 2.3 17.36 2.3 12C2.3 6.64 6.64 2.3 12 2.3Z" stroke="currentColor" stroke-width="1.4"/></svg></button>
+      <button class="shell__mobile-tab" title="Communities"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M11 21C11 18.35 12.05 15.8 13.93 13.93C15.8 12.05 18.35 11 21 11M7 21C7 17.29 8.47 13.73 11.1 11.1C13.73 8.48 17.29 7 21 7M15.47 18.66C15.77 17.96 16.2 17.31 16.76 16.76C17.31 16.21 17.96 15.77 18.66 15.47C19.95 14.93 20.6 14.65 20.8 14.35C21 14.05 21 13.57 21 12.6V5.4C21 4.24 21 3.67 20.59 3.31C20.18 2.95 19.66 3.02 18.61 3.16C10.54 4.21 4.21 10.54 3.15 18.61C3.02 19.66 2.95 20.18 3.31 20.59C3.67 21 4.24 21 5.4 21H12.6C13.57 21 14.05 21 14.35 20.8C14.65 20.6 14.93 19.95 15.47 18.66Z" stroke="currentColor" stroke-width="1.4"/></svg></button>
+      <button class="shell__mobile-tab" title="Wallet"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 1.8C14.13 1.8 15.84 1.86 17.19 2.1C18.55 2.34 19.63 2.77 20.43 3.57C21.23 4.37 21.66 5.45 21.9 6.81C22.12 8.03 22.18 9.54 22.19 11.38C22.2 11.5 22.2 11.5 22.2 11.5C22.2 11.66 22.2 11.83 22.2 12C22.2 12.1 22.2 12.2 22.2 12.3C22.2 12.36 22.2 12.43 22.2 12.5C22.19 14.4 22.12 15.94 21.9 17.19C21.66 18.55 21.23 19.63 20.43 20.43C19.63 21.23 18.55 21.66 17.19 21.9C15.84 22.14 14.13 22.2 12 22.2C9.87 22.2 8.16 22.14 6.81 21.9C5.45 21.66 4.37 21.23 3.57 20.43C2.77 19.63 2.34 18.55 2.1 17.19C1.88 15.94 1.81 14.4 1.81 12.5C1.8 12.43 1.8 12.36 1.8 12.3C1.8 12.2 1.8 12.1 1.8 12C1.8 11.83 1.8 11.66 1.81 11.5C1.8 11.46 1.8 11.42 1.81 11.38C1.82 9.54 1.89 8.03 2.1 6.81C2.34 5.45 2.77 4.37 3.57 3.57C4.37 2.77 5.45 2.34 6.81 2.1C8.16 1.86 9.87 1.8 12 1.8Z" stroke="currentColor" stroke-width="1.4"/></svg></button>
+      <button class="shell__mobile-tab" title="Browser"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="currentColor" stroke-width="1.4"/><path d="M9.99 10.55L8.55 15.33C8.53 15.4 8.6 15.47 8.67 15.45L13.94 14.02C13.98 14.01 14.01 13.98 14.02 13.94L15.45 8.69C15.47 8.61 15.39 8.54 15.32 8.57L10.05 10.48C10.02 10.49 9.99 10.52 9.99 10.55Z" stroke="currentColor" stroke-width="1.4"/></svg></button>
+    </div>
   `
 }
 
@@ -470,6 +511,15 @@ function bindToolbarEvents() {
       render()
     })
   })
+  const viewSelect = document.querySelector('[data-set-view]')
+  if (viewSelect) {
+    viewSelect.addEventListener('change', (e) => {
+      currentView = e.target.value
+      sideBySide = false
+      customizerOpen = false
+      render()
+    })
+  }
   document.querySelectorAll('[data-toggle-split]').forEach(btn => {
     btn.addEventListener('click', () => {
       sideBySide = !sideBySide
