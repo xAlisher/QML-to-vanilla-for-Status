@@ -1,0 +1,24 @@
+{
+  "surface": {
+    "0": { "$type": "color", "$value": "#2C2C2C", "$description": "Page bg, cards, modals" },
+    "1": { "$type": "color", "$value": "#252525", "$description": "Secondary panels" },
+    "2": { "$type": "color", "$value": "#373737", "$description": "Borders, hover bg" },
+    "3": { "$type": "color", "$value": "#2C2C2C", "$description": "Active/selected bg" },
+    "4": { "$type": "color", "$value": "#414141", "$description": "Strong dividers" }
+  },
+  "text": {
+    "primary": { "$type": "color", "$value": "#FFFFFF", "$description": "Headings, body text" },
+    "secondary": { "$type": "color", "$value": "#909090", "$description": "Labels, placeholders" }
+  },
+  "brand": {
+    "primary": { "$type": "color", "$value": "#88B0FF", "$description": "Actions, links, active states" },
+    "subtle": { "$type": "color", "$value": "#273251", "$description": "Nav bg, subtle brand tint" }
+  },
+  "status": {
+    "success": { "$type": "color", "$value": "#60C370", "$description": "Positive states" },
+    "danger": { "$type": "color", "$value": "#FF5C7B", "$description": "Errors, destructive" },
+    "warning": { "$type": "color", "$value": "#F6793C", "$description": "Caution, pending" },
+    "mention": { "$type": "color", "$value": "#7BE5FF", "$description": "@mention highlights" },
+    "pin": { "$type": "color", "$value": "#FFA67B", "$description": "Pinned message accents" }
+  }
+}
