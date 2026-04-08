@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Legacy v1 — Color Swatches</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'Inter', sans-serif; padding: 24px; transition: background 0.2s, color 0.2s; }
+body.light { background: #f5f6f8; color: #000; }
+body.dark { background: #141414; color: #fff; }
+h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+.subtitle { font-size: 13px; opacity: 0.5; margin-bottom: 24px; }
+.section { margin-bottom: 28px; }
+.section-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(128,128,128,0.2); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.swatch-box { width: 64px; height: 64px; border-radius: 10px; border: 1px solid rgba(128,128,128,0.15); cursor: pointer; position: relative; transition: transform 0.1s; }
+.swatch-box:hover { transform: scale(1.08); }
+.swatch-box.sm { width: 48px; height: 48px; }
+.swatch-label { font-size: 9px; opacity: 0.5; text-align: center; max-width: 64px; line-height: 1.2; }
+.swatch-hex { font-size: 9px; font-family: 'Roboto Mono', monospace; opacity: 0.35; }
+.tooltip { display: none; position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); background: #000; color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 4px; white-space: nowrap; font-family: monospace; z-index: 10; }
+.swatch-box:hover .tooltip { display: block; }
+.mode-toggle { display: flex; gap: 6px; margin-bottom: 20px; }
+.mode-btn { padding: 6px 16px; font-size: 12px; border-radius: 20px; border: 1px solid rgba(128,128,128,0.3); background: transparent; cursor: pointer; font-weight: 500; color: inherit; }
+.mode-btn.active { background: #4360DF; color: #fff; border-color: #4360DF; }
+.pair { display: flex; gap: 0; }
+.pair .half { width: 32px; height: 64px; }
+.pair .half:first-child { border-radius: 10px 0 0 10px; border: 1px solid rgba(128,128,128,0.15); border-right: none; }
+.pair .half:last-child { border-radius: 0 10px 10px 0; border: 1px solid rgba(128,128,128,0.15); border-left: none; }
+.note { font-size: 11px; opacity: 0.4; margin-top: 4px; font-style: italic; }
+</style>
+</head>
+<body class="light">
+
+<h1>Status Legacy v1 — Color Swatches</h1>
+<p class="subtitle">Source: status-im/status-legacy @ v1.20.6 — src/quo/design_system/colors.cljs</p>
+
+<div class="mode-toggle">
+  <button class="mode-btn active" onclick="setMode('light')">Light</button>
+  <button class="mode-btn" onclick="setMode('dark')">Dark</button>
+</div>
+
+<div id="content"></div>
+
+<script>
+const light = {
+  'ui-background': 'rgba(255,255,255,1)',
+  'ui-01': 'rgba(238,242,245,1)',
+  'ui-02': 'rgba(0,0,0,0.1)',
+  'ui-03': 'rgba(0,0,0,0.86)',
+  'interactive-01': 'rgba(67,96,223,1)',
+  'interactive-02': 'rgba(236,239,252,1)',
+  'interactive-04': 'rgba(147,155,161,1)',
+  'text-01': 'rgba(0,0,0,1)',
+  'text-02': 'rgba(147,155,161,1)',
+  'text-04': 'rgba(67,96,223,1)',
+  'text-05': 'rgba(255,255,255,1)',
+  'positive-01': 'rgba(68,208,88,1)',
+  'positive-03': 'rgba(78,188,96,1)',
+  'negative-01': 'rgba(255,45,85,1)',
+  'warning-01': 'rgba(255,202,15,1)',
+  'shadow-01': 'rgba(0,9,26,0.12)',
+  'backdrop': 'rgba(0,0,0,0.4)',
+  'border-01': 'rgba(238,242,245,1)',
+}
+
+const dark = {
+  'ui-background': 'rgba(20,20,20,1)',
+  'ui-01': 'rgba(37,37,40,1)',
+  'ui-02': 'rgba(0,0,0,0.1)',
+  'ui-03': 'rgba(0,0,0,0.86)',
+  'interactive-01': 'rgba(97,119,229,1)',
+  'interactive-02': 'rgba(35,37,47,1)',
+  'interactive-04': 'rgba(131,140,145,1)',
+  'text-01': 'rgba(255,255,255,1)',
+  'text-02': 'rgba(131,140,145,1)',
+  'text-04': 'rgba(97,119,229,1)',
+  'text-05': 'rgba(20,20,20,1)',
+  'positive-01': 'rgba(68,208,88,1)',
+  'positive-03': 'rgba(78,188,96,1)',
+  'negative-01': 'rgba(252,95,95,1)',
+  'warning-01': 'rgba(255,202,15,1)',
+  'shadow-01': 'rgba(0,0,0,0.75)',
+  'backdrop': 'rgba(0,0,0,0.4)',
+  'border-01': 'rgba(37,37,40,1)',
+}
+
+const named = [
+  { name: 'White', hex: '#FFFFFF' },
+  { name: 'Black', hex: '#000000' },
+  { name: 'Gray', hex: '#939BA1' },
+  { name: 'Gray Lighter', hex: '#EEF2F5' },
+  { name: 'Blue', hex: '#4360DF' },
+  { name: 'Blue Light', hex: '#ECEFFC' },
+  { name: 'Red', hex: '#FF2D55' },
+  { name: 'Green', hex: '#44D058' },
+  { name: 'Purple', hex: '#887AF9' },
+  { name: 'Orange', hex: '#FE8F59' },
+]
+
+const chatColors = ['#FA6565','#7CDA00','#887AF9','#51D0F0','#FE8F59','#D37EF4']
+const accountColors = ['#9B832F','#D37EF4','#1D806F','#FA6565','#7CDA00','#887AF9','#8B3131']
+
+const statusColors = [
+  { name: 'Online', hex: '#7CDA00' },
+  { name: 'DND', hex: '#FA6565' },
+  { name: 'Inactive', hex: '#939BA1' },
+]
+
+const mentionColors = [
+  { name: 'Mention In', hex: '#0DA4C9' },
+  { name: 'Mention Out', hex: '#9EE8FA' },
+  { name: 'Mention BG (L)', hex: '#DEF6FC' },
+  { name: 'Mention BG (D)', hex: '#2A4046' },
+  { name: 'Pin BG (L)', hex: '#FFEECC' },
+  { name: 'Pin BG (D)', hex: '#34232B' },
+]
+
+function sw(color, label, small) {
+  return `<div class="swatch">
+    <div class="swatch-box${small ? ' sm' : ''}" style="background:${color}"><span class="tooltip">${color}</span></div>
+    <span class="swatch-label">${label}</span>
+  </div>`
+}
+
+let mode = 'light'
+
+function setMode(m) {
+  mode = m
+  document.body.className = m
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase() === m))
+  render()
+}
+
+function render() {
+  const t = mode === 'light' ? light : dark
+  const groups = [
+    { title: 'Surfaces', keys: ['ui-background', 'ui-01', 'ui-02', 'ui-03'] },
+    { title: 'Interactive / Accent', keys: ['interactive-01', 'interactive-02', 'interactive-04'] },
+    { title: 'Text', keys: ['text-01', 'text-02', 'text-04', 'text-05'] },
+    { title: 'Semantic', keys: ['positive-01', 'positive-03', 'negative-01', 'warning-01'] },
+    { title: 'System', keys: ['shadow-01', 'backdrop', 'border-01'] },
+  ]
+
+  let html = groups.map(g => `
+    <div class="section">
+      <div class="section-title">${g.title} (${mode})</div>
+      <div class="row">${g.keys.map(k => sw(t[k], k)).join('')}</div>
+    </div>
+  `).join('')
+
+  html += `
+    <div class="section">
+      <div class="section-title">Named Colors (theme-independent)</div>
+      <div class="row">${named.map(n => sw(n.hex, n.name)).join('')}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Chat Colors</div>
+      <div class="row">${chatColors.map((c,i) => sw(c, `Chat ${i}`, true)).join('')}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Account Colors</div>
+      <div class="row">${accountColors.map((c,i) => sw(c, `Acc ${i}`, true)).join('')}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Status Indicators</div>
+      <div class="row">${statusColors.map(s => sw(s.hex, s.name, true)).join('')}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Mention & Pin Colors</div>
+      <div class="row">${mentionColors.map(m => sw(m.hex, m.name, true)).join('')}</div>
+    </div>
+
+    <p class="note">v1 uses pure grays (#141414 dark, #939BA1 secondary) — NOT the navy-tinted neutrals from quo2/v2.</p>
+  `
+
+  document.getElementById('content').innerHTML = html
+}
+
+render()
+</script>
+</body>
+</html>
