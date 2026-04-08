@@ -17,6 +17,12 @@
   --font-family-mono: 'IBM Plex Mono', 'Roboto Mono', monospace;
 }
 
+/* JetBrains Mono: developer-focused mono for both base and code */
+[data-tokens][data-fonts="jetbrains"] {
+  --font-family-base: 'JetBrains Mono', 'Roboto Mono', monospace;
+  --font-family-mono: 'JetBrains Mono', 'Roboto Mono', monospace;
+}
+
 /* Editorial: serif body for a publishing/newspaper feel — pairs with mono accents */
 [data-tokens][data-fonts="editorial"] {
   --font-family-base: 'Source Serif 4', Georgia, 'Times New Roman', serif;
