@@ -1,0 +1,179 @@
+/* Francesca's Logos Dark theme
+   Source: Francesca's design, 2026-04-08
+   Muted, restrained dark palette for Logos identity */
+
+[data-tokens="francesca-logos"][data-mode="dark"] {
+  /* === Base colors === */
+  --base-color-1: #83979f;
+  --base-color-2: #282c2f;
+  --base-color-3: #353b4a;
+  --base-color-4: #232628;
+  --base-color-5: #1e2122;
+
+  /* === Primary === */
+  --primary-color-1: #b8cbd2;
+  --primary-color-2: #b8cbd233;
+  --primary-color-3: #b8cbd21a;
+
+  /* === Danger === */
+  --danger-color-1: #c14555;
+  --danger-color-2: #c145554d;
+  --danger-color-3: #c1455526;
+
+  /* === Warning === */
+  --warning-color-1: #c48a59;
+  --warning-color-2: #c48a5933;
+  --warning-color-3: #c48a591a;
+
+  /* === Success === */
+  --success-color-1: #628770;
+  --success-color-2: #62877033;
+  --success-color-3: #6287704d;
+
+  /* === Mention === */
+  --mention-color-1: #738ddd;
+  --mention-color-2: #738ddd4d;
+  --mention-color-3: #738ddd33;
+  --mention-color-4: #738ddd1a;
+
+  /* === Pin === */
+  --pin-color-1: #ddc39e;
+  --pin-color-2: #ddc39e33;
+  --pin-color-3: #ddc39e1a;
+
+  /* === Direct (foreground) === */
+  --direct-color-1: #d6d5d0;
+  --direct-color-2: #d6d5d0e6;
+  --direct-color-3: #d6d5d0cc;
+  --direct-color-4: #d6d5d0b3;
+  --direct-color-5: #d6d5d066;
+  --direct-color-6: #d6d5d04d;
+  --direct-color-7: #d6d5d01a;
+  --direct-color-8: #d6d5d00d;
+  --direct-color-9: #d6d5d033;
+
+  /* === Indirect === */
+  --indirect-color-1: #1e2122;
+  --indirect-color-2: #1e2122b3;
+  --indirect-color-3: #1e212266;
+  --indirect-color-4: #1e2122;
+
+  /* === Misc (muted avatar/channel colors) === */
+  --misc-color-1: #5a7a8a;
+  --misc-color-2: #7a6a8f;
+  --misc-color-3: #5a8a8a;
+  --misc-color-4: #8a6a7f;
+  --misc-color-5: #8a5a5a;
+  --misc-color-6: #8a7a5a;
+  --misc-color-7: #9a8a5a;
+  --misc-color-8: #5a7a5a;
+  --misc-color-9: #5a8a7a;
+  --misc-color-10: #7a5a5a;
+  --misc-color-11: #8a7a6a;
+  --misc-color-12: #6a7a5a;
+
+  /* === Surfaces === */
+  --background: #1e2122;
+  --background-hover: #282c2f;
+  --card-color: #232628;
+  --border: #282c2f;
+  --separator: #d6d5d01a;
+  --text-color: #d6d5d0;
+  --secondary-text: #83979f;
+  --secondary-background: #b8cbd233;
+  --secondary-menu-background: #1e2122;
+  --dark-grey: #282c2f;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(0, 0, 0, 0.12);
+  --drop-shadow-2: rgba(0, 0, 0, 0.04);
+  --drop-shadow-3: rgba(0, 0, 0, 0.20);
+  --backdrop-color: rgba(0, 0, 0, 0.6);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: #b8cbd233;
+  --message-highlight-color: #b8cbd226;
+  --desktop-blue-10: #363a35;
+
+  /* === Other === */
+  --neutral-95: #1e2122;
+  --block-progress-bar-color: #d6d5d01a;
+
+  /* === Component tokens === */
+  --app-layout-bg: #1e2122;
+  --app-layout-right-panel-bg: #1e2122;
+  --app-nav-bar-bg: #1e2122;
+  --toast-message-bg: #232628;
+  --list-item-bg: #1e2122;
+  --list-item-secondary-hover-bg: #b8cbd226;
+  --list-item-highlight: #b8cbd20d;
+  --chat-list-item-hover-bg: #d6d5d00d;
+  --chat-list-item-selected-bg: #d6d5d01a;
+  --chat-list-category-button-hover-bg: #d6d5d01a;
+  --nav-list-item-hover-bg: #d6d5d00d;
+  --nav-list-item-selected-bg: #d6d5d01a;
+  --badge-foreground: #1e2122;
+  --badge-border: #1e2122;
+  --badge-hover-border: #353b4a;
+  --menu-bg: #232628;
+  --menu-hover-bg: #d6d5d01a;
+  --menu-separator: #d6d5d01a;
+  --modal-bg: #232628;
+  --rounded-image-bg: #1e2122;
+  --chat-input-secondary-bg: #282c2f;
+  --switch-tab-button-bg: #b8cbd2;
+  --switch-tab-bar-bg: #b8cbd21a;
+  --switch-tab-selected-text: #1e2122;
+  --switch-tab-text: #b8cbd2;
+  --select-menu-item-bg: #232628;
+  --select-menu-item-hover-bg: #d6d5d01a;
+  --message-emoji-reaction-bg: #282c2f;
+  --message-emoji-reaction-bg-hovered: #b8cbd233;
+  --message-emoji-reaction-border-hovered: #b8cbd21a;
+
+  /* === Privacy === */
+  --privacy-primary: #363a35;
+  --privacy-secondary: #b8cbd2;
+  --privacy-tertiary: #d6d5d0;
+  --privacy-tertiary-opaque: #d6d5d04d;
+  --privacy-icon-color: #83979f;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors === */
+  --black-hovered: #282c2f;
+  --blue-hovered: #b8cbd2;
+  --purple-hovered: #7a6a8f;
+  --cyan-hovered: #5a8a8a;
+  --violet-hovered: #8a6a7f;
+  --red-hovered: #9a3a45;
+  --yellow-hovered: #9a7a49;
+  --green-hovered: #4a6a55;
+  --moss-hovered: #4a7a6a;
+  --brown-hovered: #6a4a4a;
+  --brown2-hovered: #7a6a5a;
+}

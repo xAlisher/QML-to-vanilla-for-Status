@@ -80,6 +80,8 @@ import './tokens/fonts.css'
 // Shell styles
 import './shell/shell.css'
 
+import './tokens/francesca-logos-dark.css'
+
 // Screen styles
 import './screens/community-channel.css'
 import './screens/discover-communities.css'
@@ -120,6 +122,7 @@ const themes = {
   'hacker-dark-r1':   { label: 'Hacker Dark Revised (56)',      tokens: 'hacker-r1',    mode: 'dark',  iteration: 1, reason: 'Revised from green-on-black: neutral gray text with subtle blue accent. Legible for extended use, accessible, maintains privacy-dark aesthetic.' },
   'solarized-dark-r1': { label: 'Solarized Dark Revised (47)',  tokens: 'solarized-r1', mode: 'dark',  iteration: 1, reason: 'Contrast fix: secondary text lightened to #7B8F97 for WCAG AA compliance (4.5:1 ratio). No other changes.' },
   'dracula-dark-r1':  { label: 'Dracula Dark Revised (58)',     tokens: 'dracula-r1',   mode: 'dark',  iteration: 1, reason: 'Accent shifted from purple (#BD93F9) to blue (#8BA4F8) — feels more sovereign, less playful. Better danger vs accent distinction.' },
+  'francesca-logos-dark': { label: 'Francesca Logos Dark', tokens: 'francesca-logos', mode: 'dark', iteration: 1, reason: 'Francesca\'s Logos dark theme. Muted earth tones, restrained brand (#b8cbd2), desaturated avatar colors. Logos network identity.' },
   // --- Iteration 2: Privacy-inspired themes (from Volo) ---
   'i2-obsidian-dark':   { label: 'Obsidian Vault Dark',    tokens: 'i2-obsidian-vault',    mode: 'dark',  iteration: 2, reason: 'Deep black + electric indigo. Signal+Mullvad+Tor inspiration. Maximum side-view blackout. ★★★★★' },
   'i2-obsidian-light':  { label: 'Obsidian Vault Light',   tokens: 'i2-obsidian-vault',    mode: 'light', iteration: 2, reason: 'Soft violet-white + deep indigo accent. Trust-first simplicity.' },
