@@ -14,6 +14,8 @@ import './tokens/neo-dark.css'
 import './tokens/neo-light.css'
 import './tokens/v1-light.css'
 import './tokens/v1-dark.css'
+import './tokens/v2mob-light.css'
+import './tokens/v2mob-dark.css'
 import './tokens/quiet-light.css'
 import './tokens/quiet-dark.css'
 import './tokens/current-light-r1.css'
@@ -105,8 +107,10 @@ const themes = {
   'basecamp-dark':  { label: 'Basecamp Dark (60)',   tokens: 'basecamp',  mode: 'dark',  iteration: 0, reason: 'Productivity-focused neutral dark. Restrained palette with warm grays — professional trust without visual noise. Reference: https://github.com/logos-co/logos-design-system' },
   'neo-dark':       { label: 'Neo Dark (56)',        tokens: 'neo',       mode: 'dark',  iteration: 0, reason: 'Deep charcoal with cyan accents. High contrast ratio — strong privacy feel with modern, accessible readability. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
   'neo-light':      { label: 'Neo Light (57)',       tokens: 'neo',       mode: 'light', iteration: 0, reason: 'Clean white with cyan accents. Bright but not glaring — accessible, simple, instills confidence in a privacy tool. Reference: Francesca\'s exploration https://www.figma.com/design/gZss5EzKuqdcSXOlqrQZoZ/Branding----Status?node-id=1193-21&t=EZqZrIfzcLpGreCU-0' },
-  'v1-light':       { label: 'Legacy v1 Light (68)', tokens: 'v1',        mode: 'light', iteration: 1, reason: 'Status v1 (mobile) palette. Navy-tinted neutrals with teal success — the original identity before the desktop redesign. Reference: https://github.com/status-im/status-legacy' },
-  'v1-dark':        { label: 'Legacy v1 Dark (63)',  tokens: 'v1',        mode: 'dark',  iteration: 1, reason: 'Status v1 dark mode. Deep navy darks (#131D2F) instead of pure gray — more character, better side-viewer protection. Reference: https://github.com/status-im/status-legacy' },
+  'v1-light':       { label: 'Legacy v1 Mobile Light (73)', tokens: 'v1',     mode: 'light', iteration: 1, reason: 'Status v1 mobile app palette. Pure white bg, pure gray neutrals (#939BA1), bright green success (#44D058), pink-red danger (#FF2D55). The original Status mobile identity. Source: quo/design_system/colors.cljs @ v1.20.6' },
+  'v1-dark':        { label: 'Legacy v1 Mobile Dark (70)',  tokens: 'v1',  mode: 'dark',  iteration: 1, reason: 'Status v1 mobile dark mode. Pure dark gray (#141414), lighter blue accent (#6177E5), warm red danger (#FC5F5F). Clean, no navy tint. Source: quo/design_system/colors.cljs @ v1.20.6' },
+  'v2mob-light':    { label: 'Legacy v2 Mobile Light (68)', tokens: 'v2mob', mode: 'light', iteration: 1, reason: 'Status v2 mobile app palette (quo2). Navy-tinted neutrals (#647084), teal success (#23ADA0), warm red danger (#E95460). The redesigned mobile identity. Source: quo/foundations/colors.cljs' },
+  'v2mob-dark':     { label: 'Legacy v2 Mobile Dark (63)',  tokens: 'v2mob', mode: 'dark',  iteration: 1, reason: 'Status v2 mobile dark mode. Deep navy (#131D2F), blue accent (#88B0FF), teal success. More character than v1\'s pure grays. Source: quo/foundations/colors.cljs' },
   'quiet-light':    { label: 'Quiet Authority Light (65)', tokens: 'quiet', mode: 'light', iteration: 1, reason: 'Near-monochrome editorial. Single indigo accent on cool slate — reads like documentation, communicates calm authority and trust. Reference: Ned\'s proposal doc' },
   'quiet-dark':     { label: 'Quiet Authority Dark (54)',  tokens: 'quiet', mode: 'dark',  iteration: 1, reason: 'Deep charcoal editorial. Minimal indigo accent — maximum restraint, zero visual noise, strong side-viewer protection. Reference: Ned\'s proposal doc' },
   'current-light-r1': { label: 'Current Light Compressed (20p)', tokens: 'current-r1', mode: 'light', iteration: 1, reason: 'Off-white background (#FAFBFC) reduces glare vs pure white. 20 primitives + color-mix() for all derived tokens.' },

@@ -1,0 +1,179 @@
+/* Status Legacy v2 Mobile — light mode
+   Source: status-im/status-legacy/src/quo/foundations/colors.cljs
+   Navy-tinted neutrals, teal success, warmer danger */
+
+[data-tokens="v2mob"][data-mode="light"] {
+  /* === Base colors (v1 neutrals are blue-tinted) === */
+  --base-color-1: #647084;   /* neutral-50 */
+  --base-color-2: #E7EAEE;   /* neutral-20 */
+  --base-color-3: #DCE0E5;   /* neutral-30 */
+  --base-color-4: #F5F6F8;   /* neutral-5 */
+  --base-color-5: #F0F2F5;   /* neutral-10 */
+
+  /* === Primary (same as v2) === */
+  --primary-color-1: #4360DF;   /* primary-50 */
+  --primary-color-2: #4360DF33;
+  --primary-color-3: #4360DF1A;
+
+  /* === Danger (v1: warmer red) === */
+  --danger-color-1: #E95460;   /* danger-50 */
+  --danger-color-2: #E9546033;
+  --danger-color-3: #E954601A;
+
+  /* === Warning (v1: orange) === */
+  --warning-color-1: #FF7D46;   /* warning-50 */
+  --warning-color-2: #FF7D4633;
+  --warning-color-3: #FF7D461A;
+
+  /* === Success (v1: teal, not green) === */
+  --success-color-1: #23ADA0;   /* success-50 */
+  --success-color-2: #23ADA01A;
+  --success-color-3: #23ADA033;
+
+  /* === Mention === */
+  --mention-color-1: #0DA4C9;
+  --mention-color-2: #07BCE94D;
+  --mention-color-3: #07BCE933;
+  --mention-color-4: #07BCE91A;
+
+  /* === Pin === */
+  --pin-color-1: #FF7D46;   /* using v1 warning color */
+  --pin-color-2: #FF7D4633;
+  --pin-color-3: #FF7D461A;
+
+  /* === Direct (foreground — navy-black tinted) === */
+  --direct-color-1: #09101C;   /* neutral-100 */
+  --direct-color-2: #09101CE6;
+  --direct-color-3: #09101CCC;
+  --direct-color-4: #09101CB3;
+  --direct-color-5: #09101C66;
+  --direct-color-6: #09101C4D;
+  --direct-color-7: #09101C1A;
+  --direct-color-8: #09101C0D;
+  --direct-color-9: #09101C33;
+
+  /* === Indirect (inverse foreground) === */
+  --indirect-color-1: #FFFFFF;
+  --indirect-color-2: #FFFFFFB3;
+  --indirect-color-3: #FFFFFF66;
+  --indirect-color-4: #FFFFFF;
+
+  /* === Misc (avatar/accent palette) === */
+  --misc-color-1: #2946C4;
+  --misc-color-2: #887AF9;
+  --misc-color-3: #51D0F0;
+  --misc-color-4: #D37EF4;
+  --misc-color-5: #E95460;
+  --misc-color-6: #FF7D46;
+  --misc-color-7: #FFD60A;
+  --misc-color-8: #7CDA00;
+  --misc-color-9: #23ADA0;
+  --misc-color-10: #8B3131;
+  --misc-color-11: #9B832F;
+  --misc-color-12: #9EA85D;
+
+  /* === Surfaces (v1: slightly cooler whites) === */
+  --background: #FAFBFC;   /* neutral-2.5 */
+  --background-hover: #F0F2F5;   /* neutral-10 */
+  --card-color: #FFFFFF;
+  --border: #E7EAEE;   /* neutral-20 */
+  --separator: #E7EAEE;
+  --text-color: #09101C;   /* neutral-100 */
+  --secondary-text: #647084;   /* neutral-50 */
+  --secondary-background: #4360DF33;
+  --secondary-menu-background: #F5F6F8;   /* neutral-5 */
+  --dark-grey: #647084;
+
+  /* === Shadows === */
+  --drop-shadow: rgba(9, 16, 28, 0.08);   /* v1 shadow color */
+  --drop-shadow-2: rgba(9, 16, 28, 0.02);
+  --drop-shadow-3: rgba(9, 16, 28, 0.15);
+  --backdrop-color: rgba(9, 16, 28, 0.4);
+
+  /* === Highlights === */
+  --status-floating-button-highlight: #CDF2FB;
+  --message-highlight-color: rgba(67, 96, 223, 0.2);
+  --desktop-blue-10: #ECEFFB;
+
+  /* === Other === */
+  --neutral-95: #0D1625;
+  --block-progress-bar-color: #DCE0E5;
+
+  /* === Component tokens === */
+  --app-layout-bg: #FAFBFC;
+  --app-layout-right-panel-bg: #FFFFFF;
+  --app-nav-bar-bg: #ECEFFB;
+  --toast-message-bg: #FFFFFF;
+  --list-item-bg: #FFFFFF;
+  --list-item-secondary-hover-bg: #ECEFFC;
+  --list-item-highlight: #4360DF0D;
+  --chat-list-item-hover-bg: #F0F2F5;
+  --chat-list-item-selected-bg: #E7EAEE;
+  --chat-list-category-button-hover-bg: #09101C0D;
+  --nav-list-item-hover-bg: #F0F2F5;
+  --nav-list-item-selected-bg: #E7EAEE;
+  --badge-foreground: #FFFFFF;
+  --badge-border: #F5F6F8;
+  --badge-hover-border: #DCE0E5;
+  --menu-bg: #FFFFFF;
+  --menu-hover-bg: #F0F2F5;
+  --menu-separator: #E7EAEE;
+  --modal-bg: #FFFFFF;
+  --rounded-image-bg: #FFFFFF;
+  --chat-input-secondary-bg: #DCE0E5;
+  --switch-tab-button-bg: #4360DF;
+  --switch-tab-bar-bg: #4360DF1A;
+  --switch-tab-selected-text: #FFFFFF;
+  --switch-tab-text: #4360DF;
+  --select-menu-item-bg: #FFFFFF;
+  --select-menu-item-hover-bg: #F0F2F5;
+  --message-emoji-reaction-bg: #F0F2F5;
+  --message-emoji-reaction-bg-hovered: #4360DF33;
+  --message-emoji-reaction-border-hovered: #4360DF1A;
+
+  /* === Privacy === */
+  --privacy-primary: #BEBCF9;
+  --privacy-secondary: #D6D7F7;
+  --privacy-tertiary: #201C76;
+  --privacy-tertiary-opaque: #201C764D;
+  --privacy-icon-color: #647084;
+
+  /* === Typography === */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --font-size-secondary-additional: 17px;
+  --font-size-primary: 15px;
+  --font-size-secondary: 14px;
+  --font-size-additional: 13px;
+  --font-size-tertiary: 12px;
+  --font-size-aside: 10px;
+
+  /* === Spacing === */
+  --padding: 16px;
+  --padding-xl: 32px;
+  --padding-big: 24px;
+  --padding-half: 8px;
+  --padding-small: 10px;
+  --padding-xxs: 6px;
+  --padding-xs: 10px;
+  --padding-s: 13px;
+  --padding-l: 19px;
+  --radius: 8px;
+
+  /* === Opacity === */
+  --opacity-disabled: 0.3;
+  --opacity-pressed: 0.7;
+
+  /* === Hover colors === */
+  --black-hovered: #1B273D;
+  --blue-hovered: #354DB2;
+  --purple-hovered: #6D62C7;
+  --cyan-hovered: #41A6C0;
+  --violet-hovered: #A965C3;
+  --red-hovered: #BA434D;
+  --yellow-hovered: #CCA20C;
+  --green-hovered: #1C8A80;
+  --moss-hovered: #1E857B;
+  --brown-hovered: #6F2727;
+  --brown2-hovered: #7C6926;
+}
