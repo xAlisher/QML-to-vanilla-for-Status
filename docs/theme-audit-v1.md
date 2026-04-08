@@ -21,19 +21,24 @@ Requirements from status-im/status-app#20329. Scale: PASS / WEAK / FAIL.
 |-------|-----------|-----------|------------|---------------|----------|-------------|---------------|-----------|--------|
 | Current Light (70) | WEAK | WEAK | PASS | PASS | PASS | FAIL | PASS | WEAK | Pure white bg (#FFF) glares. Not privacy-coded. |
 | Current Dark (67) | WEAK | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Neutral gray — functional but generic. |
-| Concept A Light (65) | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Warm off-white (#FAFAF8) reduces glare. Still light. |
-| Concept A Dark (69) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Strong all-around. Warm darks feel humane. |
-| Nord Dark (52) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Excellent balance. Muted, professional, comfortable. |
-| Dracula Dark (55) | PASS | PASS | PASS | PASS | WEAK | PASS | WEAK | PASS | Purple accent is playful, not sovereign. Red-purple confusion risk. |
-| Monokai Dark (53) | WEAK | WEAK | PASS | PASS | WEAK | PASS | PASS | PASS | Dev-oriented — not privacy-coded. Warm and comfortable. |
+| Ned: Concept A Light (65) | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Warm off-white (#FAFAF8) reduces glare. Still light. |
+| Ned: Concept A Dark (69) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Strong all-around. Warm darks feel humane. |
+| Ned: Nord Dark (52) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Excellent balance. Muted, professional, comfortable. |
+| Ned: Dracula Dark (55) | PASS | PASS | PASS | PASS | WEAK | PASS | WEAK | PASS | Purple accent is playful, not sovereign. Red-purple confusion risk. |
+| Ned: Monokai Dark (53) | WEAK | WEAK | PASS | PASS | WEAK | PASS | PASS | PASS | Dev-oriented — not privacy-coded. Warm and comfortable. |
 | Logos Light (75) | WEAK | PASS | PASS | PASS | PASS | FAIL | PASS | WEAK | Too many colors (75). Light bg. |
-| Solarized Dark (46) | PASS | PASS | WEAK | PASS | PASS | PASS | PASS | PASS | Secondary text (#586E75 on #002B36) is low contrast. |
+| Ned: Solarized Dark (46) | PASS | PASS | WEAK | PASS | PASS | PASS | PASS | PASS | Secondary text (#586E75 on #002B36) is low contrast. |
 | Hacker Dark (47) | PASS | PASS | WEAK | FAIL | WEAK | PASS | FAIL | FAIL | Green-on-black is illegible at length. Mono-hue = accessibility fail. |
 | Basecamp Dark (60) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Strong. Neutral, professional, comfortable. |
 | Neo Dark (56) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep navy is strong for privacy. Good contrast. |
 | Neo Light (57) | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Light bg hurts side-view. Otherwise clean. |
 | Legacy v1 Light (68) | WEAK | WEAK | PASS | PASS | PASS | FAIL | PASS | PASS | Navy tint adds character. Light bg = weak side-view. |
 | Legacy v1 Dark (63) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep navy darks are distinctive and private-feeling. |
+| Legacy v2 Mobile Light (68) | WEAK | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Navy-tinted neutrals from quo2. Light = weak side-view. |
+| Legacy v2 Mobile Dark (63) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep navy darks. More character than v1 pure grays. |
+| Francesca Logos Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Muted earth tones, green-tinted nav. Restrained and comfortable. |
+| Francesca WCAG AA Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | WCAG AA compliant. All contrasts ≥4.5:1. Light = weak side-view. |
+| Francesca WCAG AA Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | WCAG AA compliant. All contrasts ≥4.5:1. Strong privacy dark. |
 | **Iteration 2** | | | | | | | | | |
 | Obsidian Vault Dark | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | Deep black + electric indigo. Maximum side-view blackout. ★★★★★ |
 | Obsidian Vault Light | PASS | PASS | PASS | PASS | PASS | FAIL | PASS | PASS | Soft violet-white. Light = weak side-view. |
