@@ -8,9 +8,14 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, Inter, sans-serif; background: #f5f6f8; color: #09101C; padding: 24px; }
 h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
-.subtitle { font-size: 13px; color: #647084; margin-bottom: 24px; }
-.stats { font-size: 13px; color: #647084; margin-bottom: 20px; }
+.subtitle { font-size: 13px; color: #647084; margin-bottom: 16px; }
+.stats { font-size: 13px; color: #647084; margin-bottom: 16px; }
 .stats strong { color: #09101C; }
+.tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid #E7EAEE; }
+.tab { padding: 8px 20px; font-size: 13px; font-weight: 500; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #647084; background: none; border-top: none; border-left: none; border-right: none; }
+.tab.active { color: #4360DF; border-bottom-color: #4360DF; }
+.tab .count { font-size: 11px; background: #E7EAEE; padding: 1px 6px; border-radius: 8px; margin-left: 4px; }
+.tab.active .count { background: #ECEFFC; color: #4360DF; }
 .section { margin-bottom: 28px; }
 .section-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #4360DF; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #E7EAEE; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -23,490 +28,560 @@ tr:hover { background: #ECEFFC; }
 .name-cell { font-family: "Roboto Mono", monospace; font-size: 11px; color: #303D55; }
 .tag { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: #ECEFFC; color: #4360DF; margin: 2px; white-space: nowrap; }
 .tag.empty { background: #FFF0F0; color: #E95460; }
+.tag.release { background: #EDFBEF; color: #1D806F; }
+.tag.dev { background: #FFF8E0; color: #9B832F; }
 .filter { margin-bottom: 16px; }
 .filter input { padding: 6px 12px; border: 1px solid #DCE0E5; border-radius: 6px; font-size: 13px; width: 300px; }
 </style>
 </head>
 <body>
 <h1>Status Desktop — Illustration Inventory</h1>
-<p class="subtitle">Extracted from status-desktop/ui/StatusQ/src/assets/ (not icons, not emoji)</p>
-<p class="stats"><strong>117</strong> illustrations across <strong>14</strong> categories</p>
+<p class="subtitle">Extracted from status-desktop/ui/StatusQ/src/assets/ (not icons, not emoji, not tokens)</p>
+<p class="stats"><strong>103</strong> illustrations &mdash; <strong>103</strong> in v2.37.0 release, <strong>0</strong> dev-only</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="setTab('all')">All<span class="count">103</span></button>
+  <button class="tab" onclick="setTab('release')">v2.37.0<span class="count">103</span></button>
+  <button class="tab" onclick="setTab('dev')">Dev only<span class="count">0</span></button>
+</div>
 
 <div class="filter"><input type="text" placeholder="Filter by name or screen..." oninput="filterRows(this.value)"></div>
-<div class="section"><div class="section-title">activity_center (4)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="emptynotifications-dark.png activitycenter/panels">
+<div class="section"><div class="section-title">activity_center (4)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="emptynotifications-dark.png activitycenter/panels" data-version="release">
   <td class="img-cell"><img src="png/activity_center/EmptyNotifications-Dark.png" alt="EmptyNotifications-Dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/activity_center/EmptyNotifications-Dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/panels</span></td>
-</tr><tr class="inv-row" data-search="emptynotifications-light.png activitycenter/panels">
+</tr><tr class="inv-row" data-search="emptynotifications-light.png activitycenter/panels" data-version="release">
   <td class="img-cell"><img src="png/activity_center/EmptyNotifications-Light.png" alt="EmptyNotifications-Light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/activity_center/EmptyNotifications-Light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/panels</span></td>
-</tr><tr class="inv-row" data-search="newsdisabled-dark.png activitycenter/panels,controls">
+</tr><tr class="inv-row" data-search="newsdisabled-dark.png activitycenter/panels,controls" data-version="release">
   <td class="img-cell"><img src="png/activity_center/NewsDisabled-Dark.png" alt="NewsDisabled-Dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/activity_center/NewsDisabled-Dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/panels</span><span class="tag">controls</span></td>
-</tr><tr class="inv-row" data-search="newsdisabled-light.png activitycenter/panels,controls">
+</tr><tr class="inv-row" data-search="newsdisabled-light.png activitycenter/panels,controls" data-version="release">
   <td class="img-cell"><img src="png/activity_center/NewsDisabled-Light.png" alt="NewsDisabled-Light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/activity_center/NewsDisabled-Light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/panels</span><span class="tag">controls</span></td>
-</tr></table></div><div class="section"><div class="section-title">browser (6)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="choosebrowserimage@2x.png ">
+</tr></table></div><div class="section"><div class="section-title">browser (6)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="choosebrowserimage@2x.png " data-version="release">
   <td class="img-cell"><img src="png/browser/chooseBrowserImage@2x.png" alt="chooseBrowserImage@2x.png" class="" loading="lazy"></td>
   <td class="name-cell">png/browser/chooseBrowserImage@2x.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="pepehand.png browser/views">
+</tr><tr class="inv-row" data-search="pepehand.png browser/views" data-version="release">
   <td class="img-cell"><img src="png/browser/pepehand.png" alt="pepehand.png" class="" loading="lazy"></td>
   <td class="name-cell">png/browser/pepehand.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Browser/views</span></td>
-</tr><tr class="inv-row" data-search="browser-dark.png ">
+</tr><tr class="inv-row" data-search="browser-dark.png " data-version="release">
   <td class="img-cell"><img src="png/browser/placeholders/browser-dark.png" alt="browser-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/browser/placeholders/browser-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="browser-dark-small.png ">
+</tr><tr class="inv-row" data-search="browser-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/browser/placeholders/browser-dark-small.png" alt="browser-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/browser/placeholders/browser-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="browser-light.png ">
+</tr><tr class="inv-row" data-search="browser-light.png " data-version="release">
   <td class="img-cell"><img src="png/browser/placeholders/browser-light.png" alt="browser-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/browser/placeholders/browser-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="browser-light-small.png ">
+</tr><tr class="inv-row" data-search="browser-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/browser/placeholders/browser-light-small.png" alt="browser-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/browser/placeholders/browser-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr></table></div><div class="section"><div class="section-title">chat (1)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="chat@2x.png activitycenter/adaptors,activitycenter/controls,activitycenter/helpers,activitycenter/panels,app/mainui">
+</tr></table></div><div class="section"><div class="section-title">chat (1)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="chat@2x.png activitycenter/adaptors,activitycenter/controls,activitycenter/helpers,activitycenter/panels,app/mainui" data-version="release">
   <td class="img-cell"><img src="png/chat/chat@2x.png" alt="chat@2x.png" class="" loading="lazy"></td>
   <td class="name-cell">png/chat/chat@2x.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">ActivityCenter/controls</span><span class="tag">ActivityCenter/helpers</span><span class="tag">ActivityCenter/panels</span><span class="tag">app/mainui</span></td>
-</tr></table></div><div class="section"><div class="section-title">community (3)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="airdrops8_1.png communities/panels">
+</tr></table></div><div class="section"><div class="section-title">community (3)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="airdrops8_1.png communities/panels" data-version="release">
   <td class="img-cell"><img src="png/community/airdrops8_1.png" alt="airdrops8_1.png" class="" loading="lazy"></td>
   <td class="name-cell">png/community/airdrops8_1.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Communities/panels</span></td>
-</tr><tr class="inv-row" data-search="mint2_1.png communities/views">
+</tr><tr class="inv-row" data-search="mint2_1.png communities/views" data-version="release">
   <td class="img-cell"><img src="png/community/mint2_1.png" alt="mint2_1.png" class="" loading="lazy"></td>
   <td class="name-cell">png/community/mint2_1.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Communities/views</span></td>
-</tr><tr class="inv-row" data-search="permissions2_3.png communities/views">
+</tr><tr class="inv-row" data-search="permissions2_3.png communities/views" data-version="release">
   <td class="img-cell"><img src="png/community/permissions2_3.png" alt="permissions2_3.png" class="" loading="lazy"></td>
   <td class="name-cell">png/community/permissions2_3.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Communities/views</span></td>
-</tr></table></div><div class="section"><div class="section-title">ens (2)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="ens-header-dark@2x.png ">
+</tr></table></div><div class="section"><div class="section-title">ens (2)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="ens-header-dark@2x.png " data-version="release">
   <td class="img-cell"><img src="png/ens/ens-header-dark@2x.png" alt="ens-header-dark@2x.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/ens/ens-header-dark@2x.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="ens-header-light@2x.png ">
+</tr><tr class="inv-row" data-search="ens-header-light@2x.png " data-version="release">
   <td class="img-cell"><img src="png/ens/ens-header-light@2x.png" alt="ens-header-light@2x.png" class="" loading="lazy"></td>
   <td class="name-cell">png/ens/ens-header-light@2x.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr></table></div><div class="section"><div class="section-title">img (2)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="open-menu-education-dark.svg app/mainui/popups">
+</tr></table></div><div class="section"><div class="section-title">img (2)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="open-menu-education-dark.svg app/mainui/popups" data-version="release">
   <td class="img-cell"><img src="img/open-menu-education-dark.svg" alt="open-menu-education-dark.svg" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">img/open-menu-education-dark.svg</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui/popups</span></td>
-</tr><tr class="inv-row" data-search="open-menu-education-light.svg app/mainui/popups">
+</tr><tr class="inv-row" data-search="open-menu-education-light.svg app/mainui/popups" data-version="release">
   <td class="img-cell"><img src="img/open-menu-education-light.svg" alt="open-menu-education-light.svg" class="" loading="lazy"></td>
   <td class="name-cell">img/open-menu-education-light.svg</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui/popups</span></td>
-</tr></table></div><div class="section"><div class="section-title">keycard (28)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="authenticate.png app/mainui,app/mainui/handlers,communities/panels,communities/views,imports/assets/docs">
+</tr></table></div><div class="section"><div class="section-title">keycard (28)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="authenticate.png app/mainui,app/mainui/handlers,communities/panels,communities/views,imports/assets/docs" data-version="release">
   <td class="img-cell"><img src="png/keycard/authenticate.png" alt="authenticate.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/authenticate.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui</span><span class="tag">app/mainui/Handlers</span><span class="tag">Communities/panels</span><span class="tag">Communities/views</span><span class="tag">imports/assets/docs</span></td>
-</tr><tr class="inv-row" data-search="biometrics-fail.png popups/auth_sign_base/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="biometrics-fail.png popups/auth_sign_base/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/biometrics-fail.png" alt="biometrics-fail.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/biometrics-fail.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="biometrics-success.png popups/auth_sign_base/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="biometrics-success.png popups/auth_sign_base/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/biometrics-success.png" alt="biometrics-success.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/biometrics-success.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="inserted.png onboarding,onboarding/pages,popups,popups/auth_sign_base/states,popups/keycard_new/states">
+</tr><tr class="inv-row" data-search="inserted.png onboarding,onboarding/pages,popups,popups/auth_sign_base/states,popups/keycard_new/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_inserted/inserted.png" alt="inserted.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_inserted/inserted.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding</span><span class="tag">Onboarding/pages</span><span class="tag">popups</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new/states</span></td>
-</tr><tr class="inv-row" data-search="reading-negative.png ">
+</tr><tr class="inv-row" data-search="reading-negative.png " data-version="release">
   <td class="img-cell"><img src="png/keycard/card_inserted/reading-negative.png" alt="reading-negative.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_inserted/reading-negative.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="reading.png imports/assets/docs,imports/utils,onboarding/components,onboarding/pages,popups">
+</tr><tr class="inv-row" data-search="reading.png imports/assets/docs,imports/utils,onboarding/components,onboarding/pages,popups" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_inserted/reading.png" alt="reading.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_inserted/reading.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">imports/assets/docs</span><span class="tag">imports/utils</span><span class="tag">Onboarding/components</span><span class="tag">Onboarding/pages</span><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="reading-positive.png popups">
+</tr><tr class="inv-row" data-search="reading-positive.png popups" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_inserted/reading-positive.png" alt="reading-positive.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_inserted/reading-positive.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="writing-negative.png onboarding/pages,popups/auth_sign_base/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="writing-negative.png onboarding/pages,popups/auth_sign_base/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_inserted/writing-negative.png" alt="writing-negative.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_inserted/writing-negative.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="writing-positive.png onboarding,popups/auth_sign_base/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="writing-positive.png onboarding,popups/auth_sign_base/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_inserted/writing-positive.png" alt="writing-positive.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_inserted/writing-positive.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="insert.png app/mainui,browser/panels/private,communities/controls,controls,imports/utils">
+</tr><tr class="inv-row" data-search="insert.png app/mainui,browser/panels/private,communities/controls,controls,imports/utils" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_insert/insert.png" alt="insert.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_insert/insert.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui</span><span class="tag">Browser/panels/private</span><span class="tag">Communities/controls</span><span class="tag">controls</span><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="insert-positive.png popups">
+</tr><tr class="inv-row" data-search="insert-positive.png popups" data-version="release">
   <td class="img-cell"><img src="png/keycard/card_insert/insert-positive.png" alt="insert-positive.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/card_insert/insert-positive.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="keycard-factory-reset-negative.png popups/keycard_new">
+</tr><tr class="inv-row" data-search="keycard-factory-reset-negative.png popups/keycard_new" data-version="release">
   <td class="img-cell"><img src="png/keycard/factory_reset/keycard-factory-reset-negative.png" alt="keycard-factory-reset-negative.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/factory_reset/keycard-factory-reset-negative.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups/keycard_new</span></td>
-</tr><tr class="inv-row" data-search="keycard-factory-reset.png onboarding,popups/keycard_new,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="keycard-factory-reset.png onboarding,popups/keycard_new,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/factory_reset/keycard-factory-reset.png" alt="keycard-factory-reset.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/factory_reset/keycard-factory-reset.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding</span><span class="tag">popups/keycard_new</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="keycard-factory-reset-positive.png onboarding,popups/keycard_new,popups/keycard/states">
+</tr><tr class="inv-row" data-search="keycard-factory-reset-positive.png onboarding,popups/keycard_new,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/factory_reset/keycard-factory-reset-positive.png" alt="keycard-factory-reset-positive.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/factory_reset/keycard-factory-reset-positive.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding</span><span class="tag">popups/keycard_new</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="in-progress.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="in-progress.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/pin/in-progress.png" alt="in-progress.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/pin/in-progress.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="negative.png bip39_en,imports/assets/docs,market/controls,onboarding/pages,popups/auth_sign_base/states">
+</tr><tr class="inv-row" data-search="negative.png bip39_en,imports/assets/docs,market/controls,onboarding/pages,popups/auth_sign_base/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/pin/negative.png" alt="negative.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/pin/negative.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">BIP39_en</span><span class="tag">imports/assets/docs</span><span class="tag">Market/controls</span><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span></td>
-</tr><tr class="inv-row" data-search="positive.png imports/utils,market/controls,onboarding,onboarding/pages,popups">
+</tr><tr class="inv-row" data-search="positive.png imports/utils,market/controls,onboarding,onboarding/pages,popups" data-version="release">
   <td class="img-cell"><img src="png/keycard/pin/positive.png" alt="positive.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/pin/positive.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">imports/utils</span><span class="tag">Market/controls</span><span class="tag">Onboarding</span><span class="tag">Onboarding/pages</span><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="unblock-negative.png onboarding/pages">
+</tr><tr class="inv-row" data-search="unblock-negative.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/keycard/pin/unblock-negative.png" alt="unblock-negative.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/pin/unblock-negative.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="unblock.png app/mainui,chat/panels,chat/views,communities/panels,imports/utils">
+</tr><tr class="inv-row" data-search="unblock.png app/mainui,chat/panels,chat/views,communities/panels,imports/utils" data-version="release">
   <td class="img-cell"><img src="png/keycard/pin/unblock.png" alt="unblock.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/pin/unblock.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui</span><span class="tag">Chat/panels</span><span class="tag">Chat/views</span><span class="tag">Communities/panels</span><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="already-added.png popups/keycard/states">
+</tr><tr class="inv-row" data-search="already-added.png popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/profile/already-added.png" alt="already-added.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/profile/already-added.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="in-progress.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="in-progress.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/profile/in-progress.png" alt="in-progress.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/profile/in-progress.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="negative.png bip39_en,imports/assets/docs,market/controls,onboarding/pages,popups/auth_sign_base/states">
+</tr><tr class="inv-row" data-search="negative.png bip39_en,imports/assets/docs,market/controls,onboarding/pages,popups/auth_sign_base/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/profile/negative.png" alt="negative.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/profile/negative.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">BIP39_en</span><span class="tag">imports/assets/docs</span><span class="tag">Market/controls</span><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span></td>
-</tr><tr class="inv-row" data-search="positive.png imports/utils,market/controls,onboarding,onboarding/pages,popups">
+</tr><tr class="inv-row" data-search="positive.png imports/utils,market/controls,onboarding,onboarding/pages,popups" data-version="release">
   <td class="img-cell"><img src="png/keycard/profile/positive.png" alt="positive.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/profile/positive.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">imports/utils</span><span class="tag">Market/controls</span><span class="tag">Onboarding</span><span class="tag">Onboarding/pages</span><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="scanning.png popups/addaccount/panels,popups/auth_sign_base/states,popups/keycard_new,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="scanning.png popups/addaccount/panels,popups/auth_sign_base/states,popups/keycard_new,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/scanning/scanning.png" alt="scanning.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/scanning/scanning.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups/addaccount/panels</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="empty.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui/adaptors,app/mainui/handlers">
+</tr><tr class="inv-row" data-search="empty.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui/adaptors,app/mainui/handlers" data-version="release">
   <td class="img-cell"><img src="png/keycard/wrong_card/empty.png" alt="empty.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/wrong_card/empty.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">ActivityCenter/controls</span><span class="tag">ActivityCenter/panels</span><span class="tag">app/mainui/adaptors</span><span class="tag">app/mainui/Handlers</span></td>
-</tr><tr class="inv-row" data-search="not-keycard.png imports/utils,onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="not-keycard.png imports/utils,onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/wrong_card/not-keycard.png" alt="not-keycard.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/wrong_card/not-keycard.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">imports/utils</span><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="something-went-wrong.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="something-went-wrong.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/wrong_card/something-went-wrong.png" alt="something-went-wrong.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/wrong_card/something-went-wrong.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr><tr class="inv-row" data-search="wrong-profile.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states">
+</tr><tr class="inv-row" data-search="wrong-profile.png onboarding/pages,popups/auth_sign_base/states,popups/keycard_new/states,popups/keycard/states" data-version="release">
   <td class="img-cell"><img src="png/keycard/wrong_card/wrong-profile.png" alt="wrong-profile.png" class="" loading="lazy"></td>
   <td class="name-cell">png/keycard/wrong_card/wrong-profile.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups/auth_sign_base/states</span><span class="tag">popups/keycard_new/states</span><span class="tag">popups/keycard/states</span></td>
-</tr></table></div><div class="section"><div class="section-title">market (8)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="swap-dark.png ">
+</tr></table></div><div class="section"><div class="section-title">market (8)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="swap-dark.png " data-version="release">
   <td class="img-cell"><img src="png/market/swap-dark.png" alt="swap-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/market/swap-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swap-dark-small.png ">
+</tr><tr class="inv-row" data-search="swap-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/market/swap-dark-small.png" alt="swap-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/market/swap-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swap-light.png ">
+</tr><tr class="inv-row" data-search="swap-light.png " data-version="release">
   <td class="img-cell"><img src="png/market/swap-light.png" alt="swap-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/market/swap-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swap-light-small.png ">
+</tr><tr class="inv-row" data-search="swap-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/market/swap-light-small.png" alt="swap-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/market/swap-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="tradecenter-dark.png ">
+</tr><tr class="inv-row" data-search="tradecenter-dark.png " data-version="release">
   <td class="img-cell"><img src="png/market/tradeCenter-dark.png" alt="tradeCenter-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/market/tradeCenter-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="tradecenter-dark-small.png ">
+</tr><tr class="inv-row" data-search="tradecenter-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/market/tradeCenter-dark-small.png" alt="tradeCenter-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/market/tradeCenter-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="tradecenter-light.png ">
+</tr><tr class="inv-row" data-search="tradecenter-light.png " data-version="release">
   <td class="img-cell"><img src="png/market/tradeCenter-light.png" alt="tradeCenter-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/market/tradeCenter-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="tradecenter-light-small.png ">
+</tr><tr class="inv-row" data-search="tradecenter-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/market/tradeCenter-light-small.png" alt="tradeCenter-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/market/tradeCenter-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr></table></div><div class="section"><div class="section-title">onRampProviders (1)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="moonpay.png ">
+</tr></table></div><div class="section"><div class="section-title">onRampProviders (1)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="moonpay.png " data-version="release">
   <td class="img-cell"><img src="png/onRampProviders/moonPay.png" alt="moonPay.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onRampProviders/moonPay.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr></table></div><div class="section"><div class="section-title">onboarding (21)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="avatar.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui,popups">
+</tr></table></div><div class="section"><div class="section-title">onboarding (21)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="avatar.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui,popups" data-version="release">
   <td class="img-cell"><img src="png/onboarding/avatar.png" alt="avatar.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/avatar.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">ActivityCenter/controls</span><span class="tag">ActivityCenter/panels</span><span class="tag">app/mainui</span><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="chat.png activitycenter/adaptors,activitycenter/controls,activitycenter/helpers,activitycenter/panels,app/mainui">
+</tr><tr class="inv-row" data-search="chat.png activitycenter/adaptors,activitycenter/controls,activitycenter/helpers,activitycenter/panels,app/mainui" data-version="release">
   <td class="img-cell"><img src="png/onboarding/carousel/chat.png" alt="chat.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/carousel/chat.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">ActivityCenter/controls</span><span class="tag">ActivityCenter/helpers</span><span class="tag">ActivityCenter/panels</span><span class="tag">app/mainui</span></td>
-</tr><tr class="inv-row" data-search="crypto.png app/mainui/handlers,chat/helpers,chat/popups,chat/stores,controls">
+</tr><tr class="inv-row" data-search="crypto.png app/mainui/handlers,chat/helpers,chat/popups,chat/stores,controls" data-version="release">
   <td class="img-cell"><img src="png/onboarding/carousel/crypto.png" alt="crypto.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/carousel/crypto.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui/Handlers</span><span class="tag">Chat/helpers</span><span class="tag">Chat/popups</span><span class="tag">Chat/stores</span><span class="tag">controls</span></td>
-</tr><tr class="inv-row" data-search="keycard.png app/mainui,chat/helpers,communities/panels,controls,homepage">
+</tr><tr class="inv-row" data-search="keycard.png app/mainui,chat/helpers,communities/panels,controls,homepage" data-version="release">
   <td class="img-cell"><img src="png/onboarding/carousel/keycard.png" alt="keycard.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/carousel/keycard.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui</span><span class="tag">Chat/helpers</span><span class="tag">Communities/panels</span><span class="tag">controls</span><span class="tag">HomePage</span></td>
-</tr><tr class="inv-row" data-search="enable_biometrics.png onboarding/pages,popups">
+</tr><tr class="inv-row" data-search="enable_biometrics.png onboarding/pages,popups" data-version="release">
   <td class="img-cell"><img src="png/onboarding/enable_biometrics.png" alt="enable_biometrics.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/enable_biometrics.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="keys.png app/mainui,app/mainui/handlers,browser/provider/js,chat/views,communities/controls">
+</tr><tr class="inv-row" data-search="keys.png app/mainui,app/mainui/handlers,browser/provider/js,chat/views,communities/controls" data-version="release">
   <td class="img-cell"><img src="png/onboarding/keys.png" alt="keys.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/keys.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui</span><span class="tag">app/mainui/Handlers</span><span class="tag">Browser/provider/js</span><span class="tag">Chat/views</span><span class="tag">Communities/controls</span></td>
-</tr><tr class="inv-row" data-search="seed-phrase.png profile/helpers">
+</tr><tr class="inv-row" data-search="seed-phrase.png profile/helpers" data-version="release">
   <td class="img-cell"><img src="png/onboarding/seed-phrase.png" alt="seed-phrase.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/seed-phrase.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Profile/helpers</span></td>
-</tr><tr class="inv-row" data-search="status_chat.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_chat.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_chat.png" alt="status_chat.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_chat.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_generate_keycard.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_generate_keycard.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_generate_keycard.png" alt="status_generate_keycard.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_generate_keycard.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_generate_keys.png onboarding/pages,popups">
+</tr><tr class="inv-row" data-search="status_generate_keys.png onboarding/pages,popups" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_generate_keys.png" alt="status_generate_keys.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_generate_keys.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="status_keycard_adding_keypair.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_keycard_adding_keypair.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_keycard_adding_keypair.png" alt="status_keycard_adding_keypair.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_keycard_adding_keypair.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_keycard_adding_keypair_success.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_keycard_adding_keypair_success.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_keycard_adding_keypair_success.png" alt="status_keycard_adding_keypair_success.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_keycard_adding_keypair_success.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_keycard_multiple.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_keycard_multiple.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_keycard_multiple.png" alt="status_keycard_multiple.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_keycard_multiple.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_key.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_key.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_key.png" alt="status_key.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_key.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_login_seedphrase.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_login_seedphrase.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_login_seedphrase.png" alt="status_login_seedphrase.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_login_seedphrase.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_sync_failed.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_sync_failed.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_sync_failed.png" alt="status_sync_failed.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_sync_failed.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_sync.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_sync.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_sync.png" alt="status_sync.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_sync.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_sync_progress.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_sync_progress.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_sync_progress.png" alt="status_sync_progress.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_sync_progress.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_sync_success.png onboarding/pages">
+</tr><tr class="inv-row" data-search="status_sync_success.png onboarding/pages" data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_sync_success.png" alt="status_sync_success.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_sync_success.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Onboarding/pages</span></td>
-</tr><tr class="inv-row" data-search="status_totebag_artwork_1.png ">
+</tr><tr class="inv-row" data-search="status_totebag_artwork_1.png " data-version="release">
   <td class="img-cell"><img src="png/onboarding/status_totebag_artwork_1.png" alt="status_totebag_artwork_1.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/status_totebag_artwork_1.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="welcome.png bip39_en,communities/controls,communities/panels,communities/views,onboarding">
+</tr><tr class="inv-row" data-search="welcome.png bip39_en,communities/controls,communities/panels,communities/views,onboarding" data-version="release">
   <td class="img-cell"><img src="png/onboarding/welcome.png" alt="welcome.png" class="" loading="lazy"></td>
   <td class="name-cell">png/onboarding/welcome.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">BIP39_en</span><span class="tag">Communities/controls</span><span class="tag">Communities/panels</span><span class="tag">Communities/views</span><span class="tag">Onboarding</span></td>
-</tr></table></div><div class="section"><div class="section-title">png (8)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="backup-popup.png popups">
+</tr></table></div><div class="section"><div class="section-title">png (8)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="backup-popup.png popups" data-version="release">
   <td class="img-cell"><img src="png/backup-popup.png" alt="backup-popup.png" class="" loading="lazy"></td>
   <td class="name-cell">png/backup-popup.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">popups</span></td>
-</tr><tr class="inv-row" data-search="qr-scan-success.png ">
+</tr><tr class="inv-row" data-search="qr-scan-success.png " data-version="release">
   <td class="img-cell"><img src="png/qr-scan-success.png" alt="qr-scan-success.png" class="" loading="lazy"></td>
   <td class="name-cell">png/qr-scan-success.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="status-logo-circle.png profile/views">
+</tr><tr class="inv-row" data-search="status-logo-circle.png profile/views" data-version="release">
   <td class="img-cell"><img src="png/status-logo-circle.png" alt="status-logo-circle.png" class="" loading="lazy"></td>
   <td class="name-cell">png/status-logo-circle.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Profile/views</span></td>
-</tr><tr class="inv-row" data-search="status-logo-dev-circle.png profile/views">
+</tr><tr class="inv-row" data-search="status-logo-dev-circle.png profile/views" data-version="release">
   <td class="img-cell"><img src="png/status-logo-dev-circle.png" alt="status-logo-dev-circle.png" class="" loading="lazy"></td>
   <td class="name-cell">png/status-logo-dev-circle.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Profile/views</span></td>
-</tr><tr class="inv-row" data-search="status-logo-icon.png activitycenter/adaptors,wallet/popups">
+</tr><tr class="inv-row" data-search="status-logo-icon.png activitycenter/adaptors,wallet/popups" data-version="release">
   <td class="img-cell"><img src="png/status-logo-icon.png" alt="status-logo-icon.png" class="" loading="lazy"></td>
   <td class="name-cell">png/status-logo-icon.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">Wallet/popups</span></td>
-</tr><tr class="inv-row" data-search="status-logo.png activitycenter/adaptors,app/mainui,imports/utils,popups,profile/views">
+</tr><tr class="inv-row" data-search="status-logo.png activitycenter/adaptors,app/mainui,imports/utils,popups,profile/views" data-version="release">
   <td class="img-cell"><img src="png/status-logo.png" alt="status-logo.png" class="" loading="lazy"></td>
   <td class="name-cell">png/status-logo.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">app/mainui</span><span class="tag">imports/utils</span><span class="tag">popups</span><span class="tag">Profile/views</span></td>
-</tr><tr class="inv-row" data-search="status.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui,app/mainui/adaptors">
+</tr><tr class="inv-row" data-search="status.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui,app/mainui/adaptors" data-version="release">
   <td class="img-cell"><img src="png/status.png" alt="status.png" class="" loading="lazy"></td>
   <td class="name-cell">png/status.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">ActivityCenter/controls</span><span class="tag">ActivityCenter/panels</span><span class="tag">app/mainui</span><span class="tag">app/mainui/adaptors</span></td>
-</tr><tr class="inv-row" data-search="status-preparing.png app/mainui">
+</tr><tr class="inv-row" data-search="status-preparing.png app/mainui" data-version="release">
   <td class="img-cell"><img src="png/status-preparing.png" alt="status-preparing.png" class="" loading="lazy"></td>
   <td class="name-cell">png/status-preparing.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">app/mainui</span></td>
-</tr></table></div><div class="section"><div class="section-title">settings (1)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="communities.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui,app/mainui/adaptors">
+</tr></table></div><div class="section"><div class="section-title">settings (1)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="communities.png activitycenter/adaptors,activitycenter/controls,activitycenter/panels,app/mainui,app/mainui/adaptors" data-version="release">
   <td class="img-cell"><img src="png/settings/communities.png" alt="communities.png" class="" loading="lazy"></td>
   <td class="name-cell">png/settings/communities.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">ActivityCenter/adaptors</span><span class="tag">ActivityCenter/controls</span><span class="tag">ActivityCenter/panels</span><span class="tag">app/mainui</span><span class="tag">app/mainui/adaptors</span></td>
-</tr></table></div><div class="section"><div class="section-title">tokens (14)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="abyss@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/ABYSS@3x.png" alt="ABYSS@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/ABYSS@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="appc@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/APPC@3x.png" alt="APPC@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/APPC@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="ck@3x.png chat/views,communities/controls,communities/views,imports/utils,wallet/services/dapps/plugins">
-  <td class="img-cell"><img src="png/tokens/CK@3x.png" alt="CK@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/CK@3x.png</td>
-  <td><span class="tag">Chat/views</span><span class="tag">Communities/controls</span><span class="tag">Communities/views</span><span class="tag">imports/utils</span><span class="tag">Wallet/services/dapps/plugins</span></td>
-</tr><tr class="inv-row" data-search="cob@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/COB@3x.png" alt="COB@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/COB@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="drt@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/DRT@3x.png" alt="DRT@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/DRT@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="eth2x-fli@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/ETH2x-FLI@3x.png" alt="ETH2x-FLI@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/ETH2x-FLI@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="fxc@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/FXC@3x.png" alt="FXC@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/FXC@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="lend@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/LEND@3x.png" alt="LEND@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/LEND@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="qkc@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/QKC@3x.png" alt="QKC@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/QKC@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="rhoc@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/RHOC@3x.png" alt="RHOC@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/RHOC@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="strk@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/STRK@3x.png" alt="STRK@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/STRK@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="trst@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/TRST@3x.png" alt="TRST@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/TRST@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr><tr class="inv-row" data-search="uni@3x.png app/mainui,imports/utils,profile/helpers,wallet/views">
-  <td class="img-cell"><img src="png/tokens/UNI@3x.png" alt="UNI@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/UNI@3x.png</td>
-  <td><span class="tag">app/mainui</span><span class="tag">imports/utils</span><span class="tag">Profile/helpers</span><span class="tag">Wallet/views</span></td>
-</tr><tr class="inv-row" data-search="usds@3x.png imports/utils">
-  <td class="img-cell"><img src="png/tokens/USDS@3x.png" alt="USDS@3x.png" class="" loading="lazy"></td>
-  <td class="name-cell">png/tokens/USDS@3x.png</td>
-  <td><span class="tag">imports/utils</span></td>
-</tr></table></div><div class="section"><div class="section-title">wallet (18)</div><table><tr><th>Preview</th><th>File</th><th>Used in</th></tr><tr class="inv-row" data-search="onchain-friends-empty-dark.png wallet/views">
+</tr></table></div><div class="section"><div class="section-title">wallet (18)</div><table><tr><th>Preview</th><th>File</th><th>Version</th><th>Used in</th></tr><tr class="inv-row" data-search="onchain-friends-empty-dark.png wallet/views" data-version="release">
   <td class="img-cell"><img src="png/wallet/onchain-friends-empty-dark.png" alt="onchain-friends-empty-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/onchain-friends-empty-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Wallet/views</span></td>
-</tr><tr class="inv-row" data-search="onchain-friends-empty-light.png wallet/views">
+</tr><tr class="inv-row" data-search="onchain-friends-empty-light.png wallet/views" data-version="release">
   <td class="img-cell"><img src="png/wallet/onchain-friends-empty-light.png" alt="onchain-friends-empty-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/onchain-friends-empty-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag">Wallet/views</span></td>
-</tr><tr class="inv-row" data-search="buyview-dark.png ">
+</tr><tr class="inv-row" data-search="buyview-dark.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/buyView-dark.png" alt="buyView-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/buyView-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="buyview-dark-small.png ">
+</tr><tr class="inv-row" data-search="buyview-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/buyView-dark-small.png" alt="buyView-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/buyView-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="buyview-light.png ">
+</tr><tr class="inv-row" data-search="buyview-light.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/buyView-light.png" alt="buyView-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/buyView-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="buyview-light-small.png ">
+</tr><tr class="inv-row" data-search="buyview-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/buyView-light-small.png" alt="buyView-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/buyView-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="collectiblesview-dark.png ">
+</tr><tr class="inv-row" data-search="collectiblesview-dark.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/collectiblesView-dark.png" alt="collectiblesView-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/collectiblesView-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="collectiblesview-dark-small.png ">
+</tr><tr class="inv-row" data-search="collectiblesview-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/collectiblesView-dark-small.png" alt="collectiblesView-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/collectiblesView-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="collectiblesview-light.png ">
+</tr><tr class="inv-row" data-search="collectiblesview-light.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/collectiblesView-light.png" alt="collectiblesView-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/collectiblesView-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="collectiblesview-light-small.png ">
+</tr><tr class="inv-row" data-search="collectiblesview-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/collectiblesView-light-small.png" alt="collectiblesView-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/collectiblesView-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="mainview-dark.png ">
+</tr><tr class="inv-row" data-search="mainview-dark.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/mainView-dark.png" alt="mainView-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/mainView-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="mainview-dark-small.png ">
+</tr><tr class="inv-row" data-search="mainview-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/mainView-dark-small.png" alt="mainView-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/mainView-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="mainview-light.png ">
+</tr><tr class="inv-row" data-search="mainview-light.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/mainView-light.png" alt="mainView-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/mainView-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="mainview-light-small.png ">
+</tr><tr class="inv-row" data-search="mainview-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/mainView-light-small.png" alt="mainView-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/mainView-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swapview-dark.png ">
+</tr><tr class="inv-row" data-search="swapview-dark.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/swapView-dark.png" alt="swapView-dark.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/swapView-dark.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swapview-dark-small.png ">
+</tr><tr class="inv-row" data-search="swapview-dark-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/swapView-dark-small.png" alt="swapView-dark-small.png" class=" dark-bg" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/swapView-dark-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swapview-light.png ">
+</tr><tr class="inv-row" data-search="swapview-light.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/swapView-light.png" alt="swapView-light.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/swapView-light.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
-</tr><tr class="inv-row" data-search="swapview-light-small.png ">
+</tr><tr class="inv-row" data-search="swapview-light-small.png " data-version="release">
   <td class="img-cell"><img src="png/wallet/placeholders/swapView-light-small.png" alt="swapView-light-small.png" class="" loading="lazy"></td>
   <td class="name-cell">png/wallet/placeholders/swapView-light-small.png</td>
+  <td><span class="tag release">v2.37.0</span></td>
   <td><span class="tag empty">no references found</span></td>
 </tr></table></div>
 <script>
+let currentTab = 'all';
+let currentFilter = '';
+
+function setTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.textContent.toLowerCase().startsWith(tab === 'all' ? 'all' : tab === 'release' ? 'v2' : 'dev')));
+  applyFilters();
+}
+
 function filterRows(q) {
-  q = q.toLowerCase();
+  currentFilter = q.toLowerCase();
+  applyFilters();
+}
+
+function applyFilters() {
   document.querySelectorAll('.inv-row').forEach(r => {
-    r.style.display = r.dataset.search.includes(q) ? '' : 'none';
+    const matchesFilter = !currentFilter || r.dataset.search.includes(currentFilter);
+    const matchesTab = currentTab === 'all' || r.dataset.version === currentTab;
+    r.style.display = (matchesFilter && matchesTab) ? '' : 'none';
   });
 }
 </script>
