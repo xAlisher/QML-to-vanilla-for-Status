@@ -4,29 +4,29 @@
 
 [data-tokens="v1"][data-mode="dark"] {
   /* === Base colors (v1 dark: navy-tinted) === */
-  --base-color-1: #A1ABBD;   /* neutral-40 */
-  --base-color-2: #202C42;   /* neutral-70 */
-  --base-color-3: #1B273D;   /* neutral-80 */
-  --base-color-4: #131D2F;   /* neutral-90 */
-  --base-color-5: #0D1625;   /* neutral-95 */
+  --base-color-1: #838C91;   /* neutral-40 */
+  --base-color-2: #252528;   /* neutral-70 */
+  --base-color-3: #252528;   /* neutral-80 */
+  --base-color-4: #23252F;   /* neutral-90 */
+  --base-color-5: #141414;   /* neutral-95 */
 
   /* === Primary (lighter for dark mode) === */
-  --primary-color-1: #88B0FF;
+  --primary-color-1: #6177E5;
   --primary-color-2: #869EFF4D;
   --primary-color-3: #869EFF33;
 
   /* === Danger (v1: warmer, lighter for dark) === */
-  --danger-color-1: #E95460;
+  --danger-color-1: #FC5F5F;
   --danger-color-2: #E954604D;
   --danger-color-3: #E9546033;
 
   /* === Warning === */
-  --warning-color-1: #FF7D46;
+  --warning-color-1: #FFCA0F;
   --warning-color-2: #FF7D4633;
   --warning-color-3: #FF7D461A;
 
   /* === Success (v1: teal) === */
-  --success-color-1: #23ADA0;
+  --success-color-1: #44D058;
   --success-color-2: #23ADA033;
   --success-color-3: #23ADA04D;
 
@@ -73,15 +73,15 @@
   --misc-color-12: #AFB551;
 
   /* === Surfaces (v1 dark: deep navy, not gray) === */
-  --background: #131D2F;   /* neutral-90 */
-  --background-hover: #202C42;   /* neutral-70 */
-  --card-color: #1B273D;   /* neutral-80 */
-  --border: #202C42;   /* neutral-70 */
+  --background: #141414;   /* neutral-90 */
+  --background-hover: #252528;   /* neutral-70 */
+  --card-color: #252528;   /* neutral-80 */
+  --border: #252528;   /* neutral-70 */
   --separator: #FFFFFF1A;
   --text-color: #FFFFFF;
-  --secondary-text: #A1ABBD;   /* neutral-40 */
+  --secondary-text: #838C91;   /* neutral-40 */
   --secondary-background: #869EFF4D;
-  --secondary-menu-background: #0D1625;   /* neutral-95 */
+  --secondary-menu-background: #141414;   /* neutral-95 */
   --dark-grey: #202C42;
 
   /* === Shadows === */
@@ -100,9 +100,9 @@
   --block-progress-bar-color: #FFFFFF1A;
 
   /* === Component tokens === */
-  --app-layout-bg: #131D2F;
-  --app-layout-right-panel-bg: #131D2F;
-  --app-nav-bar-bg: #0D1625;
+  --app-layout-bg: #141414;
+  --app-layout-right-panel-bg: #141414;
+  --app-nav-bar-bg: #141414;
   --toast-message-bg: #1B273D;
   --list-item-bg: #131D2F;
   --list-item-secondary-hover-bg: #869EFF33;

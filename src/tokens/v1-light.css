@@ -4,11 +4,11 @@
 
 [data-tokens="v1"][data-mode="light"] {
   /* === Base colors (v1 neutrals are blue-tinted) === */
-  --base-color-1: #647084;   /* neutral-50 */
-  --base-color-2: #E7EAEE;   /* neutral-20 */
-  --base-color-3: #DCE0E5;   /* neutral-30 */
-  --base-color-4: #F5F6F8;   /* neutral-5 */
-  --base-color-5: #F0F2F5;   /* neutral-10 */
+  --base-color-1: #939BA1;   /* neutral-50 */
+  --base-color-2: #EEF2F5;   /* neutral-20 */
+  --base-color-3: #EEF2F5;   /* neutral-30 */
+  --base-color-4: #ECEFFC;   /* neutral-5 */
+  --base-color-5: #EEF2F5;   /* neutral-10 */
 
   /* === Primary (same as v2) === */
   --primary-color-1: #4360DF;   /* primary-50 */
@@ -16,17 +16,17 @@
   --primary-color-3: #4360DF1A;
 
   /* === Danger (v1: warmer red) === */
-  --danger-color-1: #E95460;   /* danger-50 */
+  --danger-color-1: #FF2D55;   /* danger-50 */
   --danger-color-2: #E9546033;
   --danger-color-3: #E954601A;
 
   /* === Warning (v1: orange) === */
-  --warning-color-1: #FF7D46;   /* warning-50 */
+  --warning-color-1: #FFCA0F;   /* warning-50 */
   --warning-color-2: #FF7D4633;
   --warning-color-3: #FF7D461A;
 
   /* === Success (v1: teal, not green) === */
-  --success-color-1: #23ADA0;   /* success-50 */
+  --success-color-1: #44D058;   /* success-50 */
   --success-color-2: #23ADA01A;
   --success-color-3: #23ADA033;
 
@@ -73,15 +73,15 @@
   --misc-color-12: #9EA85D;
 
   /* === Surfaces (v1: slightly cooler whites) === */
-  --background: #FAFBFC;   /* neutral-2.5 */
+  --background: #FFFFFF;   /* neutral-2.5 */
   --background-hover: #F0F2F5;   /* neutral-10 */
   --card-color: #FFFFFF;
-  --border: #E7EAEE;   /* neutral-20 */
-  --separator: #E7EAEE;
-  --text-color: #09101C;   /* neutral-100 */
-  --secondary-text: #647084;   /* neutral-50 */
+  --border: #EEF2F5;   /* neutral-20 */
+  --separator: #EEF2F5;
+  --text-color: #000000;   /* neutral-100 */
+  --secondary-text: #939BA1;   /* neutral-50 */
   --secondary-background: #4360DF33;
-  --secondary-menu-background: #F5F6F8;   /* neutral-5 */
+  --secondary-menu-background: #EEF2F5;   /* neutral-5 */
   --dark-grey: #647084;
 
   /* === Shadows === */
@@ -100,7 +100,7 @@
   --block-progress-bar-color: #DCE0E5;
 
   /* === Component tokens === */
-  --app-layout-bg: #FAFBFC;
+  --app-layout-bg: #FFFFFF;
   --app-layout-right-panel-bg: #FFFFFF;
   --app-nav-bar-bg: #ECEFFB;
   --toast-message-bg: #FFFFFF;
