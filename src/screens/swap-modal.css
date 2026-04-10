@@ -498,3 +498,37 @@
 .swap-modal__submit:hover {
   opacity: 0.9;
 }
+
+/* === Mobile: fit swap modal inside phone frame === */
+.shell--mobile .swap-backdrop,
+.shell__mobile-content .swap-backdrop {
+  position: relative;
+  inset: auto;
+  min-height: 100%;
+}
+
+.shell--mobile .swap-modal,
+.shell__mobile-content .swap-modal {
+  width: 100%;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.shell--mobile .swap-modal__account-selector,
+.shell__mobile-content .swap-modal__account-selector {
+  left: var(--padding);
+  right: auto;
+}
+
+.shell--mobile .swap-modal__footer,
+.shell__mobile-content .swap-modal__footer {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.shell--mobile .swap-modal__footer-right,
+.shell__mobile-content .swap-modal__footer-right {
+  flex-wrap: wrap;
+  gap: 8px;
+}

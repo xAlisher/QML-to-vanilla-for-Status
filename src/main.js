@@ -221,6 +221,7 @@ let currentTheme = 'current-dark'
 let currentFont = 'default'
 let currentView = 'desktop' // desktop or mobile
 let sideBySide = false
+let compareIteration = iterations[iterations.length - 1]
 let compareTheme = 'current-dark'
 let customizerOpen = false
 
@@ -378,9 +379,13 @@ function renderToolbar() {
     `<option value="${key}" ${currentTheme === key ? 'selected' : ''}>${label}</option>`
   ).join('')
 
-  // Compare dropdown
-  const compareOptions = filteredThemes.map(([key, { label }]) =>
+  // Compare dropdowns (separate iteration + theme)
+  const compareFilteredThemes = Object.entries(themes).filter(([, t]) => t.iteration === compareIteration)
+  const compareOptions = compareFilteredThemes.map(([key, { label }]) =>
     `<option value="${key}" ${compareTheme === key ? 'selected' : ''}>${label}</option>`
+  ).join('')
+  const compareIterationOptions = iterations.map(i =>
+    `<option value="${i}" ${compareIteration === i ? 'selected' : ''}>#${i}</option>`
   ).join('')
 
   // Iteration dropdown
@@ -409,7 +414,7 @@ function renderToolbar() {
       </select>
       <div class="presentation__toolbar-group">${screenBtns}</div>
       <button class="${sideBySide ? 'active' : ''}" data-toggle-split>Compare</button>
-      ${sideBySide ? `<select class="presentation__toolbar-select" data-set-compare>${compareOptions}</select>` : ''}
+      ${sideBySide ? `<select class="presentation__toolbar-select" data-set-compare-iteration>${compareIterationOptions}</select><select class="presentation__toolbar-select" data-set-compare>${compareOptions}</select>` : ''}
       ${isCompressed && !sideBySide ? `<button class="presentation__toolbar-cta ${customizerOpen ? 'active' : ''}" data-toggle-customizer>Customize</button>` : ''}
       <div class="presentation__toolbar-reason">${linkify(themes[currentTheme].reason || '')}</div>
     </div>
@@ -531,6 +536,15 @@ function bindToolbarEvents() {
       render()
     })
   })
+  const compareIterSelect = document.querySelector('[data-set-compare-iteration]')
+  if (compareIterSelect) {
+    compareIterSelect.addEventListener('change', (e) => {
+      compareIteration = Number(e.target.value)
+      const compareFilteredThemes = Object.entries(themes).filter(([, t]) => t.iteration === compareIteration)
+      if (compareFilteredThemes.length > 0) compareTheme = compareFilteredThemes[0][0]
+      render()
+    })
+  }
   const compareSelect = document.querySelector('[data-set-compare]')
   if (compareSelect) {
     compareSelect.addEventListener('change', (e) => {
